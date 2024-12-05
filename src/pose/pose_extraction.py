@@ -5,6 +5,10 @@ from pathlib import Path
 import copy
 import argparse
 
+# for debugging
+from plot import plotCamera
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 
 class PoseEstimation:
     def __init__(self, params):
@@ -14,9 +18,15 @@ class PoseEstimation:
         self.chess_h = self.params["chess_h"]
         self.chess_w = self.params["chess_w"]
         self.vis = self.params["vis"]
+        self.square_real_size = self.params["square_real_size"]
         # Prepare object points
         self.object_points = np.zeros((self.chess_h * self.chess_w, 3), np.float32)
-        self.object_points[:, :2] = np.mgrid[0:self.chess_h, 0:self.chess_w].T.reshape(-1, 2)
+        self.object_points[:, :2] = np.mgrid[0:self.chess_w, 0:self.chess_h].T.reshape(-1, 2)
+        self.object_points *= self.square_real_size  # Scale to real-world square size
+
+        self.focal_length_mm = self.params['focal_length_mm']  # Focal length in mm
+        self.sensor_size_mm = self.params['sensor_size_mm'] # Sensor size in mm (diagonal for iPhone 12)
+
         self.axis = np.float32([[3, 0, 0], [0, 3, 0], [0, 0, -3]]).reshape(-1, 3)
 
         self.image_root = os.path.join(self.data_root, "images")
@@ -141,6 +151,25 @@ class PoseEstimation:
 
         return cameras_transform_3, t_out
 
+    def calculate_focal_length_in_pixels(self, focal_length_mm, image_resolution, sensor_size_mm):
+        """
+        Calculate focal length in pixels based on the given focal length in mm, image resolution, and sensor size.
+        """
+        # Assuming image resolution is (width, height)
+        width_pixels, height_pixels = image_resolution
+        # Calculate the focal length in pixels
+        return focal_length_mm * (width_pixels / sensor_size_mm)
+
+    def calculate_sensor_width(self, sensor_size_mm, resolution):
+        """
+        Calculate the sensor width given the diagonal sensor size and resolution.
+        """
+        width_pixels, height_pixels = resolution
+        diagonal_pixels = np.sqrt(width_pixels**2 + height_pixels**2)
+        aspect_ratio = width_pixels / diagonal_pixels
+        sensor_width_mm = sensor_size_mm * aspect_ratio
+        return sensor_width_mm
+
     def chessboard_detection(self, chessboard_pth, name_list, chess_T):
         corners_dict = {}
         useful_path = []
@@ -250,7 +279,38 @@ class PoseEstimation:
         for pth in bws:
             binary = bws[pth]
             # Obtain camera parameters
-            ret, cmx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, binary.shape[::-1], None, None)
+            sensor_width_mm = self.calculate_sensor_width(
+                self.sensor_size_mm, binary.shape[::-1]
+            )
+            focal_length_pixels = self.calculate_focal_length_in_pixels(
+                self.focal_length_mm, binary.shape[::-1], sensor_width_mm
+            )
+
+            image_size = binary.shape[::-1]
+            center = (image_size[0] / 2, image_size[1] / 2)  # Principal point
+            camera_matrix = np.array([
+                [focal_length_pixels, 0, center[0]],
+                [0, focal_length_pixels, center[1]],
+                [0, 0, 1]
+            ], dtype=np.float64)
+            dist_coeffs = np.zeros(5)  # Assuming no distortion
+
+            ret, cmx, dist, rvecs, tvecs = cv2.calibrateCamera(
+                objpoints, imgpoints, binary.shape[::-1], camera_matrix, dist_coeffs
+            )
+
+            # print(ret)
+            # Re-projection Error
+            mean_error = 0
+            for i in range(len(objpoints)):
+                imgpoints2, _ = cv2.projectPoints(objpoints[i], rvecs[i], tvecs[i], cmx, dist)
+                error = cv2.norm(imgpoints[i], imgpoints2, cv2.NORM_L2)/len(imgpoints2)
+                mean_error += error
+
+            print( "total error: {}".format(mean_error/len(objpoints)) )
+            if ret > 2.0:
+                print(f"root mean square error {ret} must be [0..1], skipping")
+                continue
             # print(ret, cmx, dist, rvecs, tvecs)
             # save calibration result
             if not os.path.exists(os.path.join(self.data_root, 'poses')):
@@ -269,11 +329,11 @@ class PoseEstimation:
                                                          flags=cv2.CALIB_CB_ADAPTIVE_THRESH +
                                                                cv2.CALIB_CB_FAST_CHECK +
                                                                cv2.CALIB_CB_NORMALIZE_IMAGE)
+
                 # compute transform
                 #   - solvePnP requires camera calibraiton
                 #   - the same info is also returned by calibrateCamera
                 ret, rvec, tvec = cv2.solvePnP(self.object_points, corners, cmx, dist)
-
                 avg_len[pth] = np.linalg.norm(tvec)
 
                 # transform axis to images plane
@@ -287,6 +347,7 @@ class PoseEstimation:
                 R = np.transpose(Rt[0])
                 pos = -np.dot(R, tvec)
                 cam_locs[pth] = pos.ravel()
+
         # Save for debugging
         with open(os.path.join(self.data_root, 'pose.txt'), 'w') as f:
             for pth in avg_len:
@@ -314,6 +375,9 @@ if __name__ == "__main__":
     parser.add_argument('--chess_h', type=int, default=3, help='number of rows of the chessboard')
     parser.add_argument('--chess_w', type=int, default=4, help='number of columns of the chessboard')
     parser.add_argument('--chess_T', type=int, default=200, help='binary thresholding of the chessboard')
+    parser.add_argument('--square_real_size', type=float, default=0.012, help='Chessboard square size in millimeters')
+    parser.add_argument('--focal_length_mm', type=float, default=26, help='Focal length of the camera in mm')
+    parser.add_argument('--sensor_size_mm', type=float, default=4.8, help='Sensor size in mm (diagonal for iPhone 12)')
     parser.add_argument('--vis', action='store_true', help='Visualize calibration?')
 
     args = parser.parse_args()
@@ -323,6 +387,9 @@ if __name__ == "__main__":
         "chess_h": args.chess_h,
         "chess_w": args.chess_w,
         "chess_T": args.chess_T,
+        "square_real_size": args.square_real_size,
+        "focal_length_mm": args.focal_length_mm,
+        "sensor_size_mm": args.sensor_size_mm,
         "vis": args.vis}
     est: PoseEstimation = PoseEstimation(params)
 
@@ -330,6 +397,6 @@ if __name__ == "__main__":
     loc_txt = os.path.join(os.path.join(est.data_root, 'locations.txt'))
     with open(loc_txt, 'w') as f:
         for pth in cams_loc:
-            f.write(f"{pth}\t{cams_loc[pth][0]}\t{cams_loc[pth][1]}\t{cams_loc[pth][2]}\n")
+            f.write(f"{pth}\t{cams_loc[pth][0]*100}\t{cams_loc[pth][1]*100}\t{cams_loc[pth][2]*100}\n")
 
     print(f"written {len(cams_loc)} to {loc_txt}")

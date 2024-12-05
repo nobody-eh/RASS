@@ -1,7 +1,36 @@
 import os
 import argparse
 import json
+import sys
+
 import pymeshlab as ml
+
+from pose.convert_depth import compute_depth
+
+def calc_real_camera_distance(scene_path):
+    avg = 0
+    c = 0
+    with open(os.path.join(scene_path, "pose.txt"), "r") as f:
+        for l in f:
+            ln = float(l.split("\t")[-1].split("\n")[0])
+            avg += 0.12 / ln
+            c+=1
+    return avg / c
+
+def calc_real_camera_distance_using_depth_images(scene_path:str):
+    sum = 0
+    c = 0
+    with open(os.path.join(scene_path, "pose.txt"), "r") as f:
+        for l in f:
+            id = l.split("\t")[0]
+            sum += compute_depth(
+                os.path.join(scene_path, 'depth', id),
+                os.path.join(scene_path, 'masks_ref', id.replace('.jpg', '.png')),
+                False, 5, (0, 3)
+            )
+            c+=1
+    return sum / c
+
 
 if __name__ == '__main__':
 
@@ -43,17 +72,18 @@ if __name__ == '__main__':
     transforms_path = os.path.join(scene_path,'transforms.json')
     f = open(transforms_path)
     transforms = json.load(f)
-    normalized_scale = 12 / transforms['avglen'] * 4
-
+    actual_distance = calc_real_camera_distance(scene_path)
+    depth_distance = calc_real_camera_distance_using_depth_images(scene_path)
+    normalized_scale = transforms['avglen'] / 10
     # print(normalized_scale, transforms['avglen'])
 
     offset = transforms["offset"][0] ** 3
-    scale = normalized_scale + (normalized_scale * (transforms["scale"] + offset))
+    scale = normalized_scale + (normalized_scale * (transforms["scale"] * offset))
     # scale = round(scale, 2)
     # print('Average Length=', scale)
 
     # Filters -> Scale, ... -> Transform: Scale, Normalise
-    ms.apply_filter("compute_matrix_from_scaling_or_normalization", axisx=scale, axisy=scale, axisz=scale)
+    ms.apply_filter("compute_matrix_from_scaling_or_normalization", axisx=scale)
 
     # compute volumes
     measures = ms.apply_filter("get_geometric_measures")
@@ -66,6 +96,5 @@ if __name__ == '__main__':
 
     # Apply scale as follows
     #volume_scaled = (10 ** 3) * (volume_ingp / (scale ** 3))
-
     scene_id = scene_path.split('/')[-1]
-    print(f"{scene_id}\t{round(-volume, 2)}\t{gt_volumes[scene_id]}\t{round(gt_volumes[scene_id] - round(-volume, 2), 2)}\t{scale}")
+    print(f"{scene_id}\t{round(-volume, 2)}\t{gt_volumes[scene_id]}\t{round(gt_volumes[scene_id] - round(-volume, 2), 2)}\t{scale}\t{actual_distance}\t{transforms['avglen']/100}\t{depth_distance}")

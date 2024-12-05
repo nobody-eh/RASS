@@ -16,19 +16,19 @@ MESHSET_PATH=$2
 #find "$DATASET_PATH" -mindepth 1 -maxdepth 1 -type d | parallel -I? --max-args 1 --jobs 8 --linebuffer python pose/pose_extraction.py --dataset_path ?
 
 # Run Colmap
-# find "$DATASET_PATH" -mindepth 1 -maxdepth 1 -type d | parallel -I? --max-args 1 --jobs 1 --linebuffer bash scripts/run_colmap.sh ?
+#find "$DATASET_PATH" -mindepth 1 -maxdepth 1 -type d | parallel -I? --max-args 1 --jobs 1 --linebuffer bash scripts/run_colmap.sh ?
 
 #Run Foodmem
 #find "$DATASET_PATH" -mindepth 1 -maxdepth 1 -type d | parallel -I? --max-args 1 --jobs 1 --linebuffer bash scripts/run_foodmem_docker.sh ?
 
 #Run segmenter
-# find "$DATASET_PATH" -mindepth 1 -maxdepth 1 -type d | parallel -I? --max-args 1 --jobs 8 --linebuffer python src/binary_img_seg_rgba.py --mask_dir ?/masks --rgb_dir ?/images --output ?/rgba
+#find "$DATASET_PATH" -mindepth 1 -maxdepth 1 -type d | parallel -I? --max-args 1 --jobs 8 --linebuffer python src/binary_img_seg_rgba.py --mask_dir ?/masks --rgb_dir ?/images --output ?/rgba
 
 # Run NeuS2
-find "$DATASET_PATH" -mindepth 1 -maxdepth 1 -type d | parallel -I? --max-args 1 --jobs 1 --linebuffer bash scripts/run_neus2.sh ?/transforms.json "$MESHSET_PATH"
+#find "$DATASET_PATH" -mindepth 1 -maxdepth 1 -type d | parallel -I? --max-args 1 --jobs 1 --linebuffer bash scripts/run_neus2.sh ?/transforms.json "$MESHSET_PATH"
 
 # Mesh clean up
-find "$MESHSET_PATH" -mindepth 1 -maxdepth 1 -type f | parallel -I? --max-args 1 --jobs 7 --linebuffer python src/mesh_cleanup.py --mesh_path "?"  --mesh_cleaned_path "?"
+# find "$MESHSET_PATH" -mindepth 1 -maxdepth 1 -type f | parallel -I? --max-args 1 --jobs 7 --linebuffer python src/mesh_cleanup.py --mesh_path "?"  --mesh_cleaned_path "?"
 
 for i in {1..14} ; do
   # echo "$DATASET_PATH/$i"

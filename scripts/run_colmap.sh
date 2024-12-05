@@ -9,7 +9,7 @@ rm -rf "$DATASET_PATH"/sparse/  "$DATASET_PATH"/mvs/ "$DATASET_PATH"/database.db
 colmap feature_extractor --database_path "$DATASET_PATH"/database.db \
                          --image_path "$DATASET_PATH"/images \
                          --ImageReader.single_camera "1" \
-                         --ImageReader.default_focal_length_factor "5.2" \
+                         --ImageReader.default_focal_length_factor "2.6" \
                          --SiftExtraction.use_gpu "1" \
                          --SiftExtraction.max_image_size "1000" \
                          --SiftExtraction.max_num_features "2048"
@@ -24,14 +24,14 @@ colmap mapper --database_path "$DATASET_PATH"/database.db \
               --image_path "$DATASET_PATH"/images \
               --output_path "$DATASET_PATH"/sparse \
               --Mapper.ba_global_function_tolerance=0.000001 \
-              --Mapper.init_min_tri_angle=8 \
+              --Mapper.init_min_tri_angle=16 \
               --Mapper.min_focal_length_ratio=0.1 \
               --Mapper.max_focal_length_ratio=10 \
-              --Mapper.ba_local_max_num_iterations=13 \
-              --Mapper.ba_global_max_num_iterations=25 \
-              --Mapper.ba_global_images_ratio=1.4 \
-              --Mapper.ba_global_points_ratio=1.4 \
-              --Mapper.ba_global_max_refinements=2
+              --Mapper.ba_local_max_num_iterations=25 \
+              --Mapper.ba_global_max_num_iterations=50 \
+              --Mapper.ba_global_images_ratio=1.1 \
+              --Mapper.ba_global_points_ratio=1.1 \
+              --Mapper.ba_global_max_refinements=5
 
 # For very edge cases, COLMAP split the models into disjoints models (folders), this happened because there is no general
 # relationships between these subsets. https://github.com/colmap/colmap/issues/1225
@@ -62,7 +62,7 @@ colmap model_aligner --input_path "$DATASET_PATH"/sparse \
 mkdir -p "$DATASET_PATH"/sparse/txt
 
 colmap model_converter \
-    --input_path "$DATASET_PATH"/sparse \
+    --input_path "$DATASET_PATH"/sparse/geo \
     --output_path "$DATASET_PATH"/sparse/txt \
     --output_type TXT
 
