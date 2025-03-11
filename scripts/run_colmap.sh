@@ -71,7 +71,8 @@ python src/colmap2nerf.py --colmap_db "$DATASET_PATH"/database.db \
                                           --colmap_camera_model SIMPLE_RADIAL \
                                           --images "$DATASET_PATH"/images/ \
                                           --text "$DATASET_PATH"/sparse/txt \
-                                          --out "$DATASET_PATH"/transforms.json
+                                          --out "$DATASET_PATH"/transforms.json \
+                                          --keep_colmap_coords
 
 # Update NeuS2 configuration
 python3 src/update_configs.py "$DATASET_PATH"/transforms.json

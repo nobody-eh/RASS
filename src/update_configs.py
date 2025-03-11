@@ -14,11 +14,13 @@ def modify_json(input_file):
     # For some scenes "0.20" to have watertide meshes. see c
     data["scale"] = 0.20
     data["offset"] = [0.5, 0.5, 0.5]
+    #del data["scale"]
+    #del data["offset"]
 
     # For each "file_path" in "frames", replace "images" with "rgba" in their text
     for frame in data["frames"]:
         f = frame["file_path"].split('/')[-1]
-        frame["file_path"] = './rgba/' + f.replace('.jpg', '.png')
+        frame["file_path"] = 'rgba/' + f.replace('.jpg', '.png').replace('img_', '')
 
     # Write the modified data back to the JSON file
     with open(input_file, 'w') as file:

@@ -261,9 +261,9 @@ class PoseEstimation:
 
                 bws[pth.split('/')[-1]] = binary
 
-        if len(useful_path) < (len(name_list) / 2):
+        if len(useful_path) < (len(name_list) / 6):
             print(
-                f"The number of chessboards that can be detected is less than {len(name_list) / 2}! readjusting the threshold "
+                f"The number of chessboards that can be detected is less than {len(name_list) / 6}! readjusting the threshold "
                 "chess_T !")
             print("Currently valid chessboard images: {}! Total {}!".format(len(useful_path), len(name_list)))
             if chess_T < 245:
@@ -374,7 +374,7 @@ if __name__ == "__main__":
     parser.add_argument('--dataset_path', type=str, help='The directory path that contains masks')
     parser.add_argument('--chess_h', type=int, default=3, help='number of rows of the chessboard')
     parser.add_argument('--chess_w', type=int, default=4, help='number of columns of the chessboard')
-    parser.add_argument('--chess_T', type=int, default=200, help='binary thresholding of the chessboard')
+    parser.add_argument('--chess_T', type=int, default=190, help='binary thresholding of the chessboard')
     parser.add_argument('--square_real_size', type=float, default=0.012, help='Chessboard square size in millimeters')
     parser.add_argument('--focal_length_mm', type=float, default=26, help='Focal length of the camera in mm')
     parser.add_argument('--sensor_size_mm', type=float, default=4.8, help='Sensor size in mm (diagonal for iPhone 12)')
@@ -397,6 +397,6 @@ if __name__ == "__main__":
     loc_txt = os.path.join(os.path.join(est.data_root, 'locations.txt'))
     with open(loc_txt, 'w') as f:
         for pth in cams_loc:
-            f.write(f"{pth}\t{cams_loc[pth][0]*100}\t{cams_loc[pth][1]*100}\t{cams_loc[pth][2]*100}\n")
+            f.write(f"{pth}\t{cams_loc[pth][0]}\t{cams_loc[pth][1]}\t{cams_loc[pth][2]}\n")
 
     print(f"written {len(cams_loc)} to {loc_txt}")

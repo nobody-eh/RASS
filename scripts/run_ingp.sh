@@ -3,8 +3,6 @@
 TRANSFORMATION_PATH="$1"
 DATASET_PATH="$(dirname $(readlink -f "$TRANSFORMATION_PATH"))"
 DATASET_NAME=$(basename "$DATASET_PATH")
-echo $DATASET_NAME
-MESH_OUTPUT_PATH=$2
 
 #if [ -e "$DATASET_PATH/mesh.obj" ]; then
 #    echo "Skip: $DATASET_PATH/mesh.obj"
@@ -16,8 +14,8 @@ echo "${DATASET_PATH}/transforms.json"
 # Measure time taken for the python script and report it
 START_TIME=$(date +%s)
 
-pushd NeuS2
-python -u scripts/run.py --scene "$DATASET_PATH/transforms.json" --name "$DATASET_NAME" --network dtu.json --n_steps 1000 --save_mesh --save_mesh_path "$DATASET_PATH"/"$DATASET_NAME".obj  --marching_cubes_res 256
+pushd instant-ngp
+python scripts/run.py --mode nerf --scene "$DATASET_PATH/transforms.json"  --save_snapshot "$DATASET_PATH"/ckpts/"$DATASET_NAME".msgpack --save_mesh "$DATASET_PATH"/"$DATASET_NAME".obj  --train --n_steps 1000 --marching_cubes_res 256
 popd
 
 END_TIME=$(date +%s)
