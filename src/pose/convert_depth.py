@@ -89,13 +89,15 @@ def compute_depth(depth_path: str, mask_path: str, visualize: bool, filter_size:
     if visualize:
         visualize_depth(masked_depth_values)
 
-    return average_depth
+    return average_depth, valid_depths
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Decode and process RGB depth maps.")
     parser.add_argument('--depth_path', type=str, required=True,
                         help='Path to the RGB depth image.')
+    parser.add_argument('--depth_out', type=str, required=True,
+                        help='Path to the output depth image.')
     parser.add_argument('--mask_path', type=str, required=True,
                         help='Path to the mask image.')
     parser.add_argument('--depth_range', type=float, default=3.0, help="Maximum depth range in meters.")
@@ -105,10 +107,13 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     # Explicitly pass parameters to main
-    compute_depth(
+    avg, msk = compute_depth(
         depth_path=args.depth_path,
         mask_path=args.mask_path,
         visualize=args.visualize_depth,
         depth_range=(0, args.depth_range),
         filter_size=args.filter_size
     )
+
+    np.save(args.depth_out, msk)
+    print(f"saved={args.depth_out}")
