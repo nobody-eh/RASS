@@ -111,10 +111,29 @@ if __name__ == '__main__':
     # Apply scale as follows
     #volume_scaled = (10 ** 3) * (volume_ingp / (scale ** 3))
     scene_id = scene_path.split('/')[-1]
-    gt = 0
-    with open(os.path.join(scene_path, 'ground_truth.json'), "r") as f:
-        f = json.load(f)
-        gt = sum(item["food_volume"] for item in f)
+    #gt = 0
+    #with open(os.path.join(scene_path, 'ground_truth.json'), "r") as f:
+    #    f = json.load(f)
+    #    gt = sum(item["food_volume"] for item in f)
 
-    print(scene_id, round(volume,2), gt, normalized_scale)
+    #print(scene_id, round(volume,2), gt, normalized_scale)
+    
+    gt = None
+    gt_path = os.path.join(scene_path, 'ground_truth.json')
+    if os.path.isfile(gt_path):
+        try:
+            with open(gt_path, "r") as f:
+                data = json.load(f)
+                gt = sum(item["food_volume"] for item in data)
+        except Exception as e:
+            print(f"Warning: Failed to read ground_truth.json: {e}")
+    else:
+        print("Info: No ground_truth.json found, skipping ground truth volume comparison.")
+
+    if gt is not None:
+        print(scene_id, round(volume, 2), gt, normalized_scale)
+    else:
+        print(scene_id, round(volume, 2), "GT: N/A", normalized_scale)
+
+    
     #print(f"{scene_id}\t{round(-volume, 2)}\t{gt_volumes[scene_id]}\t{round(gt_volumes[scene_id] - round(-volume, 2), 2)}\t{round(scale, 4)}\t{round(actual_distance,4)}\t{round(transforms['avglen']/100, 4)}\t{round(depth_distance, 4)}")

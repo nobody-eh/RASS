@@ -20,6 +20,7 @@ import math
 import cv2
 import os
 import shutil
+import copy
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 SCRIPTS_FOLDER = os.path.join(ROOT_DIR, "scripts")
@@ -44,6 +45,7 @@ def parse_args():
 	parser.add_argument("--vocab_path", default="", help="Vocabulary tree path.")
 	parser.add_argument("--overwrite", action="store_true", help="Do not ask for confirmation for overwriting existing images and COLMAP data.")
 	parser.add_argument("--mask_categories", nargs="*", type=str, default=[], help="Object categories that should be masked out from the training images. See `scripts/category2id.json` for supported categories.")
+	parser.add_argument('--hold', type=int, default=8, help="hold out for validation every $ images")
 	args = parser.parse_args()
 	return args
 
@@ -332,7 +334,7 @@ if __name__ == "__main__":
 
 					up += c2w[0:3,1]
 				last = name.split('/')
-				frame = {"file_path": 'images/' + last[-2] + '/' + last[-1],"sharpness":b,"transform_matrix": c2w}
+				frame = {"file_path": last[-2] + '/' + last[-1],"sharpness":b,"transform_matrix": c2w}
 				out["frames"].append(frame)
 	nframes = len(out["frames"])
 
@@ -389,8 +391,34 @@ if __name__ == "__main__":
 		f["transform_matrix"] = f["transform_matrix"].tolist()
 	print(nframes,"frames")
 	print(f"writing {OUT_PATH}")
-	with open(OUT_PATH, "w") as outfile:
-		json.dump(out, outfile, indent=2)
+	
+	# with open(OUT_PATH, "w") as outfile:
+	# 	json.dump(out, outfile, indent=2)
+	all_ids = np.arange(len(out["frames"]))
+	test_ids = all_ids[::args.hold]
+	train_ids = np.array([i for i in all_ids if i not in test_ids])
+	frames_train = []
+	frames_test = []
+
+
+	print(f"train_ids:{train_ids}")
+	print(f"test_ids:{test_ids}")
+
+	for i in train_ids:
+		frames_train.append(out["frames"][i])
+	for i in test_ids:
+		frames_test.append(out["frames"][i])
+
+	def write_json(filename, frames):
+		output_path = os.path.join(OUT_PATH, filename)
+		print(f'[INFO] write {len(frames)} images to {output_path}')
+		with open(output_path, 'w') as f:
+			out["frames"] = frames
+			json.dump(out, f, indent=2)
+	
+	write_json('transforms_train.json', frames_train)
+	# write_json('transforms_val.json', frames_test[::10])
+	write_json('transforms_test.json', frames_test)
 
 	if len(args.mask_categories) > 0:
 		# Check if detectron2 is installed. If not, install it.

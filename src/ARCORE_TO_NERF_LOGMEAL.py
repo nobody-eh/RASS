@@ -6,6 +6,7 @@ import math
 
 import cv2
 import numpy as np
+import argparse
 
 
 def read_transform_save_ARCore_to_NERF_cams(cameras, sharpness_all, image_size, out_path):
@@ -186,34 +187,60 @@ def transform_Nerf_to_o3d(cameras_matrix):
     return cameras_matrix
 
 
-def saveImagesFromVideo(scene_path):
-
+def extract_images_and_sharpness(scene_path):
     def sharpness(image):
-        import cv2
         gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
         fm = cv2.Laplacian(gray, cv2.CV_64F).var()
         return fm
 
     rgb_sequence_path = os.path.join(scene_path, 'images')
-    if not os.path.exists(rgb_sequence_path):
-        os.mkdir(rgb_sequence_path)
+    os.makedirs(rgb_sequence_path, exist_ok=True)
 
-    # SAVE VIDEO FRAMES
-    vidcap = cv2.VideoCapture(os.path.join(scene_path, 'output_video.avi'))
-    success, img = vidcap.read()
-    h, w, _ = img.shape
-    sharpness_all = []
-    k = 0
-    while success:
-        sharpness_all.append(sharpness(img))
-        cv2.imwrite(os.path.join(rgb_sequence_path, 'img_' + str(k).zfill(4) + '.jpg'), img)
+    video_path = os.path.join(scene_path, 'output_video.avi')
+
+    if os.path.exists(video_path):
+        print("📹 Found output_video.avi — extracting frames...")
+        vidcap = cv2.VideoCapture(video_path)
         success, img = vidcap.read()
-        k += 1
+        if not success:
+            raise RuntimeError("Video file could not be read.")
 
-    return [sharpness_all, [w,h]]
+        sharpness_all = []
+        k = 0
+        while success:
+            sharpness_all.append(sharpness(img))
+            img_name = f'img_{str(k).zfill(4)}.jpg'
+            cv2.imwrite(os.path.join(rgb_sequence_path, img_name), img)
+            success, img = vidcap.read()
+            k += 1
 
+        print(f"✅ Extracted {k} frames from video.")
+        h, w, _ = img.shape
+        return sharpness_all, [w, h]
 
-import argparse
+    elif os.path.isdir(rgb_sequence_path) and len(os.listdir(rgb_sequence_path)) > 0:
+        print("🖼️ No video found — using images from 'images/' folder...")
+        image_files = sorted([f for f in os.listdir(rgb_sequence_path)
+                              if f.lower().endswith(('.jpg', '.png'))])
+        if not image_files:
+            raise RuntimeError("No valid image files found in 'images/'.")
+
+        sharpness_all = []
+        for fname in image_files:
+            img_path = os.path.join(rgb_sequence_path, fname)
+            img = cv2.imread(img_path)
+            if img is None:
+                raise RuntimeError(f"Could not read image: {img_path}")
+            img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+            sharpness_all.append(sharpness(img))
+
+        h, w, _ = img.shape
+        print(f"✅ Found {len(image_files)} images in 'images/' folder.")
+        return sharpness_all, [w, h]
+
+    else:
+        raise FileNotFoundError("❌ Neither 'output_video.avi' nor 'images/' with frames found.")
+
 
 if __name__ == '__main__':
 
@@ -235,7 +262,7 @@ if __name__ == '__main__':
         'model_mtx': apiinput['camera_poses'],
     }
 
-    sharpness_all, image_size = saveImagesFromVideo(scene_path)
+    sharpness_all, image_size = extract_images_and_sharpness(scene_path)
     # ToDO: please save more computation by
     intrinsic, c2w_o3d, read_cam_time = read_transform_save_ARCore_to_NERF_cams(cameras, sharpness_all, image_size, scene_path)
     print("All is done")
