@@ -1,5 +1,10 @@
-# Pre-NeRF 360: Enriching Unbounded Appearances for Neural Radiance Fields
-The repository contains the code release for paper: [Pre-NeRF](https://amughrabi.github.io/prenerf/)
+# BASS: Risk-Aware Scene Subset Selection for Reliable Large-Scale NeRF Benchmarking
+This repository contains the code and analysis pipeline for the BASS study on risk-aware subset selection for large-scale NeRF benchmarking on Nutrition5k.  
+It also includes the original Pre-NeRF 360 data-processing pipeline.
+
+## Related Papers
+- **BASS**: *Risk-Aware Scene Subset Selection for Reliable Large-Scale NeRF Benchmarking* (see [latex/main.tex](latex/main.tex))
+- **Pre-NeRF 360**: [Pre-NeRF: Enriching Unbounded Appearances for Neural Radiance Fields](https://amughrabi.github.io/prenerf/)
 
 ## Nutrition5k Feature Pipeline (Current)
 This repository now also includes a reproducible feature extraction + analysis pipeline for large Nutrition5k scene sets.
