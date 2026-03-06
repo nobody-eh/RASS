@@ -50,14 +50,14 @@ for path in ${1}/sparse/*/; do
     fi
 done
 
-#mkdir -p "$DATASET_PATH"/sparse/geo
-#colmap model_aligner --input_path "$DATASET_PATH"/sparse \
-#                     --output_path "$DATASET_PATH"/sparse/geo \
-#                     --ref_images_path "$DATASET_PATH"/locations.txt \
-#                     --ref_is_gps 0 \
-#                     --alignment_type ecef \
-#                     --robust_alignment 1 \
-#                     --robust_alignment_max_error 3
+mkdir -p "$DATASET_PATH"/sparse/geo
+colmap model_aligner --input_path "$DATASET_PATH"/sparse \
+                     --output_path "$DATASET_PATH"/sparse/geo \
+                     --ref_images_path "$DATASET_PATH"/locations.txt \
+                     --ref_is_gps 0 \
+                     --alignment_type ecef \
+                     --robust_alignment 1 \
+                     --robust_alignment_max_error 3
 
 mkdir -p "$DATASET_PATH"/sparse/txt
 
@@ -66,13 +66,13 @@ colmap model_converter \
     --output_path "$DATASET_PATH"/sparse/txt \
     --output_type TXT
 
-### Convert COLMAP data to something parsable belnder format
-#python src/colmap2nerf.py --colmap_db "$DATASET_PATH"/database.db \
-#                                          --colmap_camera_model SIMPLE_RADIAL \
-#                                          --images "$DATASET_PATH"/images/ \
-#                                          --text "$DATASET_PATH"/sparse/txt \
-#                                          --out "$DATASET_PATH"/transforms.json \
-#                                          --keep_colmap_coords
+## Convert COLMAP data to something parsable belnder format
+python src/colmap2nerf.py --colmap_db "$DATASET_PATH"/database.db \
+                                          --colmap_camera_model SIMPLE_RADIAL \
+                                          --images "$DATASET_PATH"/images/ \
+                                          --text "$DATASET_PATH"/sparse/txt \
+                                          --out "$DATASET_PATH"/transforms.json \
+                                          --keep_colmap_coords
 
 # Update NeuS2 configuration
-# python3 src/update_configs.py "$DATASET_PATH"/transforms.json
+python3 src/update_configs.py "$DATASET_PATH"/transforms.json

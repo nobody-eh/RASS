@@ -18,7 +18,7 @@ def create_rgba_images(mask_dir, rgb_dir, output_dir):
 
                 # Ensure the mask and RGB images have the same dimensions
                 if mask.shape != rgb.shape[:2]:
-                    print(f"Skipping: Mask {mask_file} and RGB {rgb_file} images must have the same dimensions.")
+                    print(f"Skipping: Mask {mask_file} ({mask.shape}) and RGB {rgb_file} ({rgb.shape[:2]}) must have the same dimensions.")
                     continue
 
                 # Create a new RGBA image with transparency based on the mask

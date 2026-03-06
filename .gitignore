@@ -1,0 +1,69 @@
+# ----------------------------
+# OS / editor metadata
+# ----------------------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# ----------------------------
+# Python cache / environments
+# ----------------------------
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# ----------------------------
+# Local datasets / external links
+# ----------------------------
+data/
+n5k360p
+instant-ngp
+
+# ----------------------------
+# Generated experiment outputs
+# ----------------------------
+outputs/
+plots/
+figures/
+sweep_cluster_k/
+clustered_*
+feature_*
+subset_*manifest.csv
+
+# Feature tables and intermediate artifacts
+feats2.csv
+feats_normalized.csv
+feats.log
+feats2_*.png
+pipeline_config.json
+zipnerf_metrics.csv
+
+# Metrics / logs from evaluation runs
+ingp_*.csv
+*ingp_*.csv
+ingp_*.log
+ingp_full_image_ours.log
+ingp_object_centric.log
+out.log
+output.log
+paths.log
+timing_log.txt
+
+# Ad-hoc local debug/report assets
+fig_risk_selection_concept.pdf
+fig_risk_selection_concept.png
+clusters.png
+diff.png
+out.png
+ref.png
+text.txt
+text2.txt
