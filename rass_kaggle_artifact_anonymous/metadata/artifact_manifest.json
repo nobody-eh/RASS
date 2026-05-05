@@ -1,0 +1,279 @@
+{
+  "artifact_name": "rass_kaggle_artifact_anonymous",
+  "artifact_version": "1.0.0-anonymous-review",
+  "generated_on": "2026-05-05",
+  "provenance_note": "Anonymized review copy. Direct author, institution, personal Kaggle owner, profile URL, public project URL, and local absolute-path identifiers have been removed. Kaggle owner slug is set to the neutral account nobodyeh.",
+  "files": [
+    {
+      "path": "CITATION.cff",
+      "purpose": "Anonymized citation metadata for blind review.",
+      "source_path_or_placeholder_status": "anonymized placeholder citation metadata",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "e9fe761817af4374b2a95e8aac8de9e99945c1ae3692ac8237c27846114c1651",
+      "size_bytes": 491,
+      "contains_todo_required": false
+    },
+    {
+      "path": "LICENSE",
+      "purpose": "Repository software/artifact license copied into the package.",
+      "source_path_or_placeholder_status": "LICENSE",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "size_bytes": 35149,
+      "contains_todo_required": false
+    },
+    {
+      "path": "README.md",
+      "purpose": "Top-level anonymized artifact README with scope, limits, validation, reproduction, and anonymous-upload note.",
+      "source_path_or_placeholder_status": "created/updated for anonymized package",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "62cbb94f290942259aa3e88ba3c1a77da3712dfbcc235110e522fb87a5557881",
+      "size_bytes": 2893,
+      "contains_todo_required": false
+    },
+    {
+      "path": "configs/audit_settings.yaml",
+      "purpose": "High-level anonymized audit settings and external input requirements.",
+      "source_path_or_placeholder_status": "source run configuration, anonymized",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "ac892af96221296a213d333156673cf65ee13f05aeba7e02f2bca75b02d124ed",
+      "size_bytes": 1085,
+      "contains_todo_required": true
+    },
+    {
+      "path": "configs/seeds.yaml",
+      "purpose": "Known audit seed/trial settings copied from source run configuration.",
+      "source_path_or_placeholder_status": "source run configuration",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "ca2a5d0ad323a42a9e415b2e6708bd4a547a0a47c3bcd66d6acbeec44010de1e",
+      "size_bytes": 342,
+      "contains_todo_required": true
+    },
+    {
+      "path": "configs/thresholds.yaml",
+      "purpose": "Audit threshold settings copied from source run configuration.",
+      "source_path_or_placeholder_status": "source run configuration",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "0ff33e57af604deba7b0bd2fdf5613e53a555f5eb7dbd326c85bc68616f7b7e2",
+      "size_bytes": 362,
+      "contains_todo_required": false
+    },
+    {
+      "path": "dataset-cover-image.png",
+      "purpose": "Kaggle dataset cover image for listing thumbnail and header crop.",
+      "source_path_or_placeholder_status": "created for this package from deterministic Pillow drawing code",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "454d29e7a2ae845e6c0d191ee294be41e8c0f95003e2411d6fabc65d1f2aeb20",
+      "size_bytes": 52005,
+      "contains_todo_required": false
+    },
+    {
+      "path": "dataset-metadata.json",
+      "purpose": "Anonymized Kaggle dataset metadata with neutral-owner placeholder, subtitle, description, tags, source note, update frequency, license, privacy, and cover image reference.",
+      "source_path_or_placeholder_status": "anonymized Kaggle metadata configured for neutral Kaggle account nobodyeh",
+      "status": "anonymized_group_metadata",
+      "required": true,
+      "sha256": "404e7f7c4771c23ec4cb48e62bea0f40ad3cdc5ac36858d55c9c88f5127a5320",
+      "size_bytes": 1513,
+      "contains_todo_required": false
+    },
+    {
+      "path": "descriptors/descriptor_schema.json",
+      "purpose": "Generated column schema for scene_descriptors.csv with semantic definitions marked as required placeholders.",
+      "source_path_or_placeholder_status": "generated from packaged descriptor CSV",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "f6d8b4ce865582dc72ba3d52402bd1a7022e14152b86361ecb07c678af54f122",
+      "size_bytes": 4212,
+      "contains_todo_required": true
+    },
+    {
+      "path": "descriptors/regime_labels.csv",
+      "purpose": "k=6 scene regime/cluster labels copied from the source repository.",
+      "source_path_or_placeholder_status": "source k=6 regime mapping table",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "6b3648fbe3404c63e6e389426c2254bd6cce6a01e00c8d29af46b7a2e2b14b30",
+      "size_bytes": 63412,
+      "contains_todo_required": false
+    },
+    {
+      "path": "descriptors/scene_descriptors.csv",
+      "purpose": "Normalized k=6 scene descriptors copied from the source repository.",
+      "source_path_or_placeholder_status": "source normalized k=6 descriptor table",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "51bdfb1126b8481cf8c543338b01048df3ea97399ad7ce3ba85c22b1ee2d1ee4",
+      "size_bytes": 3455997,
+      "contains_todo_required": false
+    },
+    {
+      "path": "external_data/README_how_to_obtain_or_regenerate_inputs.md",
+      "purpose": "Instructions for obtaining or regenerating nonredistributed raw assets and full NeRF outputs.",
+      "source_path_or_placeholder_status": "created for this package",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "65670b32437a151382dc10f905157bf8327faf28c5d4f88d64e0123207f3afc2",
+      "size_bytes": 1313,
+      "contains_todo_required": false
+    },
+    {
+      "path": "metadata/artifact_manifest.json",
+      "purpose": "Machine-readable anonymized manifest listing package files, purpose, source/status, required flag, and checksum.",
+      "source_path_or_placeholder_status": "generated for anonymized package",
+      "status": "anonymized_manifest",
+      "required": true,
+      "sha256": null,
+      "size_bytes": null,
+      "contains_todo_required": false,
+      "checksum_note": "Self-referential manifest checksum intentionally omitted."
+    },
+    {
+      "path": "metadata/croissant.json",
+      "purpose": "Anonymized Croissant and Croissant RAI-style metadata aligned to packaged RASS files and RAI checker requirements.",
+      "source_path_or_placeholder_status": "anonymized Croissant metadata configured for neutral Kaggle account nobodyeh",
+      "status": "anonymized_group_metadata",
+      "required": true,
+      "sha256": "bce12add36dd2d7634c5c45d8070c6f73a7223aeb54a26662993a85448362c86",
+      "size_bytes": 64611,
+      "contains_todo_required": false
+    },
+    {
+      "path": "metadata/dataset_card.md",
+      "purpose": "Anonymized dataset card describing intended use, limits, external data, and licensing.",
+      "source_path_or_placeholder_status": "created/updated for anonymized package",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "5f3d37dafa5ca19fe77f93266fb5ed1089f126bc2c2537c71cca2a183a49eea6",
+      "size_bytes": 1885,
+      "contains_todo_required": false
+    },
+    {
+      "path": "results/audit_frontier.csv",
+      "purpose": "Copied reliability/audit frontier with anonymized provenance path strings.",
+      "source_path_or_placeholder_status": "source reliability frontier CSV with local paths anonymized",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "ab40646735c56aade66a9150b8b433610d31ccbb0090d0e082962940daf30b8a",
+      "size_bytes": 1092,
+      "contains_todo_required": false
+    },
+    {
+      "path": "results/cross_method_diagnostics.csv",
+      "purpose": "Copied cross-method ranking correlation diagnostics.",
+      "source_path_or_placeholder_status": "source cross-method ranking correlation CSV",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "f63d3741b830c9150e7b997b183b050d97029f16f81a62a62eb5fa5707f0a171",
+      "size_bytes": 126,
+      "contains_todo_required": false
+    },
+    {
+      "path": "scene_lists/cross_method_common_ids.txt",
+      "purpose": "Scene IDs common to available cross-method metric tables.",
+      "source_path_or_placeholder_status": "source common-intersection scene IDs table",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "bd242b36ba44caab39a3cf87c0eb47c78634cc66bb6fd533a688b1723674ffce",
+      "size_bytes": 55568,
+      "contains_todo_required": false
+    },
+    {
+      "path": "scene_lists/full_zipnerf_audit_ids.txt",
+      "purpose": "Full ZipNeRF audit population scene IDs extracted from the source ZipNeRF full-image metric table.",
+      "source_path_or_placeholder_status": "source ZipNeRF full-image metric table",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "3fc9bcd1eb35920eb0a310804163a8362239f0d3eb153aad66a5e5ffc4a481ab",
+      "size_bytes": 58000,
+      "contains_todo_required": false
+    },
+    {
+      "path": "scene_lists/rass48_scene_ids.txt",
+      "purpose": "RASS-48 compact rapid-screening scene IDs extracted from an existing source subset manifest.",
+      "source_path_or_placeholder_status": "anonymized source subset manifest",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "697876ea858055a3b10b0e123bb6b5f9f30f65989939ab64d7786023beba44e9",
+      "size_bytes": 768,
+      "contains_todo_required": false
+    },
+    {
+      "path": "scene_lists/rass96_scene_ids.txt",
+      "purpose": "RASS-96 stronger compact reporting scene IDs extracted from an existing 96-scene source manifest.",
+      "source_path_or_placeholder_status": "anonymized source 96-scene subset manifest",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "b33280ba5ecd99e508b067d39291643eb5d4383fc33c05a54426b932e24b249a",
+      "size_bytes": 1536,
+      "contains_todo_required": false
+    },
+    {
+      "path": "scripts/compute_audit.py",
+      "purpose": "Audit-loop scaffold that states required inputs.",
+      "source_path_or_placeholder_status": "placeholder scaffold; exact final audit loop must be ported before full recomputation",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "056d7fcb3a578fda5a32f446d85b394fc833f70d5726865b468bf8109b6b8b9d",
+      "size_bytes": 1111,
+      "contains_todo_required": true
+    },
+    {
+      "path": "scripts/compute_fidelity_event.py",
+      "purpose": "Fidelity-event scaffold that states required inputs.",
+      "source_path_or_placeholder_status": "placeholder scaffold; exact final criterion must be ported before full recomputation",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "2539abcb998061fedd510f070d6b23761a9694bb3c3a95d2678b26630d0ffbf3",
+      "size_bytes": 1058,
+      "contains_todo_required": true
+    },
+    {
+      "path": "scripts/compute_wilson_lcb.py",
+      "purpose": "Implemented Wilson lower confidence bound CLI.",
+      "source_path_or_placeholder_status": "created for this package",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "aed19aacea5f6cbf12945214cc671672f5f34becfe7b54be0bcd115d864f55d9",
+      "size_bytes": 1806,
+      "contains_todo_required": false
+    },
+    {
+      "path": "scripts/generate_candidates.py",
+      "purpose": "Candidate-generation scaffold that states required inputs.",
+      "source_path_or_placeholder_status": "placeholder scaffold; exact final generation routine not present as package-native script",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "fa45ec8be60db104bec49f863cdb52c8ecc20163c41ee74cdaba46d7a5bb9d09",
+      "size_bytes": 1192,
+      "contains_todo_required": true
+    },
+    {
+      "path": "scripts/reproduce_tables.py",
+      "purpose": "Packaged table summary script that flags external inputs needed for full recomputation.",
+      "source_path_or_placeholder_status": "created for this package",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "7ea6f7ddf48ea2bfb4ca202556436411e61d4b3a3fbb93821a84d023559f6384",
+      "size_bytes": 1225,
+      "contains_todo_required": true
+    },
+    {
+      "path": "scripts/validate_artifact.py",
+      "purpose": "Artifact validator for required files, CSV/YAML/JSON parsing, compact scene counts, and placeholder reporting.",
+      "source_path_or_placeholder_status": "created for this package",
+      "status": "anonymized",
+      "required": true,
+      "sha256": "7c99c4eb5bd91d0b2d88c694ab3bc916e4b150d20d51003b74f127da74a35961",
+      "size_bytes": 4663,
+      "contains_todo_required": false
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+source_path: results/strong_accept/run_config.json
+seed: 0
+num_trials: 400
+known_randomized_steps:
+  - name: strong_accept_candidate_sampling
+    seed: 0
+    source_path: results/strong_accept/run_config.json
+unknown_or_external_seeds: "TODO_REQUIRED: Confirm any method-training or NeRF-rendering seeds used outside the CSV audit pipeline."

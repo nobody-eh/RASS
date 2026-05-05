@@ -1,0 +1,1766 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "sc": "https://schema.org/",
+    "dct": "http://purl.org/dc/terms/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "foaf": "http://xmlns.com/foaf/0.1/"
+  },
+  "@type": "sc:Dataset",
+  "name": "RASS / NeRF Benchmark Artifact",
+  "alternateName": [
+    "RASS-48",
+    "RASS-96",
+    "RASS NeRF benchmark artifact",
+    "Risk-aware scene subset selection artifact for NeRF evaluation"
+  ],
+  "description": "Kaggle-ready benchmark artifact for risk-aware compact scene-list auditing in NeRF evaluation. The package contains RASS-48 and RASS-96 scene lists, the full ZipNeRF audit scene list, the cross-method common scene list, normalized scene descriptors, k=6 regime labels, audit thresholds and seeds, copied audit frontier and cross-method diagnostic CSVs, validation code, Wilson lower-confidence-bound code, and reproduction scaffolds. Raw Nutrition5k-derived images, scene assets, and complete NeRF outputs are not redistributed unless separately permitted by their upstream terms.",
+  "keywords": [
+    "NeRF",
+    "RASS",
+    "benchmark subset selection",
+    "dataset-scale evaluation",
+    "Nutrition5k",
+    "Zip-NeRF",
+    "Instant-NGP",
+    "Feature Splatting",
+    "Croissant",
+    "computer vision",
+    "reproducibility"
+  ],
+  "url": "https://www.kaggle.com/datasets/nobodyeh/rass-nerf-benchmark-artifact",
+  "sameAs": [],
+  "version": "1.0.0",
+  "isLiveDataset": false,
+  "datePublished": "2026-05-05",
+  "dateModified": "2026-05-05",
+  "inLanguage": "en",
+  "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+  "usageInfo": "This package is released with the repository GPL-3.0 license included in LICENSE. It does not grant additional rights to underlying Nutrition5k-derived raw scenes or method outputs. Reviewers/users must obtain or regenerate raw assets and full NeRF outputs under the applicable upstream terms before making full-population or leaderboard-quality claims.",
+  "creator": [
+    {
+      "@type": "sc:Person",
+      "name": "Anonymous Authors"
+    }
+  ],
+  "publisher": {
+    "@type": "sc:Organization",
+    "name": "Anonymous Institution"
+  },
+  "maintainer": {
+    "@type": "sc:Person",
+    "name": "Anonymous Maintainer"
+  },
+  "dct:conformsTo": [
+    "http://mlcommons.org/croissant/1.0",
+    "http://mlcommons.org/croissant/RAI/1.0"
+  ],
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "readme_md",
+      "name": "Artifact README",
+      "description": "Top-level explanation of scope, limits, validation, and reproduction steps.",
+      "contentUrl": "README.md",
+      "encodingFormat": "text/markdown"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "dataset_cover_image_png",
+      "name": "Dataset cover image",
+      "description": "Kaggle dataset cover image used for the listing thumbnail and header crop.",
+      "contentUrl": "dataset-cover-image.png",
+      "encodingFormat": "image/png"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "license_txt",
+      "name": "License",
+      "description": "Repository license copied into the artifact package.",
+      "contentUrl": "LICENSE",
+      "encodingFormat": "text/plain"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "citation_cff",
+      "name": "Citation metadata",
+      "description": "Citation metadata for the paper/artifact, with remaining archival fields handled in the CFF file.",
+      "contentUrl": "CITATION.cff",
+      "encodingFormat": "text/plain"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "kaggle_dataset_metadata_json",
+      "name": "Kaggle dataset metadata",
+      "description": "Kaggle dataset metadata used by the Kaggle CLI.",
+      "contentUrl": "dataset-metadata.json",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "croissant_json",
+      "name": "Croissant metadata",
+      "description": "This Croissant metadata description.",
+      "contentUrl": "metadata/croissant.json",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "dataset_card_md",
+      "name": "Dataset card",
+      "description": "Dataset card covering intended use, limitations, and external data requirements.",
+      "contentUrl": "metadata/dataset_card.md",
+      "encodingFormat": "text/markdown"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "artifact_manifest_json",
+      "name": "Artifact manifest",
+      "description": "Machine-readable file manifest with provenance status and checksums.",
+      "contentUrl": "metadata/artifact_manifest.json",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "rass48_scene_ids_txt",
+      "name": "RASS-48 scene IDs",
+      "description": "Forty-eight scene identifiers for rapid screening, one identifier per line.",
+      "contentUrl": "scene_lists/rass48_scene_ids.txt",
+      "encodingFormat": "text/plain"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "rass96_scene_ids_txt",
+      "name": "RASS-96 scene IDs",
+      "description": "Ninety-six scene identifiers for the stronger compact reporting option, one identifier per line.",
+      "contentUrl": "scene_lists/rass96_scene_ids.txt",
+      "encodingFormat": "text/plain"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "full_zipnerf_audit_ids_txt",
+      "name": "Full ZipNeRF audit scene IDs",
+      "description": "Scene identifiers for the full ZipNeRF audit population available in the repository.",
+      "contentUrl": "scene_lists/full_zipnerf_audit_ids.txt",
+      "encodingFormat": "text/plain"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "cross_method_common_ids_txt",
+      "name": "Cross-method common scene IDs",
+      "description": "Scene identifiers common to the available cross-method metric tables.",
+      "contentUrl": "scene_lists/cross_method_common_ids.txt",
+      "encodingFormat": "text/plain"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "scene_descriptors_csv",
+      "name": "Scene descriptors",
+      "description": "Normalized scene-level descriptor matrix copied from the repository k=6 descriptor table.",
+      "contentUrl": "descriptors/scene_descriptors.csv",
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "regime_labels_csv",
+      "name": "Regime labels",
+      "description": "k=6 descriptor-regime or cluster assignments copied from the source repository.",
+      "contentUrl": "descriptors/regime_labels.csv",
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "descriptor_schema_json",
+      "name": "Descriptor schema",
+      "description": "Generated schema for the descriptor table columns.",
+      "contentUrl": "descriptors/descriptor_schema.json",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "thresholds_yaml",
+      "name": "Audit thresholds",
+      "description": "Strict, default, and relaxed audit threshold settings.",
+      "contentUrl": "configs/thresholds.yaml",
+      "encodingFormat": "application/x-yaml"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "seeds_yaml",
+      "name": "Audit seeds",
+      "description": "Known audit seeds and trial counts copied from the source run configuration.",
+      "contentUrl": "configs/seeds.yaml",
+      "encodingFormat": "application/x-yaml"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "audit_settings_yaml",
+      "name": "Audit settings",
+      "description": "High-level audit settings and external-input requirements.",
+      "contentUrl": "configs/audit_settings.yaml",
+      "encodingFormat": "application/x-yaml"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "generate_candidates_py",
+      "name": "Candidate generation scaffold",
+      "description": "Script scaffold documenting required candidate-generation inputs.",
+      "contentUrl": "scripts/generate_candidates.py",
+      "encodingFormat": "text/x-python"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "compute_fidelity_event_py",
+      "name": "Fidelity event scaffold",
+      "description": "Script scaffold documenting required fidelity-event inputs.",
+      "contentUrl": "scripts/compute_fidelity_event.py",
+      "encodingFormat": "text/x-python"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "compute_wilson_lcb_py",
+      "name": "Wilson LCB CLI",
+      "description": "Implemented Wilson lower confidence bound command-line utility.",
+      "contentUrl": "scripts/compute_wilson_lcb.py",
+      "encodingFormat": "text/x-python"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "compute_audit_py",
+      "name": "Audit computation scaffold",
+      "description": "Script scaffold documenting required full-audit inputs.",
+      "contentUrl": "scripts/compute_audit.py",
+      "encodingFormat": "text/x-python"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "reproduce_tables_py",
+      "name": "Table reproduction helper",
+      "description": "Helper script that summarizes packaged tables and flags external inputs required for full recomputation.",
+      "contentUrl": "scripts/reproduce_tables.py",
+      "encodingFormat": "text/x-python"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "validate_artifact_py",
+      "name": "Artifact validator",
+      "description": "Validator for required files, parseable metadata, compact list counts, and placeholder reporting.",
+      "contentUrl": "scripts/validate_artifact.py",
+      "encodingFormat": "text/x-python"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "audit_frontier_csv",
+      "name": "Audit frontier",
+      "description": "Copied larger-budget reliability frontier with pass counts and Wilson lower confidence bounds.",
+      "contentUrl": "results/audit_frontier.csv",
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "cross_method_diagnostics_csv",
+      "name": "Cross-method diagnostics",
+      "description": "Copied cross-method ranking correlation diagnostics on the available matched method pool.",
+      "contentUrl": "results/cross_method_diagnostics.csv",
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "external_data_readme_md",
+      "name": "External data README",
+      "description": "Instructions for obtaining or regenerating raw Nutrition5k-derived assets and full NeRF outputs when permitted.",
+      "contentUrl": "external_data/README_how_to_obtain_or_regenerate_inputs.md",
+      "encodingFormat": "text/markdown"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "scene_descriptors",
+      "name": "scene_descriptors",
+      "description": "Normalized scene-level descriptor rows keyed by dish_id. The source table contains 57 numeric descriptor dimensions plus identifier columns.",
+      "key": {
+        "@id": "scene_descriptors/dish_id"
+      },
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/dish_id",
+          "name": "dish_id",
+          "description": "Stable scene or dish identifier.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "dish_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/aabb_scale",
+          "name": "aabb_scale",
+          "description": "Column `aabb_scale` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "aabb_scale"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/area_frac_mean",
+          "name": "area_frac_mean",
+          "description": "Column `area_frac_mean` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "area_frac_mean"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/area_frac_std",
+          "name": "area_frac_std",
+          "description": "Column `area_frac_std` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "area_frac_std"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/bbox_aspect_ratio_mean",
+          "name": "bbox_aspect_ratio_mean",
+          "description": "Column `bbox_aspect_ratio_mean` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "bbox_aspect_ratio_mean"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/bbox_aspect_ratio_std",
+          "name": "bbox_aspect_ratio_std",
+          "description": "Column `bbox_aspect_ratio_std` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "bbox_aspect_ratio_std"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/bbox_max_x",
+          "name": "bbox_max_x",
+          "description": "Column `bbox_max_x` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "bbox_max_x"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/bbox_max_y",
+          "name": "bbox_max_y",
+          "description": "Column `bbox_max_y` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "bbox_max_y"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/bbox_max_z",
+          "name": "bbox_max_z",
+          "description": "Column `bbox_max_z` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "bbox_max_z"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/bbox_min_x",
+          "name": "bbox_min_x",
+          "description": "Column `bbox_min_x` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "bbox_min_x"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/bbox_min_y",
+          "name": "bbox_min_y",
+          "description": "Column `bbox_min_y` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "bbox_min_y"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/bbox_min_z",
+          "name": "bbox_min_z",
+          "description": "Column `bbox_min_z` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "bbox_min_z"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/camera_angle_x",
+          "name": "camera_angle_x",
+          "description": "Column `camera_angle_x` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "camera_angle_x"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/camera_angle_y",
+          "name": "camera_angle_y",
+          "description": "Column `camera_angle_y` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "camera_angle_y"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/cx",
+          "name": "cx",
+          "description": "Column `cx` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "cx"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/cy",
+          "name": "cy",
+          "description": "Column `cy` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "cy"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/edge_frac_mean",
+          "name": "edge_frac_mean",
+          "description": "Column `edge_frac_mean` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "edge_frac_mean"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/edge_frac_std",
+          "name": "edge_frac_std",
+          "description": "Column `edge_frac_std` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "edge_frac_std"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/entropy_mean",
+          "name": "entropy_mean",
+          "description": "Column `entropy_mean` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "entropy_mean"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/entropy_std",
+          "name": "entropy_std",
+          "description": "Column `entropy_std` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "entropy_std"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/extent_x",
+          "name": "extent_x",
+          "description": "Column `extent_x` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "extent_x"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/extent_y",
+          "name": "extent_y",
+          "description": "Column `extent_y` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "extent_y"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/extent_z",
+          "name": "extent_z",
+          "description": "Column `extent_z` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "extent_z"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/fl_x",
+          "name": "fl_x",
+          "description": "Column `fl_x` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "fl_x"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/fl_y",
+          "name": "fl_y",
+          "description": "Column `fl_y` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "fl_y"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/h",
+          "name": "h",
+          "description": "Column `h` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "h"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/k1",
+          "name": "k1",
+          "description": "Column `k1` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "k1"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/k2",
+          "name": "k2",
+          "description": "Column `k2` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "k2"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/k3",
+          "name": "k3",
+          "description": "Column `k3` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "k3"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/largest_comp_frac_mean",
+          "name": "largest_comp_frac_mean",
+          "description": "Column `largest_comp_frac_mean` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "largest_comp_frac_mean"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/largest_comp_frac_std",
+          "name": "largest_comp_frac_std",
+          "description": "Column `largest_comp_frac_std` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "largest_comp_frac_std"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/mean_camera_center_dist",
+          "name": "mean_camera_center_dist",
+          "description": "Column `mean_camera_center_dist` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "mean_camera_center_dist"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/mean_error",
+          "name": "mean_error",
+          "description": "Column `mean_error` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "mean_error"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/mean_track_length",
+          "name": "mean_track_length",
+          "description": "Column `mean_track_length` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "mean_track_length"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/mean_view_angle_var",
+          "name": "mean_view_angle_var",
+          "description": "Column `mean_view_angle_var` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "mean_view_angle_var"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/mean_visible_points",
+          "name": "mean_visible_points",
+          "description": "Column `mean_visible_points` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "mean_visible_points"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/mean_visible_ratio",
+          "name": "mean_visible_ratio",
+          "description": "Column `mean_visible_ratio` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "mean_visible_ratio"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/median_error",
+          "name": "median_error",
+          "description": "Column `median_error` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "median_error"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/median_track_length",
+          "name": "median_track_length",
+          "description": "Column `median_track_length` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "median_track_length"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/num_components_mean",
+          "name": "num_components_mean",
+          "description": "Column `num_components_mean` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "num_components_mean"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/num_components_std",
+          "name": "num_components_std",
+          "description": "Column `num_components_std` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "num_components_std"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/num_frames_total",
+          "name": "num_frames_total",
+          "description": "Column `num_frames_total` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "num_frames_total"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/num_frames_used",
+          "name": "num_frames_used",
+          "description": "Column `num_frames_used` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "num_frames_used"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/num_images",
+          "name": "num_images",
+          "description": "Column `num_images` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "num_images"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/p1",
+          "name": "p1",
+          "description": "Column `p1` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "p1"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/p2",
+          "name": "p2",
+          "description": "Column `p2` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "p2"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/point_count",
+          "name": "point_count",
+          "description": "Column `point_count` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "point_count"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/point_density",
+          "name": "point_density",
+          "description": "Column `point_density` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "point_density"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/sharpness_mean",
+          "name": "sharpness_mean",
+          "description": "Column `sharpness_mean` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "sharpness_mean"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/sharpness_std",
+          "name": "sharpness_std",
+          "description": "Column `sharpness_std` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "sharpness_std"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/std_camera_center_dist",
+          "name": "std_camera_center_dist",
+          "description": "Column `std_camera_center_dist` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "std_camera_center_dist"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/std_error",
+          "name": "std_error",
+          "description": "Column `std_error` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "std_error"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/std_track_length",
+          "name": "std_track_length",
+          "description": "Column `std_track_length` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "std_track_length"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/std_view_angle_var",
+          "name": "std_view_angle_var",
+          "description": "Column `std_view_angle_var` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "std_view_angle_var"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/std_visible_points",
+          "name": "std_visible_points",
+          "description": "Column `std_visible_points` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "std_visible_points"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/std_visible_ratio",
+          "name": "std_visible_ratio",
+          "description": "Column `std_visible_ratio` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "std_visible_ratio"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/volume",
+          "name": "volume",
+          "description": "Column `volume` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "volume"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scene_descriptors/w",
+          "name": "w",
+          "description": "Column `w` from `descriptors/scene_descriptors.csv`.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "scene_descriptors_csv"
+            },
+            "extract": {
+              "column": "w"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "regime_labels",
+      "name": "regime_labels",
+      "description": "k=6 descriptor-space regime labels copied from the source repository.",
+      "key": {
+        "@id": "regime_labels/dish_id"
+      },
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "regime_labels/dish_id",
+          "name": "dish_id",
+          "description": "Stable scene or dish identifier.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "regime_labels_csv"
+            },
+            "extract": {
+              "column": "dish_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "regime_labels/cluster",
+          "name": "cluster",
+          "description": "k=6 descriptor-space regime or cluster identifier used by the copied RASS source artifacts.",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "regime_labels_csv"
+            },
+            "extract": {
+              "column": "cluster"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "audit_frontier",
+      "name": "audit_frontier",
+      "description": "Budget-reliability frontier with empirical pass rates and Wilson lower confidence bounds.",
+      "key": {
+        "@id": "audit_frontier/budget_scenes"
+      },
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "audit_frontier/budget_scenes",
+          "name": "budget_scenes",
+          "description": "Total number of scenes in the audited compact subset budget.",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "audit_frontier_csv"
+            },
+            "extract": {
+              "column": "budget_scenes"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "audit_frontier/k",
+          "name": "k",
+          "description": "Number of descriptor-space regimes or clusters used in this frontier row.",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "audit_frontier_csv"
+            },
+            "extract": {
+              "column": "k"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "audit_frontier/b",
+          "name": "b",
+          "description": "Budget per regime or cluster for this frontier row.",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "audit_frontier_csv"
+            },
+            "extract": {
+              "column": "b"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "audit_frontier/n_trials",
+          "name": "n_trials",
+          "description": "Number of candidate trials audited for this frontier row.",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "audit_frontier_csv"
+            },
+            "extract": {
+              "column": "n_trials"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "audit_frontier/n_pass",
+          "name": "n_pass",
+          "description": "Number of audited candidates satisfying the declared joint pass event.",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "audit_frontier_csv"
+            },
+            "extract": {
+              "column": "n_pass"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "audit_frontier/empirical_pass_rate",
+          "name": "empirical_pass_rate",
+          "description": "Observed fraction of passing candidates.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "audit_frontier_csv"
+            },
+            "extract": {
+              "column": "empirical_pass_rate"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "audit_frontier/wilson_lcb_95",
+          "name": "wilson_lcb_95",
+          "description": "Wilson lower confidence bound at 95 percent confidence for the pass rate.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "audit_frontier_csv"
+            },
+            "extract": {
+              "column": "wilson_lcb_95"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "audit_frontier/psnr_mean_gap",
+          "name": "psnr_mean_gap",
+          "description": "Absolute ZipNeRF PSNR mean gap for the selected candidate in this frontier row.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "audit_frontier_csv"
+            },
+            "extract": {
+              "column": "psnr_mean_gap"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "audit_frontier/ssim_mean_gap",
+          "name": "ssim_mean_gap",
+          "description": "Absolute ZipNeRF SSIM mean gap for the selected candidate in this frontier row.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "audit_frontier_csv"
+            },
+            "extract": {
+              "column": "ssim_mean_gap"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "audit_frontier/lpips_mean_gap",
+          "name": "lpips_mean_gap",
+          "description": "Absolute ZipNeRF LPIPS mean gap for the selected candidate in this frontier row.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "audit_frontier_csv"
+            },
+            "extract": {
+              "column": "lpips_mean_gap"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "audit_frontier/max_ks",
+          "name": "max_ks",
+          "description": "Maximum Kolmogorov-Smirnov diagnostic distance across audited metrics for this frontier row.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "audit_frontier_csv"
+            },
+            "extract": {
+              "column": "max_ks"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "audit_frontier/best_subset_manifest",
+          "name": "best_subset_manifest",
+          "description": "Source-repository path to the best subset manifest used to generate this row.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "audit_frontier_csv"
+            },
+            "extract": {
+              "column": "best_subset_manifest"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "cross_method_diagnostics",
+      "name": "cross_method_diagnostics",
+      "description": "Cross-method ranking diagnostic summary on the available matched method pool.",
+      "key": {
+        "@id": "cross_method_diagnostics/metric"
+      },
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "cross_method_diagnostics/metric",
+          "name": "metric",
+          "description": "Ranking metric used for the cross-method diagnostic.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "cross_method_diagnostics_csv"
+            },
+            "extract": {
+              "column": "metric"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "cross_method_diagnostics/spearman_rho",
+          "name": "spearman_rho",
+          "description": "Spearman rank correlation between full matched-pool method ordering and compact-subset ordering.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "cross_method_diagnostics_csv"
+            },
+            "extract": {
+              "column": "spearman_rho"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "cross_method_diagnostics/kendall_tau",
+          "name": "kendall_tau",
+          "description": "Kendall rank correlation between full matched-pool method ordering and compact-subset ordering.",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "cross_method_diagnostics_csv"
+            },
+            "extract": {
+              "column": "kendall_tau"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "cross_method_diagnostics/shared_full_size",
+          "name": "shared_full_size",
+          "description": "Number of scenes in the matched full cross-method pool.",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "cross_method_diagnostics_csv"
+            },
+            "extract": {
+              "column": "shared_full_size"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "cross_method_diagnostics/shared_subset_size",
+          "name": "shared_subset_size",
+          "description": "Number of compact-subset scenes available for all included methods.",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "cross_method_diagnostics_csv"
+            },
+            "extract": {
+              "column": "shared_subset_size"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "cross_method_diagnostics/num_methods",
+          "name": "num_methods",
+          "description": "Number of methods included in the diagnostic.",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "cross_method_diagnostics_csv"
+            },
+            "extract": {
+              "column": "num_methods"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "citeAs": "Anonymous Authors. RASS: Risk-Aware Scene Subset Selection for Reliable Large-Scale NeRF Benchmarking. Anonymized artifact version 1.0.0, 2026.",
+  "isBasedOn": [
+    {
+      "@type": "sc:Dataset",
+      "@id": "https://github.com/google-research-datasets/Nutrition5k",
+      "name": "Nutrition5k: A Comprehensive Nutrition Dataset",
+      "url": "https://github.com/google-research-datasets/Nutrition5k",
+      "description": "Original visual nutrition dataset containing multi-view food-dish imagery and related metadata. This artifact uses Nutrition5k-derived scene identifiers and descriptors; raw images and scenes remain governed by the original source-data terms."
+    }
+  ],
+  "prov:wasDerivedFrom": [
+    {
+      "@type": "sc:Dataset",
+      "@id": "https://github.com/google-research-datasets/Nutrition5k",
+      "name": "Nutrition5k: A Comprehensive Nutrition Dataset",
+      "url": "https://github.com/google-research-datasets/Nutrition5k",
+      "description": "Original visual nutrition dataset containing multi-view food-dish imagery and related metadata. This artifact uses Nutrition5k-derived scene identifiers and descriptors; raw images and scenes remain governed by the original source-data terms."
+    }
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@type": "prov:Activity",
+      "@id": "#activity-source-scene-validation",
+      "prov:label": "Source scene derivation and validation",
+      "name": "Source scene derivation and validation",
+      "activityType": "preprocessing",
+      "description": "Nutrition5k-derived scenes were organized into the benchmark scene universe used by the source RASS study. Invalid, unavailable, or unmatched scenes are outside the packaged compact and audit lists.",
+      "prov:used": {
+        "@id": "https://github.com/google-research-datasets/Nutrition5k"
+      },
+      "prov:wasAssociatedWith": {
+        "@type": "prov:Agent",
+        "prov:label": "RASS authors"
+      }
+    },
+    {
+      "@type": "prov:Activity",
+      "@id": "#activity-descriptor-preprocessing",
+      "prov:label": "Descriptor extraction and preprocessing",
+      "name": "Descriptor extraction and preprocessing",
+      "activityType": "preprocessing",
+      "description": "Scene-level descriptors were normalized in the source repository and copied into this package. The descriptor schema file marks column-level semantic definitions that still need final paper-level documentation.",
+      "prov:used": {
+        "@id": "scene_descriptors_csv"
+      },
+      "prov:wasAssociatedWith": {
+        "@type": "prov:Agent",
+        "prov:label": "Source repository preprocessing scripts"
+      }
+    },
+    {
+      "@type": "prov:Activity",
+      "@id": "#activity-risk-audited-selection",
+      "prov:label": "Risk-audited compact subset selection",
+      "name": "Risk-audited compact subset selection",
+      "activityType": "subset_selection",
+      "description": "Compact scene lists were extracted from existing source-repository subset manifests. RASS-48 is for rapid screening, RASS-96 is the stronger compact reporting option, and full-population evaluation remains necessary for leaderboard-quality claims.",
+      "prov:used": [
+        {
+          "@id": "scene_descriptors_csv"
+        },
+        {
+          "@id": "regime_labels_csv"
+        },
+        {
+          "@id": "audit_frontier_csv"
+        }
+      ],
+      "prov:generated": [
+        {
+          "@id": "rass48_scene_ids_txt"
+        },
+        {
+          "@id": "rass96_scene_ids_txt"
+        }
+      ],
+      "prov:wasAssociatedWith": {
+        "@type": "prov:Agent",
+        "prov:label": "RASS audit scripts"
+      }
+    },
+    {
+      "@type": "prov:Activity",
+      "@id": "#activity-cross-method-audit",
+      "prov:label": "Cross-method diagnostic construction",
+      "name": "Cross-method diagnostic construction",
+      "activityType": "evaluation",
+      "description": "Cross-method diagnostic rows were copied from existing repository outputs on the available matched method pool. These diagnostics do not certify arbitrary same-size subsets or cross-method ranking preservation in general.",
+      "prov:used": [
+        {
+          "@id": "cross_method_common_ids_txt"
+        },
+        {
+          "@id": "cross_method_diagnostics_csv"
+        }
+      ],
+      "prov:generated": {
+        "@id": "cross_method_diagnostics_csv"
+      },
+      "prov:wasAssociatedWith": {
+        "@type": "prov:Agent",
+        "prov:label": "RASS authors"
+      }
+    }
+  ],
+  "rai:provenanceActivities": [
+    {
+      "@type": "prov:Activity",
+      "@id": "#activity-source-scene-validation",
+      "prov:label": "Source scene derivation and validation",
+      "name": "Source scene derivation and validation",
+      "activityType": "preprocessing",
+      "description": "Nutrition5k-derived scenes were organized into the benchmark scene universe used by the source RASS study. Invalid, unavailable, or unmatched scenes are outside the packaged compact and audit lists.",
+      "prov:used": {
+        "@id": "https://github.com/google-research-datasets/Nutrition5k"
+      },
+      "prov:wasAssociatedWith": {
+        "@type": "prov:Agent",
+        "prov:label": "RASS authors"
+      }
+    },
+    {
+      "@type": "prov:Activity",
+      "@id": "#activity-descriptor-preprocessing",
+      "prov:label": "Descriptor extraction and preprocessing",
+      "name": "Descriptor extraction and preprocessing",
+      "activityType": "preprocessing",
+      "description": "Scene-level descriptors were normalized in the source repository and copied into this package. The descriptor schema file marks column-level semantic definitions that still need final paper-level documentation.",
+      "prov:used": {
+        "@id": "scene_descriptors_csv"
+      },
+      "prov:wasAssociatedWith": {
+        "@type": "prov:Agent",
+        "prov:label": "Source repository preprocessing scripts"
+      }
+    },
+    {
+      "@type": "prov:Activity",
+      "@id": "#activity-risk-audited-selection",
+      "prov:label": "Risk-audited compact subset selection",
+      "name": "Risk-audited compact subset selection",
+      "activityType": "subset_selection",
+      "description": "Compact scene lists were extracted from existing source-repository subset manifests. RASS-48 is for rapid screening, RASS-96 is the stronger compact reporting option, and full-population evaluation remains necessary for leaderboard-quality claims.",
+      "prov:used": [
+        {
+          "@id": "scene_descriptors_csv"
+        },
+        {
+          "@id": "regime_labels_csv"
+        },
+        {
+          "@id": "audit_frontier_csv"
+        }
+      ],
+      "prov:generated": [
+        {
+          "@id": "rass48_scene_ids_txt"
+        },
+        {
+          "@id": "rass96_scene_ids_txt"
+        }
+      ],
+      "prov:wasAssociatedWith": {
+        "@type": "prov:Agent",
+        "prov:label": "RASS audit scripts"
+      }
+    },
+    {
+      "@type": "prov:Activity",
+      "@id": "#activity-cross-method-audit",
+      "prov:label": "Cross-method diagnostic construction",
+      "name": "Cross-method diagnostic construction",
+      "activityType": "evaluation",
+      "description": "Cross-method diagnostic rows were copied from existing repository outputs on the available matched method pool. These diagnostics do not certify arbitrary same-size subsets or cross-method ranking preservation in general.",
+      "prov:used": [
+        {
+          "@id": "cross_method_common_ids_txt"
+        },
+        {
+          "@id": "cross_method_diagnostics_csv"
+        }
+      ],
+      "prov:generated": {
+        "@id": "cross_method_diagnostics_csv"
+      },
+      "prov:wasAssociatedWith": {
+        "@type": "prov:Agent",
+        "prov:label": "RASS authors"
+      }
+    }
+  ],
+  "rai:sourceDatasets": [
+    {
+      "@type": "sc:Dataset",
+      "@id": "https://github.com/google-research-datasets/Nutrition5k",
+      "name": "Nutrition5k: A Comprehensive Nutrition Dataset",
+      "url": "https://github.com/google-research-datasets/Nutrition5k",
+      "description": "Original visual nutrition dataset containing multi-view food-dish imagery and related metadata. This artifact uses Nutrition5k-derived scene identifiers and descriptors; raw images and scenes remain governed by the original source-data terms."
+    }
+  ],
+  "rai:dataSources": [
+    {
+      "@type": "sc:Dataset",
+      "@id": "https://github.com/google-research-datasets/Nutrition5k",
+      "name": "Nutrition5k: A Comprehensive Nutrition Dataset",
+      "url": "https://github.com/google-research-datasets/Nutrition5k",
+      "description": "Original visual nutrition dataset containing multi-view food-dish imagery and related metadata. This artifact uses Nutrition5k-derived scene identifiers and descriptors; raw images and scenes remain governed by the original source-data terms."
+    }
+  ],
+  "rai:dataCollection": "The artifact is derived from a Nutrition5k-derived NeRF scene universe used in the RASS benchmark study. This release covers tabular metadata, scene lists, normalized descriptors, regime labels, copied audit summaries, and scripts. Raw images, camera data, masks, scene reconstructions, and complete method outputs are not redistributed here unless separately permitted.",
+  "rai:dataCollectionType": [
+    "Secondary Data Analysis",
+    "Software Collection",
+    "Experiments"
+  ],
+  "rai:dataCollectionMissingData": "The package documents only the scene IDs, descriptors, labels, settings, and copied summaries present in the source repository. Some full method tables and raw outputs required for end-to-end recomputation are intentionally external and documented in external_data/README_how_to_obtain_or_regenerate_inputs.md.",
+  "rai:dataCollectionRawData": "Raw sources are Nutrition5k-derived scene assets and NeRF method outputs generated for benchmark evaluation. This artifact contains derived metadata and lightweight audit resources, not raw images, videos, masks, camera data, reconstructed scenes, or full training/rendering outputs.",
+  "rai:dataCollectionTimeframe": [
+    "Artifact version 1.0.0 was prepared and uploaded on 2026-05-05."
+  ],
+  "rai:dataImputationProtocol": "The copied normalized descriptor table reflects preprocessing already performed in the source repository. Full details of any median imputation, scaling, clipping, or transformations must be checked against the source preprocessing scripts before archival claims.",
+  "rai:dataManipulationProtocol": "The artifact is assembled from existing repository outputs: source subset manifests were converted to scene-list text files; normalized descriptors, k=6 labels, audit frontier CSVs, and cross-method diagnostics were copied; metadata, configs, validation code, Wilson LCB code, and reproduction scaffolds were created for Kaggle packaging. No new scene IDs, metrics, or scientific results were invented.",
+  "rai:dataPreprocessingProtocol": [
+    "Scene descriptors are copied from the existing normalized k=6 descriptor table in the source repository.",
+    "Descriptor-space regime labels are copied from the existing k=6 mapping.",
+    "RASS-48 and RASS-96 scene lists are extracted from existing source subset manifests.",
+    "Audit and cross-method result CSVs are copied from existing repository outputs and should be interpreted under the matched-pool and threshold assumptions stated in the package README and configs."
+  ],
+  "rai:dataAnnotationProtocol": "No new human semantic annotations were collected for this artifact. Labels are protocol-derived fields such as scene identifiers, descriptor-regime assignments, subset membership, thresholds, method names, and metric summaries.",
+  "rai:dataAnnotationPlatform": [
+    "No crowd-annotation platform was used. Artifact fields were generated by research code and packaging scripts."
+  ],
+  "rai:dataAnnotationAnalysis": [
+    "Annotator disagreement analysis is not applicable because no new human annotations were collected. Quality control consists of structural validation, checksum manifesting, scene-list count checks, parse checks, and reproducibility notes."
+  ],
+  "rai:dataReleaseMaintenancePlan": [
+    "Version 1.0.0 is a static benchmark-artifact release. Structural or semantic changes to the released tables, code, scene lists, or metadata should be reflected by a version update and updated dateModified field.",
+    "Known corrections should be documented on the Kaggle dataset page, in the source repository, or in a later artifact version."
+  ],
+  "rai:personalSensitiveInformation": [
+    "The released tabular artifact does not intentionally include personal or sensitive information. It contains scene identifiers, descriptor values, subset membership, method names, configuration metadata, and aggregate or per-scene benchmark identifiers.",
+    "Underlying Nutrition5k-derived raw data may be subject to its own privacy, licensing, or usage conditions. Users must consult and follow original source-data terms before accessing or redistributing raw assets."
+  ],
+  "rai:dataSocialImpact": "The artifact is intended to improve reproducibility and transparency in NeRF benchmarking by making compact-subset audit resources inspectable. Potential negative impacts include over-reliance on compact subsets, misinterpreting RASS-48 as a complete benchmark replacement, or extending claims beyond the declared audit scope.",
+  "rai:hasSyntheticData": false,
+  "rai:dataBiases": [
+    "The scene universe is Nutrition5k-derived and may not represent the full diversity of object categories, capture conditions, materials, foods, lighting, backgrounds, cameras, or deployment contexts relevant to NeRF and 3D reconstruction.",
+    "RASS-48 and RASS-96 are compact subsets drawn under specific descriptor, regime, threshold, and candidate-generation assumptions. They should not be assumed to preserve every local, rare-case, regime-level, or method-specific behavior.",
+    "Cross-method diagnostics are based on the available matched method pool and are diagnostic rather than a universal guarantee of ranking preservation."
+  ],
+  "rai:dataLimitations": [
+    "RASS-48 is for rapid screening and smoke-test style comparisons. RASS-96 is a stronger compact reporting option when full evaluation is too expensive.",
+    "Full audit population evaluation is needed for leaderboard-quality claims.",
+    "RASS does not certify arbitrary same-size subsets, regime-level fidelity, cross-method ranking preservation, or nutrition/clinical conclusions.",
+    "The artifact describes derived metadata and benchmark tables; availability and reuse of raw Nutrition5k-derived data depend on upstream source-data terms."
+  ],
+  "rai:dataUseCases": [
+    "Recommended: low-cost NeRF benchmark screening, ablation sanity checks, audit-protocol inspection, subset-selection research, and reproduction of packaged audit summaries when required external metric tables are available.",
+    "Recommended: inspecting descriptor and regime coverage, validating artifact structure, and computing Wilson lower confidence bounds for reported pass counts.",
+    "Not recommended: replacing exhaustive final evaluation, making definitive leaderboard claims from compact subsets alone, training general-purpose models from the compact lists, safety-critical evaluation, or drawing demographic, nutritional, medical, or clinical conclusions."
+  ],
+  "rai:annotationsPerItem": "No human annotations per item were newly collected for this artifact. Rows contain protocol-derived fields generated by deterministic scripts or copied from source repository outputs.",
+  "rai:annotatorDemographics": [
+    "Not applicable. No new human annotators were recruited for creating the artifact metadata."
+  ],
+  "rai:machineAnnotationTools": [
+    "Python preprocessing and audit scripts from the source repository.",
+    "Package scripts for Wilson lower confidence bounds, artifact validation, and reproduction scaffolding."
+  ],
+  "ethicsPolicy": "Users should treat this package as a research benchmark artifact, respect upstream raw-data access and licensing conditions, cite the artifact and source data, and avoid overstating compact-subset validity beyond the documented audit scope.",
+  "diversityPolicy": "The artifact does not make demographic diversity claims. Diversity is considered only in terms of descriptor-space scene regimes for NeRF benchmark engineering."
+}

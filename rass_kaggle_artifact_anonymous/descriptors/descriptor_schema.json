@@ -1,0 +1,241 @@
+{
+  "schema_version": "1.0.0",
+  "source_path": "sweep_cluster_k/k_6/feats_normalized.csv",
+  "scene_id_column": "dish_id",
+  "normalization": "Values copied from the existing normalized k=6 descriptor table in the source repository.",
+  "field_definitions": "TODO_REQUIRED: Add paper-level semantic definitions and units for each descriptor before archival publication.",
+  "fields": [
+    {
+      "name": "dish_id",
+      "type": "string"
+    },
+    {
+      "name": "aabb_scale",
+      "type": "number"
+    },
+    {
+      "name": "area_frac_mean",
+      "type": "number"
+    },
+    {
+      "name": "area_frac_std",
+      "type": "number"
+    },
+    {
+      "name": "bbox_aspect_ratio_mean",
+      "type": "number"
+    },
+    {
+      "name": "bbox_aspect_ratio_std",
+      "type": "number"
+    },
+    {
+      "name": "bbox_max_x",
+      "type": "number"
+    },
+    {
+      "name": "bbox_max_y",
+      "type": "number"
+    },
+    {
+      "name": "bbox_max_z",
+      "type": "number"
+    },
+    {
+      "name": "bbox_min_x",
+      "type": "number"
+    },
+    {
+      "name": "bbox_min_y",
+      "type": "number"
+    },
+    {
+      "name": "bbox_min_z",
+      "type": "number"
+    },
+    {
+      "name": "camera_angle_x",
+      "type": "number"
+    },
+    {
+      "name": "camera_angle_y",
+      "type": "number"
+    },
+    {
+      "name": "cx",
+      "type": "number"
+    },
+    {
+      "name": "cy",
+      "type": "number"
+    },
+    {
+      "name": "edge_frac_mean",
+      "type": "number"
+    },
+    {
+      "name": "edge_frac_std",
+      "type": "number"
+    },
+    {
+      "name": "entropy_mean",
+      "type": "number"
+    },
+    {
+      "name": "entropy_std",
+      "type": "number"
+    },
+    {
+      "name": "extent_x",
+      "type": "number"
+    },
+    {
+      "name": "extent_y",
+      "type": "number"
+    },
+    {
+      "name": "extent_z",
+      "type": "number"
+    },
+    {
+      "name": "fl_x",
+      "type": "number"
+    },
+    {
+      "name": "fl_y",
+      "type": "number"
+    },
+    {
+      "name": "h",
+      "type": "number"
+    },
+    {
+      "name": "k1",
+      "type": "number"
+    },
+    {
+      "name": "k2",
+      "type": "number"
+    },
+    {
+      "name": "k3",
+      "type": "number"
+    },
+    {
+      "name": "largest_comp_frac_mean",
+      "type": "number"
+    },
+    {
+      "name": "largest_comp_frac_std",
+      "type": "number"
+    },
+    {
+      "name": "mean_camera_center_dist",
+      "type": "number"
+    },
+    {
+      "name": "mean_error",
+      "type": "number"
+    },
+    {
+      "name": "mean_track_length",
+      "type": "number"
+    },
+    {
+      "name": "mean_view_angle_var",
+      "type": "number"
+    },
+    {
+      "name": "mean_visible_points",
+      "type": "number"
+    },
+    {
+      "name": "mean_visible_ratio",
+      "type": "number"
+    },
+    {
+      "name": "median_error",
+      "type": "number"
+    },
+    {
+      "name": "median_track_length",
+      "type": "number"
+    },
+    {
+      "name": "num_components_mean",
+      "type": "number"
+    },
+    {
+      "name": "num_components_std",
+      "type": "number"
+    },
+    {
+      "name": "num_frames_total",
+      "type": "number"
+    },
+    {
+      "name": "num_frames_used",
+      "type": "number"
+    },
+    {
+      "name": "num_images",
+      "type": "number"
+    },
+    {
+      "name": "p1",
+      "type": "number"
+    },
+    {
+      "name": "p2",
+      "type": "number"
+    },
+    {
+      "name": "point_count",
+      "type": "number"
+    },
+    {
+      "name": "point_density",
+      "type": "number"
+    },
+    {
+      "name": "sharpness_mean",
+      "type": "number"
+    },
+    {
+      "name": "sharpness_std",
+      "type": "number"
+    },
+    {
+      "name": "std_camera_center_dist",
+      "type": "number"
+    },
+    {
+      "name": "std_error",
+      "type": "number"
+    },
+    {
+      "name": "std_track_length",
+      "type": "number"
+    },
+    {
+      "name": "std_view_angle_var",
+      "type": "number"
+    },
+    {
+      "name": "std_visible_points",
+      "type": "number"
+    },
+    {
+      "name": "std_visible_ratio",
+      "type": "number"
+    },
+    {
+      "name": "volume",
+      "type": "number"
+    },
+    {
+      "name": "w",
+      "type": "number"
+    }
+  ]
+}

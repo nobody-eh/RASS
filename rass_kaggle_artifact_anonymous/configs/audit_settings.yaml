@@ -1,0 +1,21 @@
+artifact_version: "1.0.0"
+source_run_config: results/strong_accept/run_config.json
+subset_family: "RASS package assembled from repository RASS k=6 artifacts"
+confidence_level: 0.95
+p_min: 0.08
+num_trials: 400
+scene_lists:
+  rass48: scene_lists/rass48_scene_ids.txt
+  rass96: scene_lists/rass96_scene_ids.txt
+  full_zipnerf_audit: scene_lists/full_zipnerf_audit_ids.txt
+  cross_method_common: scene_lists/cross_method_common_ids.txt
+descriptors:
+  scene_descriptors: descriptors/scene_descriptors.csv
+  regime_labels: descriptors/regime_labels.csv
+external_inputs:
+  zipnerf_metric_table: "TODO_REQUIRED: Provide or regenerate results_final/ZipNeRF full image.xlsx or an equivalent per-scene ZipNeRF table."
+  method_metric_tables: "TODO_REQUIRED: Provide per-scene metric tables for every method included in leaderboard-quality claims."
+  raw_scene_assets: "TODO_REQUIRED: Obtain raw Nutrition5k-derived assets only under permitted redistribution/use terms."
+copied_results:
+  audit_frontier: results/audit_frontier.csv
+  cross_method_diagnostics: results/cross_method_diagnostics.csv

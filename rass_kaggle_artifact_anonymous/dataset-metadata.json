@@ -1,0 +1,22 @@
+{
+  "title": "RASS NeRF Benchmark Artifact",
+  "subtitle": "Risk-audited compact scene lists for NeRF benchmarking",
+  "description": "RASS / NeRF Benchmark Artifact packages compact scene lists and audit metadata for an anonymized NeRF benchmark study on Nutrition5k-derived scenes.\n\nThe dataset includes RASS-48 for rapid screening, RASS-96 for stronger compact reporting, a full ZipNeRF audit scene list, cross-method common IDs, normalized descriptors, k=6 regime labels, audit thresholds, Wilson LCB utilities, Croissant/RAI metadata, and copied audit diagnostics.\n\nUse this artifact for reproducible benchmark-subset inspection, low-cost screening, and audit protocol development. Full leaderboard-quality claims still require the full audit population and external per-scene NeRF metrics; raw Nutrition5k-derived assets and complete NeRF outputs are not redistributed unless permitted.",
+  "id": "nobodyeh/rass-nerf-benchmark-artifact",
+  "isPrivate": true,
+  "licenses": [
+    {
+      "name": "GPL-3.0"
+    }
+  ],
+  "keywords": [
+    "artificial intelligence",
+    "advanced",
+    "computer vision",
+    "clustering",
+    "image"
+  ],
+  "expectedUpdateFrequency": "never",
+  "userSpecifiedSources": "Nutrition5k-derived NeRF benchmark scene assets and repository-local anonymized RASS audit outputs. Raw Nutrition5k-derived images, scene assets, and full NeRF outputs are not redistributed in this artifact unless separately permitted by their upstream terms.",
+  "image": "dataset-cover-image.png"
+}

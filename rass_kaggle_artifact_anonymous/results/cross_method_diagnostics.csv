@@ -1,0 +1,3 @@
+metric,spearman_rho,kendall_tau,shared_full_size,shared_subset_size,num_methods
+psnr,1.0,1.0,3518,48,3
+ssim,1.0,1.0,3518,48,3

@@ -38,6 +38,9 @@ sweep_cluster_k/
 clustered_*
 feature_*
 subset_*manifest.csv
+/results/
+/results_final/
+/tables/
 
 # Feature tables and intermediate artifacts
 feats2.csv
@@ -67,3 +70,13 @@ out.png
 ref.png
 text.txt
 text2.txt
+
+# Kaggle artifact archives and local-only publication copies
+rass_kaggle_artifact/
+rass_kaggle_artifact_v1.zip
+rass_kaggle_artifact_anonymous_v*.zip
+results.zip
+
+# Local run state
+train.log
+train.pid

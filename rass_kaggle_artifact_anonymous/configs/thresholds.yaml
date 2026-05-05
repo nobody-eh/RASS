@@ -1,0 +1,18 @@
+source_path: results/strong_accept/run_config.json
+selected_threshold_set: default
+threshold_sets:
+  strict:
+    psnr_tol: 0.25
+    ssim_tol: 0.005
+    lpips_tol: 0.005
+    ks_tol: 0.10
+  default:
+    psnr_tol: 0.50
+    ssim_tol: 0.010
+    lpips_tol: 0.010
+    ks_tol: 0.14
+  relaxed:
+    psnr_tol: 0.75
+    ssim_tol: 0.015
+    lpips_tol: 0.015
+    ks_tol: 0.18
