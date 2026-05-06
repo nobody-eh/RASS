@@ -1,4 +1,4 @@
-# RASS: Risk-Audited Scene Subsets for NeRF Benchmarking
+# RASS: Risk-Audited Budget Selection for Compact NeRF Benchmark Subsets
 
 This repository contains the anonymous RASS artifact package for compact,
 risk-audited NeRF benchmark scene lists and reproduction metadata.
@@ -9,7 +9,7 @@ Canonical repository location:
 https://github.com/nobody-eh/RASS
 ```
 
-Current private Kaggle artifact:
+Current Reviewer-accessible Kaggle artifact:
 
 ```text
 https://www.kaggle.com/datasets/nobodyeh/rass-nerf-benchmark-artifact
@@ -58,7 +58,7 @@ python rass_kaggle_artifact_anonymous/scripts/validate_artifact.py --root rass_k
 
 Expected high-level checks:
 
-- the artifact structure is complete
+- The artifact structure is complete
 - JSON, CSV, and YAML files parse
 - RASS-48 has 48 nonempty scene IDs
 - RASS-96 has 96 nonempty scene IDs
