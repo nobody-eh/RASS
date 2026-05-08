@@ -65,7 +65,8 @@
       "name": "Artifact README",
       "description": "Top-level explanation of scope, limits, validation, and reproduction steps.",
       "contentUrl": "README.md",
-      "encodingFormat": "text/markdown"
+      "encodingFormat": "text/markdown",
+      "sha256": "62cbb94f290942259aa3e88ba3c1a77da3712dfbcc235110e522fb87a5557881"
     },
     {
       "@type": "cr:FileObject",
@@ -73,7 +74,8 @@
       "name": "Dataset cover image",
       "description": "Kaggle dataset cover image used for the listing thumbnail and header crop.",
       "contentUrl": "dataset-cover-image.png",
-      "encodingFormat": "image/png"
+      "encodingFormat": "image/png",
+      "sha256": "454d29e7a2ae845e6c0d191ee294be41e8c0f95003e2411d6fabc65d1f2aeb20"
     },
     {
       "@type": "cr:FileObject",
@@ -81,7 +83,8 @@
       "name": "License",
       "description": "Repository license copied into the artifact package.",
       "contentUrl": "LICENSE",
-      "encodingFormat": "text/plain"
+      "encodingFormat": "text/plain",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
     },
     {
       "@type": "cr:FileObject",
@@ -89,7 +92,8 @@
       "name": "Citation metadata",
       "description": "Citation metadata for the paper/artifact, with remaining archival fields handled in the CFF file.",
       "contentUrl": "CITATION.cff",
-      "encodingFormat": "text/plain"
+      "encodingFormat": "text/plain",
+      "sha256": "e9fe761817af4374b2a95e8aac8de9e99945c1ae3692ac8237c27846114c1651"
     },
     {
       "@type": "cr:FileObject",
@@ -97,15 +101,8 @@
       "name": "Kaggle dataset metadata",
       "description": "Kaggle dataset metadata used by the Kaggle CLI.",
       "contentUrl": "dataset-metadata.json",
-      "encodingFormat": "application/json"
-    },
-    {
-      "@type": "cr:FileObject",
-      "@id": "croissant_json",
-      "name": "Croissant metadata",
-      "description": "This Croissant metadata description.",
-      "contentUrl": "metadata/croissant.json",
-      "encodingFormat": "application/json"
+      "encodingFormat": "application/json",
+      "sha256": "404e7f7c4771c23ec4cb48e62bea0f40ad3cdc5ac36858d55c9c88f5127a5320"
     },
     {
       "@type": "cr:FileObject",
@@ -113,15 +110,8 @@
       "name": "Dataset card",
       "description": "Dataset card covering intended use, limitations, and external data requirements.",
       "contentUrl": "metadata/dataset_card.md",
-      "encodingFormat": "text/markdown"
-    },
-    {
-      "@type": "cr:FileObject",
-      "@id": "artifact_manifest_json",
-      "name": "Artifact manifest",
-      "description": "Machine-readable file manifest with provenance status and checksums.",
-      "contentUrl": "metadata/artifact_manifest.json",
-      "encodingFormat": "application/json"
+      "encodingFormat": "text/markdown",
+      "sha256": "5f3d37dafa5ca19fe77f93266fb5ed1089f126bc2c2537c71cca2a183a49eea6"
     },
     {
       "@type": "cr:FileObject",
@@ -129,7 +119,8 @@
       "name": "RASS-48 scene IDs",
       "description": "Forty-eight scene identifiers for rapid screening, one identifier per line.",
       "contentUrl": "scene_lists/rass48_scene_ids.txt",
-      "encodingFormat": "text/plain"
+      "encodingFormat": "text/plain",
+      "sha256": "697876ea858055a3b10b0e123bb6b5f9f30f65989939ab64d7786023beba44e9"
     },
     {
       "@type": "cr:FileObject",
@@ -137,7 +128,8 @@
       "name": "RASS-96 scene IDs",
       "description": "Ninety-six scene identifiers for the stronger compact reporting option, one identifier per line.",
       "contentUrl": "scene_lists/rass96_scene_ids.txt",
-      "encodingFormat": "text/plain"
+      "encodingFormat": "text/plain",
+      "sha256": "b33280ba5ecd99e508b067d39291643eb5d4383fc33c05a54426b932e24b249a"
     },
     {
       "@type": "cr:FileObject",
@@ -145,7 +137,8 @@
       "name": "Full ZipNeRF audit scene IDs",
       "description": "Scene identifiers for the full ZipNeRF audit population available in the repository.",
       "contentUrl": "scene_lists/full_zipnerf_audit_ids.txt",
-      "encodingFormat": "text/plain"
+      "encodingFormat": "text/plain",
+      "sha256": "3fc9bcd1eb35920eb0a310804163a8362239f0d3eb153aad66a5e5ffc4a481ab"
     },
     {
       "@type": "cr:FileObject",
@@ -153,7 +146,8 @@
       "name": "Cross-method common scene IDs",
       "description": "Scene identifiers common to the available cross-method metric tables.",
       "contentUrl": "scene_lists/cross_method_common_ids.txt",
-      "encodingFormat": "text/plain"
+      "encodingFormat": "text/plain",
+      "sha256": "bd242b36ba44caab39a3cf87c0eb47c78634cc66bb6fd533a688b1723674ffce"
     },
     {
       "@type": "cr:FileObject",
@@ -161,7 +155,8 @@
       "name": "Scene descriptors",
       "description": "Normalized scene-level descriptor matrix copied from the repository k=6 descriptor table.",
       "contentUrl": "descriptors/scene_descriptors.csv",
-      "encodingFormat": "text/csv"
+      "encodingFormat": "text/csv",
+      "sha256": "51bdfb1126b8481cf8c543338b01048df3ea97399ad7ce3ba85c22b1ee2d1ee4"
     },
     {
       "@type": "cr:FileObject",
@@ -169,7 +164,8 @@
       "name": "Regime labels",
       "description": "k=6 descriptor-regime or cluster assignments copied from the source repository.",
       "contentUrl": "descriptors/regime_labels.csv",
-      "encodingFormat": "text/csv"
+      "encodingFormat": "text/csv",
+      "sha256": "6b3648fbe3404c63e6e389426c2254bd6cce6a01e00c8d29af46b7a2e2b14b30"
     },
     {
       "@type": "cr:FileObject",
@@ -177,7 +173,8 @@
       "name": "Descriptor schema",
       "description": "Generated schema for the descriptor table columns.",
       "contentUrl": "descriptors/descriptor_schema.json",
-      "encodingFormat": "application/json"
+      "encodingFormat": "application/json",
+      "sha256": "f6d8b4ce865582dc72ba3d52402bd1a7022e14152b86361ecb07c678af54f122"
     },
     {
       "@type": "cr:FileObject",
@@ -185,7 +182,8 @@
       "name": "Audit thresholds",
       "description": "Strict, default, and relaxed audit threshold settings.",
       "contentUrl": "configs/thresholds.yaml",
-      "encodingFormat": "application/x-yaml"
+      "encodingFormat": "application/x-yaml",
+      "sha256": "0ff33e57af604deba7b0bd2fdf5613e53a555f5eb7dbd326c85bc68616f7b7e2"
     },
     {
       "@type": "cr:FileObject",
@@ -193,7 +191,8 @@
       "name": "Audit seeds",
       "description": "Known audit seeds and trial counts copied from the source run configuration.",
       "contentUrl": "configs/seeds.yaml",
-      "encodingFormat": "application/x-yaml"
+      "encodingFormat": "application/x-yaml",
+      "sha256": "ca2a5d0ad323a42a9e415b2e6708bd4a547a0a47c3bcd66d6acbeec44010de1e"
     },
     {
       "@type": "cr:FileObject",
@@ -201,7 +200,8 @@
       "name": "Audit settings",
       "description": "High-level audit settings and external-input requirements.",
       "contentUrl": "configs/audit_settings.yaml",
-      "encodingFormat": "application/x-yaml"
+      "encodingFormat": "application/x-yaml",
+      "sha256": "ac892af96221296a213d333156673cf65ee13f05aeba7e02f2bca75b02d124ed"
     },
     {
       "@type": "cr:FileObject",
@@ -209,7 +209,8 @@
       "name": "Candidate generation scaffold",
       "description": "Script scaffold documenting required candidate-generation inputs.",
       "contentUrl": "scripts/generate_candidates.py",
-      "encodingFormat": "text/x-python"
+      "encodingFormat": "text/x-python",
+      "sha256": "fa45ec8be60db104bec49f863cdb52c8ecc20163c41ee74cdaba46d7a5bb9d09"
     },
     {
       "@type": "cr:FileObject",
@@ -217,7 +218,8 @@
       "name": "Fidelity event scaffold",
       "description": "Script scaffold documenting required fidelity-event inputs.",
       "contentUrl": "scripts/compute_fidelity_event.py",
-      "encodingFormat": "text/x-python"
+      "encodingFormat": "text/x-python",
+      "sha256": "2539abcb998061fedd510f070d6b23761a9694bb3c3a95d2678b26630d0ffbf3"
     },
     {
       "@type": "cr:FileObject",
@@ -225,7 +227,8 @@
       "name": "Wilson LCB CLI",
       "description": "Implemented Wilson lower confidence bound command-line utility.",
       "contentUrl": "scripts/compute_wilson_lcb.py",
-      "encodingFormat": "text/x-python"
+      "encodingFormat": "text/x-python",
+      "sha256": "aed19aacea5f6cbf12945214cc671672f5f34becfe7b54be0bcd115d864f55d9"
     },
     {
       "@type": "cr:FileObject",
@@ -233,7 +236,8 @@
       "name": "Audit computation scaffold",
       "description": "Script scaffold documenting required full-audit inputs.",
       "contentUrl": "scripts/compute_audit.py",
-      "encodingFormat": "text/x-python"
+      "encodingFormat": "text/x-python",
+      "sha256": "056d7fcb3a578fda5a32f446d85b394fc833f70d5726865b468bf8109b6b8b9d"
     },
     {
       "@type": "cr:FileObject",
@@ -241,7 +245,8 @@
       "name": "Table reproduction helper",
       "description": "Helper script that summarizes packaged tables and flags external inputs required for full recomputation.",
       "contentUrl": "scripts/reproduce_tables.py",
-      "encodingFormat": "text/x-python"
+      "encodingFormat": "text/x-python",
+      "sha256": "7ea6f7ddf48ea2bfb4ca202556436411e61d4b3a3fbb93821a84d023559f6384"
     },
     {
       "@type": "cr:FileObject",
@@ -249,7 +254,8 @@
       "name": "Artifact validator",
       "description": "Validator for required files, parseable metadata, compact list counts, and placeholder reporting.",
       "contentUrl": "scripts/validate_artifact.py",
-      "encodingFormat": "text/x-python"
+      "encodingFormat": "text/x-python",
+      "sha256": "7c99c4eb5bd91d0b2d88c694ab3bc916e4b150d20d51003b74f127da74a35961"
     },
     {
       "@type": "cr:FileObject",
@@ -257,7 +263,8 @@
       "name": "Audit frontier",
       "description": "Copied larger-budget reliability frontier with pass counts and Wilson lower confidence bounds.",
       "contentUrl": "results/audit_frontier.csv",
-      "encodingFormat": "text/csv"
+      "encodingFormat": "text/csv",
+      "sha256": "ab40646735c56aade66a9150b8b433610d31ccbb0090d0e082962940daf30b8a"
     },
     {
       "@type": "cr:FileObject",
@@ -265,7 +272,8 @@
       "name": "Cross-method diagnostics",
       "description": "Copied cross-method ranking correlation diagnostics on the available matched method pool.",
       "contentUrl": "results/cross_method_diagnostics.csv",
-      "encodingFormat": "text/csv"
+      "encodingFormat": "text/csv",
+      "sha256": "f63d3741b830c9150e7b997b183b050d97029f16f81a62a62eb5fa5707f0a171"
     },
     {
       "@type": "cr:FileObject",
@@ -273,7 +281,8 @@
       "name": "External data README",
       "description": "Instructions for obtaining or regenerating raw Nutrition5k-derived assets and full NeRF outputs when permitted.",
       "contentUrl": "external_data/README_how_to_obtain_or_regenerate_inputs.md",
-      "encodingFormat": "text/markdown"
+      "encodingFormat": "text/markdown",
+      "sha256": "65670b32437a151382dc10f905157bf8327faf28c5d4f88d64e0123207f3afc2"
     }
   ],
   "recordSet": [
@@ -1497,26 +1506,26 @@
     {
       "@type": "sc:Dataset",
       "@id": "https://github.com/google-research-datasets/Nutrition5k",
-      "name": "Nutrition5k Comprehensive Nutrition Dataset",
+      "name": "Nutrition5k",
       "url": "https://github.com/google-research-datasets/Nutrition5k",
-      "description": "Original visual nutrition dataset containing multi-view food-dish imagery and related metadata. This artifact uses Nutrition5k-derived scene identifiers and descriptors; raw images and scenes remain governed by the original source-data terms.",
+      "description": "Original visual nutrition dataset containing multi-view food-dish imagery and related metadata. This artifact uses Nutrition5k-derived scene identifiers and descriptors; raw images and scenes remain governed by the original source-data terms. No explicit upstream dataset version is declared in the source repository; version 1.0.0 is used here only as a Croissant-compatible source metadata version.",
       "citation": "Thames, Q., Karpur, A., Norris, W., Xia, F., Panait, L., Weyand, T., and Sim, J. Nutrition5k: Towards Automatic Nutritional Understanding of Generic Food. CVPR 2021.",
       "datePublished": "2021",
       "license": "https://github.com/google-research-datasets/Nutrition5k#license--contact",
-      "version": "Source repository release; no explicit dataset version declared by upstream source."
+      "version": "1.0.0"
     }
   ],
   "prov:wasDerivedFrom": [
     {
       "@type": "sc:Dataset",
       "@id": "https://github.com/google-research-datasets/Nutrition5k",
-      "name": "Nutrition5k Comprehensive Nutrition Dataset",
+      "name": "Nutrition5k",
       "url": "https://github.com/google-research-datasets/Nutrition5k",
-      "description": "Original visual nutrition dataset containing multi-view food-dish imagery and related metadata. This artifact uses Nutrition5k-derived scene identifiers and descriptors; raw images and scenes remain governed by the original source-data terms.",
+      "description": "Original visual nutrition dataset containing multi-view food-dish imagery and related metadata. This artifact uses Nutrition5k-derived scene identifiers and descriptors; raw images and scenes remain governed by the original source-data terms. No explicit upstream dataset version is declared in the source repository; version 1.0.0 is used here only as a Croissant-compatible source metadata version.",
       "citation": "Thames, Q., Karpur, A., Norris, W., Xia, F., Panait, L., Weyand, T., and Sim, J. Nutrition5k: Towards Automatic Nutritional Understanding of Generic Food. CVPR 2021.",
       "datePublished": "2021",
       "license": "https://github.com/google-research-datasets/Nutrition5k#license--contact",
-      "version": "Source repository release; no explicit dataset version declared by upstream source."
+      "version": "1.0.0"
     }
   ],
   "prov:wasGeneratedBy": [
@@ -1695,26 +1704,26 @@
     {
       "@type": "sc:Dataset",
       "@id": "https://github.com/google-research-datasets/Nutrition5k",
-      "name": "Nutrition5k Comprehensive Nutrition Dataset",
+      "name": "Nutrition5k",
       "url": "https://github.com/google-research-datasets/Nutrition5k",
-      "description": "Original visual nutrition dataset containing multi-view food-dish imagery and related metadata. This artifact uses Nutrition5k-derived scene identifiers and descriptors; raw images and scenes remain governed by the original source-data terms.",
+      "description": "Original visual nutrition dataset containing multi-view food-dish imagery and related metadata. This artifact uses Nutrition5k-derived scene identifiers and descriptors; raw images and scenes remain governed by the original source-data terms. No explicit upstream dataset version is declared in the source repository; version 1.0.0 is used here only as a Croissant-compatible source metadata version.",
       "citation": "Thames, Q., Karpur, A., Norris, W., Xia, F., Panait, L., Weyand, T., and Sim, J. Nutrition5k: Towards Automatic Nutritional Understanding of Generic Food. CVPR 2021.",
       "datePublished": "2021",
       "license": "https://github.com/google-research-datasets/Nutrition5k#license--contact",
-      "version": "Source repository release; no explicit dataset version declared by upstream source."
+      "version": "1.0.0"
     }
   ],
   "rai:dataSources": [
     {
       "@type": "sc:Dataset",
       "@id": "https://github.com/google-research-datasets/Nutrition5k",
-      "name": "Nutrition5k Comprehensive Nutrition Dataset",
+      "name": "Nutrition5k",
       "url": "https://github.com/google-research-datasets/Nutrition5k",
-      "description": "Original visual nutrition dataset containing multi-view food-dish imagery and related metadata. This artifact uses Nutrition5k-derived scene identifiers and descriptors; raw images and scenes remain governed by the original source-data terms.",
+      "description": "Original visual nutrition dataset containing multi-view food-dish imagery and related metadata. This artifact uses Nutrition5k-derived scene identifiers and descriptors; raw images and scenes remain governed by the original source-data terms. No explicit upstream dataset version is declared in the source repository; version 1.0.0 is used here only as a Croissant-compatible source metadata version.",
       "citation": "Thames, Q., Karpur, A., Norris, W., Xia, F., Panait, L., Weyand, T., and Sim, J. Nutrition5k: Towards Automatic Nutritional Understanding of Generic Food. CVPR 2021.",
       "datePublished": "2021",
       "license": "https://github.com/google-research-datasets/Nutrition5k#license--contact",
-      "version": "Source repository release; no explicit dataset version declared by upstream source."
+      "version": "1.0.0"
     }
   ],
   "rai:dataCollection": "The artifact is derived from a Nutrition5k-derived NeRF scene universe used in the RASS benchmark study. This release covers tabular metadata, scene lists, normalized descriptors, regime labels, copied audit summaries, and scripts. Raw images, camera data, masks, scene reconstructions, and complete method outputs are not redistributed here unless separately permitted.",
@@ -1743,10 +1752,7 @@
   "rai:dataAnnotationAnalysis": [
     "Annotator disagreement analysis is not applicable because no new human annotations were collected. Quality control consists of structural validation, checksum manifesting, scene-list count checks, parse checks, and reproducibility notes."
   ],
-  "rai:dataReleaseMaintenancePlan": [
-    "Version 1.0.0 is a static benchmark-artifact release. Structural or semantic changes to the released tables, code, scene lists, or metadata should be reflected by a version update and updated dateModified field.",
-    "Known corrections should be documented on the Kaggle dataset page, in the source repository, or in a later artifact version."
-  ],
+  "rai:dataReleaseMaintenancePlan": "Version 1.0.0 is a static benchmark-artifact release. Structural or semantic changes to the released tables, code, scene lists, or metadata should be reflected by a version update and updated dateModified field. Known corrections should be documented on the Kaggle dataset page, in the source repository, or in a later artifact version.",
   "rai:personalSensitiveInformation": [
     "The released tabular artifact does not intentionally include personal or sensitive information. It contains scene identifiers, descriptor values, subset membership, method names, configuration metadata, and aggregate or per-scene benchmark identifiers.",
     "Underlying Nutrition5k-derived raw data may be subject to its own privacy, licensing, or usage conditions. Users must consult and follow original source-data terms before accessing or redistributing raw assets."
@@ -1778,5 +1784,6 @@
     "Package scripts for Wilson lower confidence bounds, artifact validation, and reproduction scaffolding."
   ],
   "ethicsPolicy": "Users should treat this package as a research benchmark artifact, respect upstream raw-data access and licensing conditions, cite the artifact and source data, and avoid overstating compact-subset validity beyond the documented audit scope.",
-  "diversityPolicy": "The artifact does not make demographic diversity claims. Diversity is considered only in terms of descriptor-space scene regimes for NeRF benchmark engineering."
+  "diversityPolicy": "The artifact does not make demographic diversity claims. Diversity is considered only in terms of descriptor-space scene regimes for NeRF benchmark engineering.",
+  "cr:citeAs": "Anonymous Authors. RASS: Risk-Aware Scene Subset Selection for Reliable Large-Scale NeRF Benchmarking. Anonymized artifact version 1.0.0, 2026."
 }
