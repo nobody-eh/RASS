@@ -141,8 +141,8 @@
       "source_path_or_placeholder_status": "anonymized Croissant metadata configured for neutral Kaggle account nobodyeh",
       "status": "anonymized_group_metadata",
       "required": true,
-      "sha256": "bce12add36dd2d7634c5c45d8070c6f73a7223aeb54a26662993a85448362c86",
-      "size_bytes": 64611,
+      "sha256": "df0c133bbad16113abbb4d7a86eb766c1d7eae6f7f891a67689668e6fb19ab8e",
+      "size_bytes": 66259,
       "contains_todo_required": false
     },
     {

@@ -1497,18 +1497,26 @@
     {
       "@type": "sc:Dataset",
       "@id": "https://github.com/google-research-datasets/Nutrition5k",
-      "name": "Nutrition5k: A Comprehensive Nutrition Dataset",
+      "name": "Nutrition5k Comprehensive Nutrition Dataset",
       "url": "https://github.com/google-research-datasets/Nutrition5k",
-      "description": "Original visual nutrition dataset containing multi-view food-dish imagery and related metadata. This artifact uses Nutrition5k-derived scene identifiers and descriptors; raw images and scenes remain governed by the original source-data terms."
+      "description": "Original visual nutrition dataset containing multi-view food-dish imagery and related metadata. This artifact uses Nutrition5k-derived scene identifiers and descriptors; raw images and scenes remain governed by the original source-data terms.",
+      "citation": "Thames, Q., Karpur, A., Norris, W., Xia, F., Panait, L., Weyand, T., and Sim, J. Nutrition5k: Towards Automatic Nutritional Understanding of Generic Food. CVPR 2021.",
+      "datePublished": "2021",
+      "license": "https://github.com/google-research-datasets/Nutrition5k#license--contact",
+      "version": "Source repository release; no explicit dataset version declared by upstream source."
     }
   ],
   "prov:wasDerivedFrom": [
     {
       "@type": "sc:Dataset",
       "@id": "https://github.com/google-research-datasets/Nutrition5k",
-      "name": "Nutrition5k: A Comprehensive Nutrition Dataset",
+      "name": "Nutrition5k Comprehensive Nutrition Dataset",
       "url": "https://github.com/google-research-datasets/Nutrition5k",
-      "description": "Original visual nutrition dataset containing multi-view food-dish imagery and related metadata. This artifact uses Nutrition5k-derived scene identifiers and descriptors; raw images and scenes remain governed by the original source-data terms."
+      "description": "Original visual nutrition dataset containing multi-view food-dish imagery and related metadata. This artifact uses Nutrition5k-derived scene identifiers and descriptors; raw images and scenes remain governed by the original source-data terms.",
+      "citation": "Thames, Q., Karpur, A., Norris, W., Xia, F., Panait, L., Weyand, T., and Sim, J. Nutrition5k: Towards Automatic Nutritional Understanding of Generic Food. CVPR 2021.",
+      "datePublished": "2021",
+      "license": "https://github.com/google-research-datasets/Nutrition5k#license--contact",
+      "version": "Source repository release; no explicit dataset version declared by upstream source."
     }
   ],
   "prov:wasGeneratedBy": [
@@ -1687,18 +1695,26 @@
     {
       "@type": "sc:Dataset",
       "@id": "https://github.com/google-research-datasets/Nutrition5k",
-      "name": "Nutrition5k: A Comprehensive Nutrition Dataset",
+      "name": "Nutrition5k Comprehensive Nutrition Dataset",
       "url": "https://github.com/google-research-datasets/Nutrition5k",
-      "description": "Original visual nutrition dataset containing multi-view food-dish imagery and related metadata. This artifact uses Nutrition5k-derived scene identifiers and descriptors; raw images and scenes remain governed by the original source-data terms."
+      "description": "Original visual nutrition dataset containing multi-view food-dish imagery and related metadata. This artifact uses Nutrition5k-derived scene identifiers and descriptors; raw images and scenes remain governed by the original source-data terms.",
+      "citation": "Thames, Q., Karpur, A., Norris, W., Xia, F., Panait, L., Weyand, T., and Sim, J. Nutrition5k: Towards Automatic Nutritional Understanding of Generic Food. CVPR 2021.",
+      "datePublished": "2021",
+      "license": "https://github.com/google-research-datasets/Nutrition5k#license--contact",
+      "version": "Source repository release; no explicit dataset version declared by upstream source."
     }
   ],
   "rai:dataSources": [
     {
       "@type": "sc:Dataset",
       "@id": "https://github.com/google-research-datasets/Nutrition5k",
-      "name": "Nutrition5k: A Comprehensive Nutrition Dataset",
+      "name": "Nutrition5k Comprehensive Nutrition Dataset",
       "url": "https://github.com/google-research-datasets/Nutrition5k",
-      "description": "Original visual nutrition dataset containing multi-view food-dish imagery and related metadata. This artifact uses Nutrition5k-derived scene identifiers and descriptors; raw images and scenes remain governed by the original source-data terms."
+      "description": "Original visual nutrition dataset containing multi-view food-dish imagery and related metadata. This artifact uses Nutrition5k-derived scene identifiers and descriptors; raw images and scenes remain governed by the original source-data terms.",
+      "citation": "Thames, Q., Karpur, A., Norris, W., Xia, F., Panait, L., Weyand, T., and Sim, J. Nutrition5k: Towards Automatic Nutritional Understanding of Generic Food. CVPR 2021.",
+      "datePublished": "2021",
+      "license": "https://github.com/google-research-datasets/Nutrition5k#license--contact",
+      "version": "Source repository release; no explicit dataset version declared by upstream source."
     }
   ],
   "rai:dataCollection": "The artifact is derived from a Nutrition5k-derived NeRF scene universe used in the RASS benchmark study. This release covers tabular metadata, scene lists, normalized descriptors, regime labels, copied audit summaries, and scripts. Raw images, camera data, masks, scene reconstructions, and complete method outputs are not redistributed here unless separately permitted.",
