@@ -5869,10 +5869,41 @@
   "E17": {
     "date": "2026-07-26",
     "progress": {
-      "status": "RUNNING - splatfacto (3DGS) DL3DV-140 streamed pipeline on local RTX 3090, low priority, resumable",
-      "settings": "ns-train splatfacto defaults, machine.seed 0, downscale 4 (960P), same log schema as E13; per-scene checkpointing; download retry guard (4 attempts, backoff) after an HF rate-limit storm killed the first launch at 0/140",
-      "scenes_completed": 0,
-      "note": "no rebuttal text depends on this; camera-ready material only"
+      "status": "RUNNING on a 2-GPU node (H100 NVL + H200 NVL), 6 workers, resumable",
+      "scenes_completed_at_last_check": 4,
+      "settings": "ns-train splatfacto defaults, machine.seed 0, downscale 4 (960P), COLMAP-seeded Gaussian init (dataparser converts COLMAP points to sparse_pc.ply), same log schema as E13",
+      "measured_rate": "17.9-18.0 min/scene/worker including ns-eval; ~3 min/scene effective with 6 workers -> ~7 h for 140 scenes",
+      "throughput_note": "bottleneck is the scheduler's 16-CPU-per-node cap on the GPU partition (splatfacto undistorts ~381 images per scene on CPU), not the GPUs: 7 GB of 94/140 GB used, and a third worker per GPU left aggregate throughput flat (~15k steps/min either way)",
+      "failures": 0,
+      "first_results_sanity_check": {
+        "note": "splatfacto beats nerfacto on the first scenes by a wide consistent margin, the expected direction for 3DGS on DL3DV; confirms the point-cloud seeding works",
+        "9641a1ed7963": {
+          "nerfacto": {
+            "psnr": 21.65,
+            "ssim": 0.7236,
+            "lpips": 0.2989
+          },
+          "splatfacto": {
+            "psnr": 27.02,
+            "ssim": 0.8856,
+            "lpips": 0.1895
+          }
+        },
+        "c37109a55eff": {
+          "nerfacto": {
+            "psnr": 19.6,
+            "ssim": 0.5311,
+            "lpips": 0.3238
+          },
+          "splatfacto": {
+            "psnr": 23.39,
+            "ssim": 0.7471,
+            "lpips": 0.1965
+          }
+        }
+      },
+      "expectation_for_the_two_method_audit": "between-method gaps (~4-5 dB PSNR, 0.16-0.22 SSIM) are far larger than the DL3DV tolerances (tau_PSNR 0.2014 dB), so the two-method joint event is a demanding test; expect a certified budget at or above nerfacto's 32 scenes. To be reported honestly either way.",
+      "note": "camera-ready material; NO rebuttal text depends on this and nothing may be claimed from it during the discussion period"
     },
     "logs_path": "scratchpad dl3dv_splatfacto_logs/json",
     "audit": null
