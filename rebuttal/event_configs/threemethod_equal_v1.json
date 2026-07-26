@@ -1,0 +1,40 @@
+{
+  "schema_version": "rass-event-config/1.0",
+  "event": "three-method joint fidelity (E1)",
+  "population": {
+    "definition": "4-way intersection zipnerf \u2229 feature_splatting \u2229 instant_ngp_fi \u2229 instant_ngp_oc",
+    "n_scenes": 3473,
+    "ingp_psnr_column": "per-frame-mean PNSR/PSNR (paper cross-method convention, P0)"
+  },
+  "constraints": {
+    "method_metrics": {
+      "zipnerf": [
+        "psnr",
+        "ssim",
+        "lpips"
+      ],
+      "feature_splatting": [
+        "psnr",
+        "ssim",
+        "lpips"
+      ],
+      "instant_ngp_fi": [
+        "psnr",
+        "ssim"
+      ]
+    },
+    "event": "all mean gaps within tolerance AND all per-metric KS <= ks_tol"
+  },
+  "tolerances": {
+    "psnr": 0.5,
+    "ssim": 0.01,
+    "lpips": 0.01,
+    "ks": 0.14
+  },
+  "allocation": {
+    "type": "equal-per-regime",
+    "regimes": "k=6 KMeans seed 0 on the 57-D descriptors excluding proxies num_images/num_frames_total/num_frames_used (shipped mapping, replication validated ARI=1.0)"
+  },
+  "M": 400,
+  "seed_rule": "default_rng(0 + b), b = subset_size/6"
+}

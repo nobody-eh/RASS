@@ -113,6 +113,29 @@ than inventing metrics, scene IDs, or scientific results.
 The artifact package is the review-safe entry point. Historical source scripts
 may preserve older internal names or assumptions from earlier experiments.
 
+## Rebuttal Artifacts (Discussion Period)
+
+The `rebuttal/` directory holds the NeurIPS 2026 discussion-period audit
+artifacts: `rebuttal_results.json` (one key per task, all seeds recorded),
+per-task summaries in `rebuttal/summaries/`, versioned event configurations in
+`rebuttal/event_configs/` (schema `rass-event-config/1.0`), the DL3DV audit
+card and contract-declaration package, and the FL-36′ reimplementation
+artifacts in `subsets/fl36/`.
+
+**Erratum (audit population).** The effective Zip-NeRF audit population is
+3,521 scenes, not the stated 3,522: one descriptor scene has no entry in the
+Zip-NeRF log. The paper's own exports already use the 3,521-scene population;
+audit cards record this.
+
+**DL3DV transfer disclosures.** The DL3DV-140 audit (key `E13`) uses per-scene
+nerfacto logs we generated ourselves (DL3DV publishes none); only our derived
+metrics are redistributed here, never DL3DV images or inputs. At N = 140 the
+two-sample KS critical distances are loose (0.19–0.49 across the swept subset
+sizes), so the binding constraints in that audit are the dispersion-matched
+mean tolerances — the KS guardrail constrains little at this population size.
+Further caveats (single method; dataset choice postdating submission; 3DGS
+queued for camera-ready) are listed verbatim in `rebuttal/dl3dv_audit_card.json`.
+
 ## Anonymity Hygiene
 
 The working-tree artifact has been scrubbed of direct author, institution,

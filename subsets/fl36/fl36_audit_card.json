@@ -1,0 +1,134 @@
+{
+  "name": "FL-36-prime",
+  "provenance": "LABELED REIMPLEMENTATION (2026-07-24). The paper's original FL selection script was not preserved; this subset was produced by scripts/rebuttal_e5b_fl_reimplementation.py per the recorded protocol (baseline_eval_config.json) and is a NEW run, not the paper's original FL-36.",
+  "protocol": {
+    "objective": "greedy facility location (sum of Euclidean distances to nearest selected), stochastic candidate pool of 16 per step",
+    "feature_space": "54 normalized descriptors (57 minus budget proxies), StandardScaler, 3521-scene audit population",
+    "M": 400,
+    "pool": 16,
+    "run_seed_rule": "default_rng([0, run_index])",
+    "certified_run_index": 219,
+    "thresholds": {
+      "psnr_tol": 0.5,
+      "ssim_tol": 0.01,
+      "lpips_tol": 0.01,
+      "ks_tol": 0.14
+    }
+  },
+  "scene_ids": [
+    "dish_1550708556",
+    "dish_1550773430",
+    "dish_1550775393",
+    "dish_1550859578",
+    "dish_1550876619",
+    "dish_1551235270",
+    "dish_1551306241",
+    "dish_1551314589",
+    "dish_1551322652",
+    "dish_1551488691",
+    "dish_1551490469",
+    "dish_1551567396",
+    "dish_1558115241",
+    "dish_1559845018",
+    "dish_1560369294",
+    "dish_1560456833",
+    "dish_1561060613",
+    "dish_1562010865",
+    "dish_1562605315",
+    "dish_1562774099",
+    "dish_1562947469",
+    "dish_1563479625",
+    "dish_1563827162",
+    "dish_1563910276",
+    "dish_1563913675",
+    "dish_1565036890",
+    "dish_1565208562",
+    "dish_1565641915",
+    "dish_1565981848",
+    "dish_1565987298",
+    "dish_1566591022",
+    "dish_1566851198",
+    "dish_1567537252",
+    "dish_1567789230",
+    "dish_1568060542",
+    "dish_1571931809"
+  ],
+  "export_audit": {
+    "pass": true,
+    "joint_objective": 0.636994360368402,
+    "constraints": [
+      {
+        "metric": "psnr",
+        "abs_mean_gap": 0.12777463673318934,
+        "tolerance": 0.5,
+        "normalized_gap": 0.2555492734663787,
+        "ks": 0.08917921045157629,
+        "ks_tolerance": 0.14,
+        "mean_pass": true,
+        "ks_pass": true
+      },
+      {
+        "metric": "ssim",
+        "abs_mean_gap": 0.0005385489651370534,
+        "tolerance": 0.01,
+        "normalized_gap": 0.05385489651370534,
+        "ks": 0.083798794534381,
+        "ks_tolerance": 0.14,
+        "mean_pass": true,
+        "ks_pass": true
+      },
+      {
+        "metric": "lpips",
+        "abs_mean_gap": 0.00030118187646688277,
+        "tolerance": 0.01,
+        "normalized_gap": 0.030118187646688277,
+        "ks": 0.056896714948404814,
+        "ks_tolerance": 0.14,
+        "mean_pass": true,
+        "ks_pass": true
+      }
+    ]
+  },
+  "cross_method_gaps_3473": {
+    "zipnerf": {
+      "subset_n": 36,
+      "abs_psnr_gap": 0.1398294732343146,
+      "abs_ssim_gap": 0.0008702331855183765,
+      "abs_lpips_gap": 0.00033089773192540584
+    },
+    "feature_splatting": {
+      "subset_n": 36,
+      "abs_psnr_gap": 0.03185712669130325,
+      "abs_ssim_gap": 0.008325672447471621,
+      "abs_lpips_gap": 0.011526529587318757
+    },
+    "instant_ngp_fi": {
+      "subset_n": 36,
+      "abs_psnr_gap": 0.7272835536962106,
+      "abs_ssim_gap": 0.012137166504184393
+    },
+    "instant_ngp_oc": {
+      "subset_n": 36,
+      "abs_psnr_gap": 0.8323661341414628,
+      "abs_ssim_gap": 0.014678295503928296
+    }
+  },
+  "rank_preserved": {
+    "psnr": false,
+    "ssim": true
+  },
+  "regime_counts_k6": {
+    "0": 7,
+    "1": 6,
+    "2": 5,
+    "3": 6,
+    "4": 6,
+    "5": 6
+  },
+  "stability": {
+    "seeds": 20,
+    "mean_pairwise_overlap": 0.038157894736842106,
+    "pass_fraction": 0.15
+  },
+  "erratum": "Effective Zip-NeRF audit population is 3,521 scenes (one descriptor scene lacks a log entry; documented off-by-one vs the stated 3,522). The paper's own exports already use the 3,521-scene population."
+}

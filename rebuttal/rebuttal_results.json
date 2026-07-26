@@ -1,0 +1,5675 @@
+{
+  "full_budget_sweep": {
+    "description": "Reliability frontier over the full budget sweep b in {4,...,20} (subset sizes 24-120), balanced generator on k=6 regimes, M=400, seed 0, Zip-NeRF audit population of 3521 scenes (3522 descriptor scenes minus dish_1563900172, absent from the Zip-NeRF log). Joint pass event: |dPSNR|<=0.5, |dSSIM|<=0.01, |dLPIPS|<=0.01, max KS<=0.14 vs the full-population empirical CDFs.",
+    "population_size": 3521,
+    "thresholds": {
+      "psnr_tol": 0.5,
+      "ssim_tol": 0.01,
+      "lpips_tol": 0.01,
+      "ks_tol": 0.14
+    },
+    "num_trials": 400,
+    "seed": 0,
+    "per_budget_rng_seed_rule": "numpy default_rng(seed + b) for balanced mode",
+    "p_min": 0.08,
+    "confidence_level": 0.95,
+    "validated_against": {
+      "b8_n_pass": 88,
+      "b16_n_pass": 113
+    },
+    "frontier": [
+      {
+        "budget_scenes": 24,
+        "b": 4,
+        "n_trials": 400,
+        "n_pass": 26,
+        "empirical_pass_rate": 0.065,
+        "wilson_lcb_95": 0.04474048189620037,
+        "best_joint_abs_psnr_gap": 0.06913099102278863,
+        "best_joint_abs_ssim_gap": 0.00265667101852074,
+        "best_joint_abs_lpips_gap": 0.005722811828112073,
+        "best_joint_max_ks": 0.09908406702641295,
+        "best_subset_manifest": "rebuttal/manifests/rebuttal_full_sweep_b4_best_subset.csv",
+        "rng_seed_effective": 4
+      },
+      {
+        "budget_scenes": 36,
+        "b": 6,
+        "n_trials": 400,
+        "n_pass": 58,
+        "empirical_pass_rate": 0.145,
+        "wilson_lcb_95": 0.11387048965924289,
+        "best_joint_abs_psnr_gap": 0.23728256833649297,
+        "best_joint_abs_ssim_gap": 0.0008888661585388924,
+        "best_joint_abs_lpips_gap": 0.00011014284394988971,
+        "best_joint_max_ks": 0.08739625737637666,
+        "best_subset_manifest": "rebuttal/manifests/rebuttal_full_sweep_b6_best_subset.csv",
+        "rng_seed_effective": 6
+      },
+      {
+        "budget_scenes": 48,
+        "b": 8,
+        "n_trials": 400,
+        "n_pass": 88,
+        "empirical_pass_rate": 0.22,
+        "wilson_lcb_95": 0.1821738927340146,
+        "best_joint_abs_psnr_gap": 0.209463373699748,
+        "best_joint_abs_ssim_gap": 0.0015698185949339916,
+        "best_joint_abs_lpips_gap": 0.00012201886246043792,
+        "best_joint_max_ks": 0.06244083120325665,
+        "best_subset_manifest": "rebuttal/manifests/rebuttal_full_sweep_b8_best_subset.csv",
+        "rng_seed_effective": 8
+      },
+      {
+        "budget_scenes": 60,
+        "b": 10,
+        "n_trials": 400,
+        "n_pass": 92,
+        "empirical_pass_rate": 0.23,
+        "wilson_lcb_95": 0.19144383051896455,
+        "best_joint_abs_psnr_gap": 0.013576151807150438,
+        "best_joint_abs_ssim_gap": 0.003760844331105462,
+        "best_joint_abs_lpips_gap": 0.0018935373884383933,
+        "best_joint_max_ks": 0.062160371106693174,
+        "best_subset_manifest": "rebuttal/manifests/rebuttal_full_sweep_b10_best_subset.csv",
+        "rng_seed_effective": 10
+      },
+      {
+        "budget_scenes": 72,
+        "b": 12,
+        "n_trials": 400,
+        "n_pass": 95,
+        "empirical_pass_rate": 0.2375,
+        "wilson_lcb_95": 0.19841751180740802,
+        "best_joint_abs_psnr_gap": 0.11330026972194318,
+        "best_joint_abs_ssim_gap": 0.0015198233502963232,
+        "best_joint_abs_lpips_gap": 0.0007882072379744032,
+        "best_joint_max_ks": 0.05778424689955505,
+        "best_subset_manifest": "rebuttal/manifests/rebuttal_full_sweep_b12_best_subset.csv",
+        "rng_seed_effective": 12
+      },
+      {
+        "budget_scenes": 84,
+        "b": 14,
+        "n_trials": 400,
+        "n_pass": 101,
+        "empirical_pass_rate": 0.2525,
+        "wilson_lcb_95": 0.2124169413920716,
+        "best_joint_abs_psnr_gap": 0.17293039089821605,
+        "best_joint_abs_ssim_gap": 0.0034024987941458917,
+        "best_joint_abs_lpips_gap": 0.001407943139351553,
+        "best_joint_max_ks": 0.05531099119568304,
+        "best_subset_manifest": "rebuttal/manifests/rebuttal_full_sweep_b14_best_subset.csv",
+        "rng_seed_effective": 14
+      },
+      {
+        "budget_scenes": 96,
+        "b": 16,
+        "n_trials": 400,
+        "n_pass": 113,
+        "empirical_pass_rate": 0.2825,
+        "wilson_lcb_95": 0.24061027235147464,
+        "best_joint_abs_psnr_gap": 0.0474377315451342,
+        "best_joint_abs_ssim_gap": 0.00012764097364614813,
+        "best_joint_abs_lpips_gap": 0.0034568799171664777,
+        "best_joint_max_ks": 0.049024306541702166,
+        "best_subset_manifest": "rebuttal/manifests/rebuttal_full_sweep_b16_best_subset.csv",
+        "rng_seed_effective": 16
+      },
+      {
+        "budget_scenes": 120,
+        "b": 20,
+        "n_trials": 400,
+        "n_pass": 120,
+        "empirical_pass_rate": 0.3,
+        "wilson_lcb_95": 0.25716767195619705,
+        "best_joint_abs_psnr_gap": 0.1594847700208355,
+        "best_joint_abs_ssim_gap": 0.0004570795706101416,
+        "best_joint_abs_lpips_gap": 4.471147190104885e-05,
+        "best_joint_max_ks": 0.04598362207706144,
+        "best_subset_manifest": "rebuttal/manifests/rebuttal_full_sweep_b20_best_subset.csv",
+        "rng_seed_effective": 20
+      }
+    ],
+    "first_budget_with_lcb_at_or_above_p_min": {
+      "budget_scenes": 36,
+      "wilson_lcb_95": 0.11387048965924289
+    },
+    "outputs": {
+      "frontier_csv": "rebuttal/full_budget_sweep_frontier.csv",
+      "trials_csv": "rebuttal/full_budget_sweep_trials.csv"
+    }
+  },
+  "multi_method_frontier": {
+    "description": "Multi-method reliability frontier on the 3473-scene common intersection (Zip-NeRF full image PSNR/SSIM/LPIPS, Feature-Splatting full image PSNR/SSIM/LPIPS, Instant-NGP full image PSNR/SSIM; Instant-NGP object-centric excluded from the formal event per protocol). Balanced generator on k=6 regimes restricted to the intersection, M=400, seed 0. Joint event: all formal methods pass every per-metric mean tolerance and KS<=0.14 against their own reference population on the intersection.",
+    "population_size": 3473,
+    "formal_methods": {
+      "zipnerf": [
+        "psnr",
+        "ssim",
+        "lpips"
+      ],
+      "feature_splatting": [
+        "psnr",
+        "ssim",
+        "lpips"
+      ],
+      "instant_ngp_fi": [
+        "psnr",
+        "ssim"
+      ]
+    },
+    "diagnostic_only": [
+      "instant_ngp_oc"
+    ],
+    "thresholds": {
+      "psnr_tol": 0.5,
+      "ssim_tol": 0.01,
+      "lpips_tol": 0.01,
+      "ks_tol": 0.14
+    },
+    "num_trials": 400,
+    "seed": 0,
+    "per_budget_rng_seed_rule": "numpy default_rng(seed + b) for balanced mode",
+    "p_min": 0.08,
+    "confidence_level": 0.95,
+    "generator_validation": "replicated generator reproduces 88/400 at b=8 on the 3521-scene Zip-NeRF population",
+    "frontier": [
+      {
+        "budget_scenes": 24,
+        "b": 4,
+        "n_trials": 400,
+        "n_joint_pass": 1,
+        "joint_pass_rate": 0.0025,
+        "joint_wilson_lcb_95": 0.0004414477868016353,
+        "rng_seed_effective": 4,
+        "zipnerf_n_pass": 26,
+        "zipnerf_pass_rate": 0.065,
+        "feature_splatting_n_pass": 19,
+        "feature_splatting_pass_rate": 0.0475,
+        "instant_ngp_fi_n_pass": 46,
+        "instant_ngp_fi_pass_rate": 0.115,
+        "instant_ngp_oc_diagnostic_n_pass": 30,
+        "instant_ngp_oc_diagnostic_pass_rate": 0.075
+      },
+      {
+        "budget_scenes": 36,
+        "b": 6,
+        "n_trials": 400,
+        "n_joint_pass": 4,
+        "joint_pass_rate": 0.01,
+        "joint_wilson_lcb_95": 0.0038954837949909914,
+        "rng_seed_effective": 6,
+        "zipnerf_n_pass": 49,
+        "zipnerf_pass_rate": 0.1225,
+        "feature_splatting_n_pass": 56,
+        "feature_splatting_pass_rate": 0.14,
+        "instant_ngp_fi_n_pass": 136,
+        "instant_ngp_fi_pass_rate": 0.34,
+        "instant_ngp_oc_diagnostic_n_pass": 70,
+        "instant_ngp_oc_diagnostic_pass_rate": 0.175
+      },
+      {
+        "budget_scenes": 48,
+        "b": 8,
+        "n_trials": 400,
+        "n_joint_pass": 6,
+        "joint_pass_rate": 0.015,
+        "joint_wilson_lcb_95": 0.006892291919440893,
+        "rng_seed_effective": 8,
+        "zipnerf_n_pass": 73,
+        "zipnerf_pass_rate": 0.1825,
+        "feature_splatting_n_pass": 61,
+        "feature_splatting_pass_rate": 0.1525,
+        "instant_ngp_fi_n_pass": 160,
+        "instant_ngp_fi_pass_rate": 0.4,
+        "instant_ngp_oc_diagnostic_n_pass": 82,
+        "instant_ngp_oc_diagnostic_pass_rate": 0.205
+      },
+      {
+        "budget_scenes": 60,
+        "b": 10,
+        "n_trials": 400,
+        "n_joint_pass": 16,
+        "joint_pass_rate": 0.04,
+        "joint_wilson_lcb_95": 0.024769063069711755,
+        "rng_seed_effective": 10,
+        "zipnerf_n_pass": 92,
+        "zipnerf_pass_rate": 0.23,
+        "feature_splatting_n_pass": 90,
+        "feature_splatting_pass_rate": 0.225,
+        "instant_ngp_fi_n_pass": 204,
+        "instant_ngp_fi_pass_rate": 0.51,
+        "instant_ngp_oc_diagnostic_n_pass": 100,
+        "instant_ngp_oc_diagnostic_pass_rate": 0.25
+      },
+      {
+        "budget_scenes": 72,
+        "b": 12,
+        "n_trials": 400,
+        "n_joint_pass": 21,
+        "joint_pass_rate": 0.0525,
+        "joint_wilson_lcb_95": 0.034591528357920405,
+        "rng_seed_effective": 12,
+        "zipnerf_n_pass": 101,
+        "zipnerf_pass_rate": 0.2525,
+        "feature_splatting_n_pass": 88,
+        "feature_splatting_pass_rate": 0.22,
+        "instant_ngp_fi_n_pass": 209,
+        "instant_ngp_fi_pass_rate": 0.5225,
+        "instant_ngp_oc_diagnostic_n_pass": 110,
+        "instant_ngp_oc_diagnostic_pass_rate": 0.275
+      },
+      {
+        "budget_scenes": 84,
+        "b": 14,
+        "n_trials": 400,
+        "n_joint_pass": 19,
+        "joint_pass_rate": 0.0475,
+        "joint_wilson_lcb_95": 0.03061707696271188,
+        "rng_seed_effective": 14,
+        "zipnerf_n_pass": 105,
+        "zipnerf_pass_rate": 0.2625,
+        "feature_splatting_n_pass": 107,
+        "feature_splatting_pass_rate": 0.2675,
+        "instant_ngp_fi_n_pass": 227,
+        "instant_ngp_fi_pass_rate": 0.5675,
+        "instant_ngp_oc_diagnostic_n_pass": 130,
+        "instant_ngp_oc_diagnostic_pass_rate": 0.325
+      },
+      {
+        "budget_scenes": 96,
+        "b": 16,
+        "n_trials": 400,
+        "n_joint_pass": 32,
+        "joint_pass_rate": 0.08,
+        "joint_wilson_lcb_95": 0.057235750410133526,
+        "rng_seed_effective": 16,
+        "zipnerf_n_pass": 119,
+        "zipnerf_pass_rate": 0.2975,
+        "feature_splatting_n_pass": 99,
+        "feature_splatting_pass_rate": 0.2475,
+        "instant_ngp_fi_n_pass": 256,
+        "instant_ngp_fi_pass_rate": 0.64,
+        "instant_ngp_oc_diagnostic_n_pass": 161,
+        "instant_ngp_oc_diagnostic_pass_rate": 0.4025
+      },
+      {
+        "budget_scenes": 120,
+        "b": 20,
+        "n_trials": 400,
+        "n_joint_pass": 26,
+        "joint_pass_rate": 0.065,
+        "joint_wilson_lcb_95": 0.04474048189620037,
+        "rng_seed_effective": 20,
+        "zipnerf_n_pass": 116,
+        "zipnerf_pass_rate": 0.29,
+        "feature_splatting_n_pass": 91,
+        "feature_splatting_pass_rate": 0.2275,
+        "instant_ngp_fi_n_pass": 270,
+        "instant_ngp_fi_pass_rate": 0.675,
+        "instant_ngp_oc_diagnostic_n_pass": 155,
+        "instant_ngp_oc_diagnostic_pass_rate": 0.3875
+      }
+    ],
+    "first_budget_with_joint_lcb_at_or_above_p_min": null,
+    "outputs": {
+      "frontier_csv": "rebuttal/multi_method_frontier.csv",
+      "trials_csv": "rebuttal/multi_method_frontier_trials.csv"
+    }
+  },
+  "P0": {
+    "description": "Pipeline validation: inventory of all audit inputs plus reproduction of the paper's exported RASS-48 audit, the balanced-generator sweep at 48/96 scenes, and the RASS-48 cross-method gaps on the 3,473-scene intersection, using the repo's own audit code (generate_strong_accept_results.py).",
+    "inventory": {
+      "zipnerf_log": {
+        "path": "sweep_cluster_k/holdout_protocol_v2/joint_selection/zipnerf.xlsx",
+        "exists": true,
+        "rows": 3625,
+        "columns": [
+          "experiment_name",
+          "psnr",
+          "psnr_std",
+          "ssim",
+          "ssim_std",
+          "lpips",
+          "lpips_std",
+          "num_rays_per_sec",
+          "num_rays_per_sec_std",
+          "fps",
+          "fps_std"
+        ]
+      },
+      "feature_splatting_log": {
+        "path": "sweep_cluster_k/holdout_protocol_v2/joint_selection/feature_splatting.csv",
+        "exists": true,
+        "rows": 3617,
+        "columns": [
+          "experiment_name",
+          "method_name",
+          "psnr",
+          "psnr_std",
+          "ssim",
+          "ssim_std",
+          "lpips",
+          "lpips_std",
+          "num_rays_per_sec",
+          "num_rays_per_sec_std",
+          "fps",
+          "fps_std"
+        ]
+      },
+      "ingp_fi_log": {
+        "path": "ingp_fi.csv",
+        "exists": true,
+        "rows": 3521,
+        "columns": [
+          "dish_id",
+          "PNSR",
+          "MIN",
+          "MAX",
+          "SSIM",
+          "MIN.1",
+          "MAX.1",
+          "psnr avgmse"
+        ]
+      },
+      "ingp_oc_log": {
+        "path": "ingp_oc.csv",
+        "exists": true,
+        "rows": 3479,
+        "columns": [
+          "dish_id",
+          "PSNR",
+          "PSNR_MIN",
+          "PSNR_MAX",
+          "SSIM",
+          "SSIM_MIN",
+          "SSIM_MAX",
+          "psnr_avgmse"
+        ]
+      },
+      "descriptors_57d": {
+        "path": "sweep_cluster_k/k_6/feats_normalized.csv",
+        "exists": true,
+        "rows": 3522,
+        "columns": [
+          "dish_id",
+          "aabb_scale",
+          "area_frac_mean",
+          "area_frac_std",
+          "bbox_aspect_ratio_mean",
+          "bbox_aspect_ratio_std",
+          "bbox_max_x",
+          "bbox_max_y",
+          "bbox_max_z",
+          "bbox_min_x",
+          "bbox_min_y",
+          "bbox_min_z",
+          "camera_angle_x",
+          "camera_angle_y",
+          "cx",
+          "cy",
+          "edge_frac_mean",
+          "edge_frac_std",
+          "entropy_mean",
+          "entropy_std",
+          "extent_x",
+          "extent_y",
+          "extent_z",
+          "fl_x",
+          "fl_y",
+          "h",
+          "k1",
+          "k2",
+          "k3",
+          "largest_comp_frac_mean",
+          "largest_comp_frac_std",
+          "mean_camera_center_dist",
+          "mean_error",
+          "mean_track_length",
+          "mean_view_angle_var",
+          "mean_visible_points",
+          "mean_visible_ratio",
+          "median_error",
+          "median_track_length",
+          "num_components_mean",
+          "num_components_std",
+          "num_frames_total",
+          "num_frames_used",
+          "num_images",
+          "p1",
+          "p2",
+          "point_count",
+          "point_density",
+          "sharpness_mean",
+          "sharpness_std",
+          "std_camera_center_dist",
+          "std_error",
+          "std_track_length",
+          "std_view_angle_var",
+          "std_visible_points",
+          "std_visible_ratio",
+          "volume",
+          "w"
+        ]
+      },
+      "normalization_code": {
+        "path": "src/feats_norm.py",
+        "exists": true,
+        "rows": null
+      },
+      "normalization_pipeline": {
+        "path": "scripts/run_feature_analysis_pipeline.py",
+        "exists": true,
+        "rows": null
+      },
+      "k6_regime_labels": {
+        "path": "sweep_cluster_k/k_6/clustered_scenes_k6_dish_cluster_mapping.csv",
+        "exists": true,
+        "rows": 3522,
+        "columns": [
+          "dish_id",
+          "cluster"
+        ]
+      },
+      "k6_run_metadata": {
+        "path": "sweep_cluster_k/k_6/clustered_scenes_k6_run_metadata.json",
+        "exists": true,
+        "rows": null
+      },
+      "rass48_subset": {
+        "path": "sweep_cluster_k/budget_sweep_k6_auto_v2/recommended_subset.csv",
+        "exists": true,
+        "rows": 48,
+        "columns": [
+          "dish_id",
+          "cluster"
+        ]
+      },
+      "rass96_subset": {
+        "path": "results/strong_accept/manifests/bass_joint_k6_b16_best_subset.csv",
+        "exists": true,
+        "rows": 96,
+        "columns": [
+          "dish_id",
+          "cluster"
+        ]
+      },
+      "facility_location_summary": {
+        "path": "sweep_cluster_k/baseline_comparison_lpips_ks/baseline_min_size_summary.csv",
+        "exists": true,
+        "rows": 3,
+        "columns": [
+          "baseline",
+          "status",
+          "smallest_size_meeting_lcb",
+          "smallest_tested_size",
+          "largest_tested_size",
+          "pass_rate_at_reported_size",
+          "lcb_at_reported_size",
+          "selection_runtime_sec_mean_at_reported_size"
+        ]
+      },
+      "facility_location_config": {
+        "path": "sweep_cluster_k/baseline_comparison_lpips_ks/baseline_eval_config.json",
+        "exists": true,
+        "rows": null
+      },
+      "audit_code": {
+        "path": "scripts/generate_strong_accept_results.py",
+        "exists": true,
+        "rows": null
+      },
+      "cross_method_reference": {
+        "path": "results_final/paper_extra/common_intersection_method_means_and_bass_gaps.csv",
+        "exists": true,
+        "rows": 20,
+        "columns": [
+          "method",
+          "method_key",
+          "metric",
+          "full_common_n_scenes",
+          "subset_name",
+          "subset_nominal_n_scenes",
+          "subset_common_n_scenes",
+          "full_mean",
+          "full_std",
+          "subset_mean",
+          "subset_std",
+          "subset_minus_full",
+          "abs_subset_minus_full"
+        ]
+      },
+      "facility_location_code": {
+        "path": null,
+        "exists": false,
+        "note": "Selection implementation not present in the repo; only outputs (baseline_min_size_summary.csv, baseline_sweep_results.csv) and config (baseline_eval_config.json: M=400, seed 0, facility_candidate_pool=16). Audit scripts consume it as 'summary only'."
+      },
+      "candidate_seed_protocol": {
+        "path": "scripts/generate_strong_accept_results.py::_simulate_trials",
+        "rule": "numpy default_rng(seed + b) for balanced mode, default_rng(seed + 10000 + b) for uniform mode; global seed 0, M=400; k-means regimes use random_seed 0 (clustered_scenes_k6_run_metadata.json)."
+      },
+      "derived_counts": {
+        "zipnerf_log_unique_scenes": 3625,
+        "descriptor_scenes": 3522,
+        "zipnerf_audit_population": 3521,
+        "common_intersection": 3473,
+        "rass48_size": 48,
+        "rass96_size": 96
+      },
+      "population_note": "Effective Zip-NeRF audit population is 3521, not 3522: descriptor scene dish_1563900172 is absent from the Zip-NeRF log. The paper's exported reference values were computed on this 3521-scene population (full_count=3521 in the paper artifacts), so this is a documented off-by-one in the stated constant, not a data change."
+    },
+    "reproduction": {
+      "export_audit": {
+        "psnr_gap": 0.1531662005970702,
+        "ssim_gap": 0.005917793871083488,
+        "lpips_gap": 4.574571668447547e-05,
+        "ks_psnr": 0.09036258638644325,
+        "ks_ssim": 0.07427459055192653,
+        "ks_lpips": 0.11264555523998863,
+        "reference": {
+          "psnr_gap": 0.1532,
+          "ssim_gap": 0.0059,
+          "lpips_gap_max": 0.0001,
+          "ks_psnr": 0.0904,
+          "ks_ssim": 0.0743,
+          "ks_lpips": 0.1126
+        },
+        "pass": true
+      },
+      "sweep_48": {
+        "n_pass": 88,
+        "n_trials": 400,
+        "empirical_pass_rate": 0.22,
+        "wilson_lcb_95": 0.1821738927340146,
+        "reference": {
+          "n_pass": 88,
+          "lcb": 0.182
+        },
+        "rng_seed_effective": 8,
+        "pass": true
+      },
+      "sweep_96": {
+        "n_pass": 113,
+        "n_trials": 400,
+        "empirical_pass_rate": 0.2825,
+        "wilson_lcb_95": 0.24061027235147464,
+        "reference": {
+          "n_pass": 113,
+          "lcb": 0.2406
+        },
+        "rng_seed_effective": 16,
+        "pass": true
+      },
+      "cross_method": {
+        "zipnerf": {
+          "population_n": 3473,
+          "subset_n": 48,
+          "abs_psnr_gap": 0.14111136409594494,
+          "abs_ssim_gap": 0.005586109650702165,
+          "abs_lpips_gap": 0.0006778253250767641,
+          "reference": {
+            "psnr": 0.1411,
+            "ssim": 0.0056,
+            "lpips": 0.0007
+          }
+        },
+        "feature_splatting": {
+          "population_n": 3473,
+          "subset_n": 48,
+          "abs_psnr_gap": 0.09191256059040853,
+          "abs_ssim_gap": 0.007432414682165267,
+          "abs_lpips_gap": 0.02105688705923464,
+          "reference": {
+            "psnr": 0.0919,
+            "ssim": 0.0074,
+            "lpips": 0.0211
+          }
+        },
+        "instant_ngp_fi": {
+          "population_n": 3473,
+          "subset_n": 48,
+          "abs_psnr_gap": 0.08404556549482578,
+          "abs_ssim_gap": 0.002038382206962286,
+          "abs_psnr_gap_avgmse_convention": 0.10947968416050635,
+          "psnr_column_note": "checked value uses the per-frame-mean PSNR column (paper convention); avgmse-convention value included for reference",
+          "reference": {
+            "psnr": 0.084,
+            "ssim": 0.002
+          }
+        },
+        "instant_ngp_oc": {
+          "population_n": 3473,
+          "subset_n": 48,
+          "abs_psnr_gap": 0.10923692749048541,
+          "abs_ssim_gap": 0.0029236192706643127,
+          "abs_psnr_gap_avgmse_convention": 0.03442749173951398,
+          "psnr_column_note": "checked value uses the per-frame-mean PSNR column (paper convention); avgmse-convention value included for reference",
+          "reference": {
+            "psnr": 0.1092,
+            "ssim": 0.0029
+          }
+        },
+        "column_convention_note": "Instant-NGP PSNR reproduces the paper references only with the per-frame-mean columns (PNSR / PSNR), not the 'psnr avgmse' columns preferred by _canonicalize_method_table. Gaps under the avgmse convention: FI 0.1095 (vs 0.0840), OC 0.0344 (vs 0.1092). Any task consuming Instant-NGP PSNR must state which column it uses; the multi_method_frontier task used the avgmse convention."
+      }
+    },
+    "matching_tolerance": {
+      "deterministic": "exact",
+      "otherwise": 0.001
+    },
+    "n_checks": 20,
+    "n_checks_passed": 20,
+    "all_pass": true
+  },
+  "E1": {
+    "description": "Formal joint multi-method fidelity event E_joint on the 3,473-scene common intersection: 8 mean + 8 KS constraints (Zip-NeRF PSNR/SSIM/LPIPS, Feature-Splatting PSNR/SSIM/LPIPS, Instant-NGP full-image PSNR/SSIM), all references recomputed on the intersection. Instant-NGP object-centric excluded. Balanced generator, k=6 regimes restricted to the intersection, M=400, seed 0, rng=default_rng(seed+b). Instant-NGP PSNR uses the per-frame-mean 'PNSR' column (paper convention per P0); the earlier exploratory multi_method_frontier key used the 'psnr avgmse' column instead.",
+    "population_size": 3473,
+    "thresholds": {
+      "psnr_tol": 0.5,
+      "ssim_tol": 0.01,
+      "lpips_tol": 0.01,
+      "ks_tol": 0.14
+    },
+    "num_trials": 400,
+    "seed": 0,
+    "per_budget_rng_seed_rule": "numpy default_rng(seed + b), balanced mode",
+    "frontier": [
+      {
+        "budget_scenes": 24,
+        "b": 4,
+        "n_trials": 400,
+        "n_pass": 1,
+        "empirical_pass_rate": 0.0025,
+        "wilson_lcb_95": 0.0004414477868016353,
+        "rng_seed_effective": 4
+      },
+      {
+        "budget_scenes": 36,
+        "b": 6,
+        "n_trials": 400,
+        "n_pass": 5,
+        "empirical_pass_rate": 0.0125,
+        "wilson_lcb_95": 0.005350750779971615,
+        "rng_seed_effective": 6
+      },
+      {
+        "budget_scenes": 48,
+        "b": 8,
+        "n_trials": 400,
+        "n_pass": 6,
+        "empirical_pass_rate": 0.015,
+        "wilson_lcb_95": 0.006892291919440893,
+        "rng_seed_effective": 8
+      },
+      {
+        "budget_scenes": 60,
+        "b": 10,
+        "n_trials": 400,
+        "n_pass": 14,
+        "empirical_pass_rate": 0.035,
+        "wilson_lcb_95": 0.02096129419797776,
+        "rng_seed_effective": 10
+      },
+      {
+        "budget_scenes": 72,
+        "b": 12,
+        "n_trials": 400,
+        "n_pass": 20,
+        "empirical_pass_rate": 0.05,
+        "wilson_lcb_95": 0.03259742983714726,
+        "rng_seed_effective": 12
+      },
+      {
+        "budget_scenes": 84,
+        "b": 14,
+        "n_trials": 400,
+        "n_pass": 20,
+        "empirical_pass_rate": 0.05,
+        "wilson_lcb_95": 0.03259742983714726,
+        "rng_seed_effective": 14
+      },
+      {
+        "budget_scenes": 96,
+        "b": 16,
+        "n_trials": 400,
+        "n_pass": 30,
+        "empirical_pass_rate": 0.075,
+        "wilson_lcb_95": 0.05303774392284766,
+        "rng_seed_effective": 16
+      },
+      {
+        "budget_scenes": 120,
+        "b": 20,
+        "n_trials": 400,
+        "n_pass": 27,
+        "empirical_pass_rate": 0.0675,
+        "wilson_lcb_95": 0.04680146916375966,
+        "rng_seed_effective": 20
+      }
+    ],
+    "budget_p008": null,
+    "rate_at_budget": null,
+    "lcb_at_budget": null,
+    "budget_p020": null,
+    "rass48_pass": false,
+    "rass48_scenes_in_intersection": 48,
+    "rass48_constraints": [
+      {
+        "method": "zipnerf",
+        "metric": "psnr",
+        "abs_mean_gap": 0.14111136409594494,
+        "mean_tolerance": 0.5,
+        "mean_pass": true,
+        "ks": 0.09017180151646031,
+        "ks_tolerance": 0.14,
+        "ks_pass": true
+      },
+      {
+        "method": "zipnerf",
+        "metric": "ssim",
+        "abs_mean_gap": 0.005586109650702165,
+        "mean_tolerance": 0.01,
+        "mean_pass": true,
+        "ks": 0.07328558402917747,
+        "ks_tolerance": 0.14,
+        "ks_pass": true
+      },
+      {
+        "method": "zipnerf",
+        "metric": "lpips",
+        "abs_mean_gap": 0.0006778253250767641,
+        "mean_tolerance": 0.01,
+        "mean_pass": true,
+        "ks": 0.11161099913619349,
+        "ks_tolerance": 0.14,
+        "ks_pass": true
+      },
+      {
+        "method": "feature_splatting",
+        "metric": "psnr",
+        "abs_mean_gap": 0.09191256059040853,
+        "mean_tolerance": 0.5,
+        "mean_pass": true,
+        "ks": 0.07444332469526826,
+        "ks_tolerance": 0.14,
+        "ks_pass": true
+      },
+      {
+        "method": "feature_splatting",
+        "metric": "ssim",
+        "abs_mean_gap": 0.007432414682165267,
+        "mean_tolerance": 0.01,
+        "mean_pass": true,
+        "ks": 0.07978812745944909,
+        "ks_tolerance": 0.14,
+        "ks_pass": true
+      },
+      {
+        "method": "feature_splatting",
+        "metric": "lpips",
+        "abs_mean_gap": 0.02105688705923464,
+        "mean_tolerance": 0.01,
+        "mean_pass": false,
+        "ks": 0.16511301468471062,
+        "ks_tolerance": 0.14,
+        "ks_pass": false
+      },
+      {
+        "method": "instant_ngp_fi",
+        "metric": "psnr",
+        "abs_mean_gap": 0.08404556549482578,
+        "mean_tolerance": 0.5,
+        "mean_pass": true,
+        "ks": 0.06788679335828775,
+        "ks_tolerance": 0.14,
+        "ks_pass": true
+      },
+      {
+        "method": "instant_ngp_fi",
+        "metric": "ssim",
+        "abs_mean_gap": 0.002038382206962286,
+        "mean_tolerance": 0.01,
+        "mean_pass": true,
+        "ks": 0.07635089739898263,
+        "ks_tolerance": 0.14,
+        "ks_pass": true
+      }
+    ],
+    "rass96_pass": true,
+    "rass96_scenes_in_intersection": 94,
+    "rass96_constraints": [
+      {
+        "method": "zipnerf",
+        "metric": "psnr",
+        "abs_mean_gap": 0.07634304888897248,
+        "mean_tolerance": 0.5,
+        "mean_pass": true,
+        "ks": 0.04490568580723024,
+        "ks_tolerance": 0.14,
+        "ks_pass": true
+      },
+      {
+        "method": "zipnerf",
+        "metric": "ssim",
+        "abs_mean_gap": 0.003428477891177284,
+        "mean_tolerance": 0.01,
+        "mean_pass": true,
+        "ks": 0.04880506766484308,
+        "ks_tolerance": 0.14,
+        "ks_pass": true
+      },
+      {
+        "method": "zipnerf",
+        "metric": "lpips",
+        "abs_mean_gap": 0.002220828432727029,
+        "mean_tolerance": 0.01,
+        "mean_pass": true,
+        "ks": 0.04991086251998701,
+        "ks_tolerance": 0.14,
+        "ks_pass": true
+      },
+      {
+        "method": "feature_splatting",
+        "metric": "psnr",
+        "abs_mean_gap": 0.32626892684135456,
+        "mean_tolerance": 0.5,
+        "mean_pass": true,
+        "ks": 0.06813963033982516,
+        "ks_tolerance": 0.14,
+        "ks_pass": true
+      },
+      {
+        "method": "feature_splatting",
+        "metric": "ssim",
+        "abs_mean_gap": 0.00844794272791849,
+        "mean_tolerance": 0.01,
+        "mean_pass": true,
+        "ks": 0.06724519239605221,
+        "ks_tolerance": 0.14,
+        "ks_pass": true
+      },
+      {
+        "method": "feature_splatting",
+        "metric": "lpips",
+        "abs_mean_gap": 0.009950170610119768,
+        "mean_tolerance": 0.01,
+        "mean_pass": true,
+        "ks": 0.052248041119640265,
+        "ks_tolerance": 0.14,
+        "ks_pass": true
+      },
+      {
+        "method": "instant_ngp_fi",
+        "metric": "psnr",
+        "abs_mean_gap": 0.0880562038167838,
+        "mean_tolerance": 0.5,
+        "mean_pass": true,
+        "ks": 0.04296671588117453,
+        "ks_tolerance": 0.14,
+        "ks_pass": true
+      },
+      {
+        "method": "instant_ngp_fi",
+        "metric": "ssim",
+        "abs_mean_gap": 0.007467583515472831,
+        "mean_tolerance": 0.01,
+        "mean_pass": true,
+        "ks": 0.08529323474094994,
+        "ks_tolerance": 0.14,
+        "ks_pass": true
+      }
+    ],
+    "single_method": {
+      "ingp": {
+        "n48": 151,
+        "p48": 0.3775,
+        "lcb48": 0.33137162500063877,
+        "n96": 249,
+        "p96": 0.6225,
+        "lcb96": 0.5740411128887363
+      },
+      "fs": {
+        "n48": 61,
+        "p48": 0.1525,
+        "lcb48": 0.12058718801590881,
+        "n96": 99,
+        "p96": 0.2475,
+        "lcb96": 0.20774293744415318
+      },
+      "zip_on_intersection": {
+        "n48": 73,
+        "p48": 0.1825,
+        "lcb48": 0.14772734739355886,
+        "n96": 119,
+        "p96": 0.2975,
+        "lcb96": 0.2547975440914506
+      }
+    },
+    "binding_histogram": {
+      "zipnerf.lpips.mean": 281,
+      "feature_splatting.lpips.mean": 269,
+      "feature_splatting.ssim.mean": 252,
+      "zipnerf.ssim.mean": 231,
+      "zipnerf.psnr.mean": 197,
+      "instant_ngp_fi.ssim.mean": 178,
+      "feature_splatting.psnr.mean": 164,
+      "instant_ngp_fi.psnr.mean": 152,
+      "feature_splatting.lpips.ks": 97,
+      "zipnerf.lpips.ks": 94,
+      "instant_ngp_fi.psnr.ks": 83,
+      "instant_ngp_fi.ssim.ks": 81,
+      "zipnerf.psnr.ks": 71,
+      "feature_splatting.psnr.ks": 69,
+      "feature_splatting.ssim.ks": 69,
+      "zipnerf.ssim.ks": 68
+    },
+    "binding_histogram_n_failing_candidates": 394,
+    "regime_support_note": "Per-regime support on the 3,473-scene intersection: {0: 724, 1: 417, 2: 457, 3: 715, 4: 528, 5: 632}. Minimum regime size 417 >= largest budget b=20 (and >= 20x b=20 = 400 for regimes [0, 1, 2, 3, 4, 5]); balanced sampling without replacement is well-supported at every budget.",
+    "outputs": {
+      "frontier_csv": "rebuttal/e1_joint_frontier.csv",
+      "trials_csv": "rebuttal/e1_joint_event_trials.csv"
+    }
+  },
+  "E2": {
+    "description": "Ranking preservation added to E1's joint event, on the same 3,473-scene intersection with identical paired candidate draws (rng=default_rng(seed+b), seed 0, M=400). Variant A: E_joint AND sign preservation of all 6 pairwise method mean gaps (3 pairs x {PSNR, SSIM}). Variant B: variant A AND gap-magnitude preservation within 0.5 dB / 0.01. Instant-NGP PSNR uses the per-frame-mean 'PNSR' column as in E1.",
+    "population_size": 3473,
+    "num_trials": 400,
+    "seed": 0,
+    "per_budget_rng_seed_rule": "numpy default_rng(seed + b), balanced mode",
+    "full_intersection_reference_gaps": {
+      "zipnerf_minus_feature_splatting_psnr": 1.5601419238236893,
+      "zipnerf_minus_feature_splatting_ssim": 0.019880642434928042,
+      "zipnerf_minus_instant_ngp_fi_psnr": 2.3069993987638213,
+      "zipnerf_minus_instant_ngp_fi_ssim": -0.06309592387238128,
+      "feature_splatting_minus_instant_ngp_fi_psnr": 0.746857474940132,
+      "feature_splatting_minus_instant_ngp_fi_ssim": -0.08297656630730932
+    },
+    "gap_magnitude_tolerances": {
+      "psnr": 0.5,
+      "ssim": 0.01
+    },
+    "variantA": {
+      "frontier": [
+        {
+          "budget_scenes": 24,
+          "b": 4,
+          "n_trials": 400,
+          "n_pass": 1,
+          "empirical_pass_rate": 0.0025,
+          "wilson_lcb_95": 0.0004414477868016353,
+          "rng_seed_effective": 4
+        },
+        {
+          "budget_scenes": 36,
+          "b": 6,
+          "n_trials": 400,
+          "n_pass": 5,
+          "empirical_pass_rate": 0.0125,
+          "wilson_lcb_95": 0.005350750779971615,
+          "rng_seed_effective": 6
+        },
+        {
+          "budget_scenes": 48,
+          "b": 8,
+          "n_trials": 400,
+          "n_pass": 6,
+          "empirical_pass_rate": 0.015,
+          "wilson_lcb_95": 0.006892291919440893,
+          "rng_seed_effective": 8
+        },
+        {
+          "budget_scenes": 60,
+          "b": 10,
+          "n_trials": 400,
+          "n_pass": 14,
+          "empirical_pass_rate": 0.035,
+          "wilson_lcb_95": 0.02096129419797776,
+          "rng_seed_effective": 10
+        },
+        {
+          "budget_scenes": 72,
+          "b": 12,
+          "n_trials": 400,
+          "n_pass": 20,
+          "empirical_pass_rate": 0.05,
+          "wilson_lcb_95": 0.03259742983714726,
+          "rng_seed_effective": 12
+        },
+        {
+          "budget_scenes": 84,
+          "b": 14,
+          "n_trials": 400,
+          "n_pass": 20,
+          "empirical_pass_rate": 0.05,
+          "wilson_lcb_95": 0.03259742983714726,
+          "rng_seed_effective": 14
+        },
+        {
+          "budget_scenes": 96,
+          "b": 16,
+          "n_trials": 400,
+          "n_pass": 30,
+          "empirical_pass_rate": 0.075,
+          "wilson_lcb_95": 0.05303774392284766,
+          "rng_seed_effective": 16
+        },
+        {
+          "budget_scenes": 120,
+          "b": 20,
+          "n_trials": 400,
+          "n_pass": 27,
+          "empirical_pass_rate": 0.0675,
+          "wilson_lcb_95": 0.04680146916375966,
+          "rng_seed_effective": 20
+        }
+      ],
+      "budget_p008": null,
+      "rate": null,
+      "lcb": null,
+      "budget_p020": null
+    },
+    "variantB": {
+      "frontier": [
+        {
+          "budget_scenes": 24,
+          "b": 4,
+          "n_trials": 400,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 4
+        },
+        {
+          "budget_scenes": 36,
+          "b": 6,
+          "n_trials": 400,
+          "n_pass": 2,
+          "empirical_pass_rate": 0.005,
+          "wilson_lcb_95": 0.0013722529547103846,
+          "rng_seed_effective": 6
+        },
+        {
+          "budget_scenes": 48,
+          "b": 8,
+          "n_trials": 400,
+          "n_pass": 3,
+          "empirical_pass_rate": 0.0075,
+          "wilson_lcb_95": 0.0025538891952499414,
+          "rng_seed_effective": 8
+        },
+        {
+          "budget_scenes": 60,
+          "b": 10,
+          "n_trials": 400,
+          "n_pass": 10,
+          "empirical_pass_rate": 0.025,
+          "wilson_lcb_95": 0.013635091745936023,
+          "rng_seed_effective": 10
+        },
+        {
+          "budget_scenes": 72,
+          "b": 12,
+          "n_trials": 400,
+          "n_pass": 13,
+          "empirical_pass_rate": 0.0325,
+          "wilson_lcb_95": 0.019089842378800445,
+          "rng_seed_effective": 12
+        },
+        {
+          "budget_scenes": 84,
+          "b": 14,
+          "n_trials": 400,
+          "n_pass": 17,
+          "empirical_pass_rate": 0.0425,
+          "wilson_lcb_95": 0.026701694991131116,
+          "rng_seed_effective": 14
+        },
+        {
+          "budget_scenes": 96,
+          "b": 16,
+          "n_trials": 400,
+          "n_pass": 21,
+          "empirical_pass_rate": 0.0525,
+          "wilson_lcb_95": 0.034591528357920405,
+          "rng_seed_effective": 16
+        },
+        {
+          "budget_scenes": 120,
+          "b": 20,
+          "n_trials": 400,
+          "n_pass": 20,
+          "empirical_pass_rate": 0.05,
+          "wilson_lcb_95": 0.03259742983714726,
+          "rng_seed_effective": 20
+        }
+      ],
+      "budget_p008": null,
+      "rate": null,
+      "lcb": null,
+      "budget_p020": null
+    },
+    "conditional_order_preservation_at_48": 1.0,
+    "unconditional_order_preservation_at_48": 0.825,
+    "delta_vs_E1": [
+      {
+        "budget_scenes": 24,
+        "e1_n_pass": 1,
+        "variantA_n_pass": 1,
+        "variantA_delta": 0,
+        "variantB_n_pass": 0,
+        "variantB_delta": -1,
+        "n_order_preserving_unconditional": 273
+      },
+      {
+        "budget_scenes": 36,
+        "e1_n_pass": 5,
+        "variantA_n_pass": 5,
+        "variantA_delta": 0,
+        "variantB_n_pass": 2,
+        "variantB_delta": -3,
+        "n_order_preserving_unconditional": 321
+      },
+      {
+        "budget_scenes": 48,
+        "e1_n_pass": 6,
+        "variantA_n_pass": 6,
+        "variantA_delta": 0,
+        "variantB_n_pass": 3,
+        "variantB_delta": -3,
+        "n_order_preserving_unconditional": 330
+      },
+      {
+        "budget_scenes": 60,
+        "e1_n_pass": 14,
+        "variantA_n_pass": 14,
+        "variantA_delta": 0,
+        "variantB_n_pass": 10,
+        "variantB_delta": -4,
+        "n_order_preserving_unconditional": 351
+      },
+      {
+        "budget_scenes": 72,
+        "e1_n_pass": 20,
+        "variantA_n_pass": 20,
+        "variantA_delta": 0,
+        "variantB_n_pass": 13,
+        "variantB_delta": -7,
+        "n_order_preserving_unconditional": 371
+      },
+      {
+        "budget_scenes": 84,
+        "e1_n_pass": 20,
+        "variantA_n_pass": 20,
+        "variantA_delta": 0,
+        "variantB_n_pass": 17,
+        "variantB_delta": -3,
+        "n_order_preserving_unconditional": 369
+      },
+      {
+        "budget_scenes": 96,
+        "e1_n_pass": 30,
+        "variantA_n_pass": 30,
+        "variantA_delta": 0,
+        "variantB_n_pass": 21,
+        "variantB_delta": -9,
+        "n_order_preserving_unconditional": 385
+      },
+      {
+        "budget_scenes": 120,
+        "e1_n_pass": 27,
+        "variantA_n_pass": 27,
+        "variantA_delta": 0,
+        "variantB_n_pass": 20,
+        "variantB_delta": -7,
+        "n_order_preserving_unconditional": 387
+      }
+    ],
+    "outputs": {
+      "variantA_frontier_csv": "rebuttal/e2_variantA_frontier.csv",
+      "variantB_frontier_csv": "rebuttal/e2_variantB_frontier.csv"
+    }
+  },
+  "E3": {
+    "description": "Sensitivity and calibration: (c) KS critical distances, tolerance/std fractions, min cross-method gaps; (a) 4x4 tau_PSNR x tau_KS tolerance sweep with shared candidate draws; (b) regime-count grid k in {4,5,6,8,10} and 5x5 K-Means x audit seed grid at k=6 with Jaccard overlap of exported subsets. Zip-NeRF event on the full audit population (3521 scenes).",
+    "c": {
+      "ks_critical": {
+        "36": 0.2275,
+        "48": 0.1973,
+        "96": 0.1405,
+        "120": 0.1261
+      },
+      "ks_critical_formula": "1.358*sqrt((n+N)/(n*N)), N=3522, alpha=0.05",
+      "metric_stds": {
+        "psnr": 6.268093626214969,
+        "ssim": 0.16837470170349858,
+        "lpips": 0.22444505682467672
+      },
+      "metric_stds_population_n": 3521,
+      "tolerance_fractions": {
+        "psnr": 0.07976907012187187,
+        "ssim": 0.05939134501101964,
+        "lpips": 0.04455433388230694
+      },
+      "cross_method_gaps_all": {
+        "psnr": {
+          "zipnerf_vs_feature_splatting": 1.5601419238236893,
+          "zipnerf_vs_instant_ngp_fi": 2.3069993987638213,
+          "feature_splatting_vs_instant_ngp_fi": 0.746857474940132
+        },
+        "ssim": {
+          "zipnerf_vs_feature_splatting": 0.019880642434928042,
+          "zipnerf_vs_instant_ngp_fi": 0.06309592387238128,
+          "feature_splatting_vs_instant_ngp_fi": 0.08297656630730932
+        },
+        "lpips": {
+          "zipnerf_vs_feature_splatting": 0.09515521434647112
+        }
+      },
+      "min_method_gaps": {
+        "psnr": 0.746857474940132,
+        "ssim": 0.019880642434928042,
+        "lpips": 0.09515521434647112
+      },
+      "tolerances_below_gaps": true,
+      "tolerances_below_gaps_per_metric": {
+        "psnr": true,
+        "ssim": true,
+        "lpips": true
+      }
+    },
+    "a": {
+      "tau_psnr_grid": [
+        0.25,
+        0.375,
+        0.5,
+        0.75
+      ],
+      "tau_ks_grid": [
+        0.1,
+        0.12,
+        0.14,
+        0.18
+      ],
+      "coupling": "tau_ssim = tau_lpips = 0.02 * tau_psnr",
+      "budget_table_4x4": {
+        "0.25": {
+          "0.1": "not reached up to 120",
+          "0.12": "not reached up to 120",
+          "0.14": "not reached up to 120",
+          "0.18": "not reached up to 120"
+        },
+        "0.375": {
+          "0.1": 72,
+          "0.12": 48,
+          "0.14": 48,
+          "0.18": 48
+        },
+        "0.5": {
+          "0.1": 60,
+          "0.12": 48,
+          "0.14": 36,
+          "0.18": 24
+        },
+        "0.75": {
+          "0.1": 48,
+          "0.12": 36,
+          "0.14": 24,
+          "0.18": 24
+        }
+      },
+      "note": "Candidate draws identical across cells (reused per-trial stats of full_budget_sweep, seed 0, M=400, b in {4..20}); only the pass indicator is recomputed."
+    },
+    "b": {
+      "clustering_replication": "features = 57 normalized descriptors minus budget proxies ['num_images', 'num_frames_total', 'num_frames_used'], fillna(mean), drop zero-variance, StandardScaler, KMeans(random_state=seed, n_init='auto'), scikit-learn 1.4.2; reproduces the shipped k=6 seed-0 labels exactly (ARI=1.0).",
+      "budget_per_k": {
+        "4": {
+          "mapping_source": "shipped",
+          "ari_replication_vs_shipped": 1.0,
+          "budgets_scenes": [
+            24,
+            36,
+            48,
+            60,
+            72,
+            84,
+            96,
+            120
+          ],
+          "min_regime_size": 540,
+          "frontier": [
+            {
+              "b": 6,
+              "budget_scenes": 24,
+              "n_pass": 7,
+              "empirical_pass_rate": 0.0175,
+              "wilson_lcb_95": 0.008502291107038101
+            },
+            {
+              "b": 9,
+              "budget_scenes": 36,
+              "n_pass": 8,
+              "empirical_pass_rate": 0.02,
+              "wilson_lcb_95": 0.01016838679166465
+            },
+            {
+              "b": 12,
+              "budget_scenes": 48,
+              "n_pass": 17,
+              "empirical_pass_rate": 0.0425,
+              "wilson_lcb_95": 0.026701694991131116
+            },
+            {
+              "b": 15,
+              "budget_scenes": 60,
+              "n_pass": 13,
+              "empirical_pass_rate": 0.0325,
+              "wilson_lcb_95": 0.019089842378800445
+            },
+            {
+              "b": 18,
+              "budget_scenes": 72,
+              "n_pass": 17,
+              "empirical_pass_rate": 0.0425,
+              "wilson_lcb_95": 0.026701694991131116
+            },
+            {
+              "b": 21,
+              "budget_scenes": 84,
+              "n_pass": 13,
+              "empirical_pass_rate": 0.0325,
+              "wilson_lcb_95": 0.019089842378800445
+            },
+            {
+              "b": 24,
+              "budget_scenes": 96,
+              "n_pass": 13,
+              "empirical_pass_rate": 0.0325,
+              "wilson_lcb_95": 0.019089842378800445
+            },
+            {
+              "b": 30,
+              "budget_scenes": 120,
+              "n_pass": 6,
+              "empirical_pass_rate": 0.015,
+              "wilson_lcb_95": 0.006892291919440893
+            }
+          ],
+          "recommended_budget_scenes": "not reached"
+        },
+        "5": {
+          "mapping_source": "replicated (seed 0)",
+          "ari_replication_vs_shipped": null,
+          "budgets_scenes": [
+            25,
+            35,
+            50,
+            60,
+            70,
+            85,
+            95,
+            120
+          ],
+          "min_regime_size": 426,
+          "frontier": [
+            {
+              "b": 5,
+              "budget_scenes": 25,
+              "n_pass": 0,
+              "empirical_pass_rate": 0.0,
+              "wilson_lcb_95": 0.0
+            },
+            {
+              "b": 7,
+              "budget_scenes": 35,
+              "n_pass": 2,
+              "empirical_pass_rate": 0.005,
+              "wilson_lcb_95": 0.0013722529547103846
+            },
+            {
+              "b": 10,
+              "budget_scenes": 50,
+              "n_pass": 2,
+              "empirical_pass_rate": 0.005,
+              "wilson_lcb_95": 0.0013722529547103846
+            },
+            {
+              "b": 12,
+              "budget_scenes": 60,
+              "n_pass": 3,
+              "empirical_pass_rate": 0.0075,
+              "wilson_lcb_95": 0.0025538891952499414
+            },
+            {
+              "b": 14,
+              "budget_scenes": 70,
+              "n_pass": 1,
+              "empirical_pass_rate": 0.0025,
+              "wilson_lcb_95": 0.0004414477868016353
+            },
+            {
+              "b": 17,
+              "budget_scenes": 85,
+              "n_pass": 2,
+              "empirical_pass_rate": 0.005,
+              "wilson_lcb_95": 0.0013722529547103846
+            },
+            {
+              "b": 19,
+              "budget_scenes": 95,
+              "n_pass": 0,
+              "empirical_pass_rate": 0.0,
+              "wilson_lcb_95": 0.0
+            },
+            {
+              "b": 24,
+              "budget_scenes": 120,
+              "n_pass": 1,
+              "empirical_pass_rate": 0.0025,
+              "wilson_lcb_95": 0.0004414477868016353
+            }
+          ],
+          "recommended_budget_scenes": "not reached"
+        },
+        "6": {
+          "mapping_source": "shipped",
+          "ari_replication_vs_shipped": 1.0,
+          "budgets_scenes": [
+            24,
+            36,
+            48,
+            60,
+            72,
+            84,
+            96,
+            120
+          ],
+          "min_regime_size": 422,
+          "frontier": [
+            {
+              "b": 4,
+              "budget_scenes": 24,
+              "n_pass": 26,
+              "empirical_pass_rate": 0.065,
+              "wilson_lcb_95": 0.04474048189620037
+            },
+            {
+              "b": 6,
+              "budget_scenes": 36,
+              "n_pass": 58,
+              "empirical_pass_rate": 0.145,
+              "wilson_lcb_95": 0.11387048965924289
+            },
+            {
+              "b": 8,
+              "budget_scenes": 48,
+              "n_pass": 88,
+              "empirical_pass_rate": 0.22,
+              "wilson_lcb_95": 0.1821738927340146
+            },
+            {
+              "b": 10,
+              "budget_scenes": 60,
+              "n_pass": 92,
+              "empirical_pass_rate": 0.23,
+              "wilson_lcb_95": 0.19144383051896455
+            },
+            {
+              "b": 12,
+              "budget_scenes": 72,
+              "n_pass": 95,
+              "empirical_pass_rate": 0.2375,
+              "wilson_lcb_95": 0.19841751180740802
+            },
+            {
+              "b": 14,
+              "budget_scenes": 84,
+              "n_pass": 101,
+              "empirical_pass_rate": 0.2525,
+              "wilson_lcb_95": 0.2124169413920716
+            },
+            {
+              "b": 16,
+              "budget_scenes": 96,
+              "n_pass": 113,
+              "empirical_pass_rate": 0.2825,
+              "wilson_lcb_95": 0.24061027235147464
+            },
+            {
+              "b": 20,
+              "budget_scenes": 120,
+              "n_pass": 120,
+              "empirical_pass_rate": 0.3,
+              "wilson_lcb_95": 0.25716767195619705
+            }
+          ],
+          "recommended_budget_scenes": 36
+        },
+        "8": {
+          "mapping_source": "shipped",
+          "ari_replication_vs_shipped": 1.0,
+          "budgets_scenes": [
+            24,
+            40,
+            48,
+            64,
+            72,
+            88,
+            96,
+            120
+          ],
+          "min_regime_size": 218,
+          "frontier": [
+            {
+              "b": 3,
+              "budget_scenes": 24,
+              "n_pass": 4,
+              "empirical_pass_rate": 0.01,
+              "wilson_lcb_95": 0.0038954837949909914
+            },
+            {
+              "b": 5,
+              "budget_scenes": 40,
+              "n_pass": 10,
+              "empirical_pass_rate": 0.025,
+              "wilson_lcb_95": 0.013635091745936023
+            },
+            {
+              "b": 6,
+              "budget_scenes": 48,
+              "n_pass": 7,
+              "empirical_pass_rate": 0.0175,
+              "wilson_lcb_95": 0.008502291107038101
+            },
+            {
+              "b": 8,
+              "budget_scenes": 64,
+              "n_pass": 14,
+              "empirical_pass_rate": 0.035,
+              "wilson_lcb_95": 0.02096129419797776
+            },
+            {
+              "b": 9,
+              "budget_scenes": 72,
+              "n_pass": 12,
+              "empirical_pass_rate": 0.03,
+              "wilson_lcb_95": 0.017243020965143047
+            },
+            {
+              "b": 11,
+              "budget_scenes": 88,
+              "n_pass": 11,
+              "empirical_pass_rate": 0.0275,
+              "wilson_lcb_95": 0.015423636260295418
+            },
+            {
+              "b": 12,
+              "budget_scenes": 96,
+              "n_pass": 11,
+              "empirical_pass_rate": 0.0275,
+              "wilson_lcb_95": 0.015423636260295418
+            },
+            {
+              "b": 15,
+              "budget_scenes": 120,
+              "n_pass": 8,
+              "empirical_pass_rate": 0.02,
+              "wilson_lcb_95": 0.01016838679166465
+            }
+          ],
+          "recommended_budget_scenes": "not reached"
+        },
+        "10": {
+          "mapping_source": "shipped",
+          "ari_replication_vs_shipped": 1.0,
+          "budgets_scenes": [
+            20,
+            40,
+            50,
+            60,
+            70,
+            80,
+            100,
+            120
+          ],
+          "min_regime_size": 172,
+          "frontier": [
+            {
+              "b": 2,
+              "budget_scenes": 20,
+              "n_pass": 6,
+              "empirical_pass_rate": 0.015,
+              "wilson_lcb_95": 0.006892291919440893
+            },
+            {
+              "b": 4,
+              "budget_scenes": 40,
+              "n_pass": 40,
+              "empirical_pass_rate": 0.1,
+              "wilson_lcb_95": 0.07429925914003438
+            },
+            {
+              "b": 5,
+              "budget_scenes": 50,
+              "n_pass": 34,
+              "empirical_pass_rate": 0.085,
+              "wilson_lcb_95": 0.061463020023938206
+            },
+            {
+              "b": 6,
+              "budget_scenes": 60,
+              "n_pass": 31,
+              "empirical_pass_rate": 0.0775,
+              "wilson_lcb_95": 0.05513293467684452
+            },
+            {
+              "b": 7,
+              "budget_scenes": 70,
+              "n_pass": 33,
+              "empirical_pass_rate": 0.0825,
+              "wilson_lcb_95": 0.05934587622971529
+            },
+            {
+              "b": 8,
+              "budget_scenes": 80,
+              "n_pass": 35,
+              "empirical_pass_rate": 0.0875,
+              "wilson_lcb_95": 0.06358691021150326
+            },
+            {
+              "b": 10,
+              "budget_scenes": 100,
+              "n_pass": 36,
+              "empirical_pass_rate": 0.09,
+              "wilson_lcb_95": 0.06571729376939447
+            },
+            {
+              "b": 12,
+              "budget_scenes": 120,
+              "n_pass": 20,
+              "empirical_pass_rate": 0.05,
+              "wilson_lcb_95": 0.03259742983714726
+            }
+          ],
+          "recommended_budget_scenes": "not reached"
+        }
+      },
+      "seed_grid_recommended_budgets": {
+        "kmeans0_audit0": 36,
+        "kmeans0_audit1": 36,
+        "kmeans0_audit2": 36,
+        "kmeans0_audit3": 36,
+        "kmeans0_audit4": 36,
+        "kmeans1_audit0": 48,
+        "kmeans1_audit1": 84,
+        "kmeans1_audit2": 36,
+        "kmeans1_audit3": 48,
+        "kmeans1_audit4": 48,
+        "kmeans2_audit0": 120,
+        "kmeans2_audit1": 36,
+        "kmeans2_audit2": 72,
+        "kmeans2_audit3": 48,
+        "kmeans2_audit4": 48,
+        "kmeans3_audit0": 60,
+        "kmeans3_audit1": 48,
+        "kmeans3_audit2": 60,
+        "kmeans3_audit3": 36,
+        "kmeans3_audit4": 48,
+        "kmeans4_audit0": 60,
+        "kmeans4_audit1": 72,
+        "kmeans4_audit2": 96,
+        "kmeans4_audit3": "not reached",
+        "kmeans4_audit4": 60
+      },
+      "seed_budget_distribution": {
+        "36": 8,
+        "48": 7,
+        "84": 1,
+        "120": 1,
+        "72": 2,
+        "60": 4,
+        "96": 1,
+        "not reached": 1
+      },
+      "jaccard_overlap": {
+        "mean_pairwise": 0.005285554311310191,
+        "pairs": [
+          0.010526315789473684,
+          0.0,
+          0.010526315789473684,
+          0.0,
+          0.02127659574468085,
+          0.0,
+          0.010526315789473684,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "definition": "Best joint-objective 48-scene candidate at b=8 per audit seed (0-4), K-Means seed 0; 10 pairwise Jaccard values."
+      },
+      "audit_seed_rule": "rng = default_rng(audit_seed + b) per budget"
+    }
+  },
+  "E4": {
+    "description": "Regime-level fidelity: Zip-NeRF global event (paper tolerances, global KS<=0.14) AND per-regime mean constraints |mean_m(S\u2229r)-mean_m(full\u2229r)| <= c*tau_m over the six k=6 regimes, c in {1,2}. Balanced sampler on the full audit population (3521 effective scenes), budgets 48..360, M=400 at every budget (fast evaluator; no reduction needed), seed 0.",
+    "population_size": 3521,
+    "tolerances": {
+      "psnr": 0.5,
+      "ssim": 0.01,
+      "lpips": 0.01
+    },
+    "ks_tolerance_global_only": 0.14,
+    "budgets_scenes": [
+      48,
+      72,
+      96,
+      120,
+      180,
+      240,
+      360
+    ],
+    "m_used_per_budget": {
+      "48": 400,
+      "72": 400,
+      "96": 400,
+      "120": 400,
+      "180": 400,
+      "240": 400,
+      "360": 400
+    },
+    "seed": 0,
+    "per_budget_rng_seed_rule": "numpy default_rng(seed + b), balanced mode",
+    "validation": "global event reproduces 88/400 at b=8",
+    "c1": {
+      "frontier": [
+        {
+          "budget_scenes": 48,
+          "b": 8,
+          "n_trials": 400,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 8
+        },
+        {
+          "budget_scenes": 72,
+          "b": 12,
+          "n_trials": 400,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 12
+        },
+        {
+          "budget_scenes": 96,
+          "b": 16,
+          "n_trials": 400,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 16
+        },
+        {
+          "budget_scenes": 120,
+          "b": 20,
+          "n_trials": 400,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 20
+        },
+        {
+          "budget_scenes": 180,
+          "b": 30,
+          "n_trials": 400,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 30
+        },
+        {
+          "budget_scenes": 240,
+          "b": 40,
+          "n_trials": 400,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 40
+        },
+        {
+          "budget_scenes": 360,
+          "b": 60,
+          "n_trials": 400,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 60
+        }
+      ],
+      "budget_p008_or_not_reached": "not reached up to 360"
+    },
+    "c2": {
+      "frontier": [
+        {
+          "budget_scenes": 48,
+          "b": 8,
+          "n_trials": 400,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 8
+        },
+        {
+          "budget_scenes": 72,
+          "b": 12,
+          "n_trials": 400,
+          "n_pass": 1,
+          "empirical_pass_rate": 0.0025,
+          "wilson_lcb_95": 0.0004414477868016353,
+          "rng_seed_effective": 12
+        },
+        {
+          "budget_scenes": 96,
+          "b": 16,
+          "n_trials": 400,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 16
+        },
+        {
+          "budget_scenes": 120,
+          "b": 20,
+          "n_trials": 400,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 20
+        },
+        {
+          "budget_scenes": 180,
+          "b": 30,
+          "n_trials": 400,
+          "n_pass": 1,
+          "empirical_pass_rate": 0.0025,
+          "wilson_lcb_95": 0.0004414477868016353,
+          "rng_seed_effective": 30
+        },
+        {
+          "budget_scenes": 240,
+          "b": 40,
+          "n_trials": 400,
+          "n_pass": 2,
+          "empirical_pass_rate": 0.005,
+          "wilson_lcb_95": 0.0013722529547103846,
+          "rng_seed_effective": 40
+        },
+        {
+          "budget_scenes": 360,
+          "b": 60,
+          "n_trials": 400,
+          "n_pass": 4,
+          "empirical_pass_rate": 0.01,
+          "wilson_lcb_95": 0.0038954837949909914,
+          "rng_seed_effective": 60
+        }
+      ],
+      "budget_p008_or_not_reached": "not reached up to 360"
+    },
+    "outputs": {
+      "c1_frontier_csv": "rebuttal/e4_c1_frontier.csv",
+      "c2_frontier_csv": "rebuttal/e4_c2_frontier.csv"
+    }
+  },
+  "E5": {
+    "description": "Audit and packaging of the certified 36-scene facility-location subset (Task P5). BLOCKED at step 1: the FL-36 subset is not reconstructible from the repository.",
+    "status": "reimplemented (option b) - original still unrecoverable",
+    "blocking_finding": "The facility-location selection implementation is not present in the repository (established in P0), no FL subset manifest or scene list exists anywhere in the tree (searched *facility*, *fl36*, *fl_36* plus manifest/subset globs), and the recorded config does not specify the perturbation protocol (objective, distance, perturbation scheme, per-run seeds) needed to regenerate the 400 FL runs. Reimplementing from scratch could not be validated against the recorded stochastic pass rate (43/400) and would risk certifying a subset the paper never produced, so per the audit conventions this task STOPs instead of improvising.",
+    "what_exists": {
+      "baseline_min_size_summary": "sweep_cluster_k/baseline_comparison_lpips_ks/baseline_min_size_summary.csv (FL row: smallest size meeting LCB target = 36, pass_rate 0.1075, LCB 0.080794)",
+      "baseline_sweep_results": "sweep_cluster_k/baseline_comparison_lpips_ks/baseline_sweep_results.csv (FL pass rate and LCB at sizes 12,24,36,48,60,72,96; e.g. 36 scenes: 0.1075 / 0.080794, met_risk_target=True; 96 scenes: 0.0725 / 0.050951, False)",
+      "baseline_eval_config": "sweep_cluster_k/baseline_comparison_lpips_ks/baseline_eval_config.json (M=400, random_seed=0, p_min=0.08, paper tolerances, facility_candidate_pool=16, dataset_overlap_scenes=3521)"
+    },
+    "what_is_missing": [
+      "facility-location selection code (objective, distance metric, greedy/perturbation algorithm)",
+      "per-run perturbation seeds or seed derivation rule for the 400 FL runs",
+      "any exported FL subset manifest (scene list) at any size",
+      "definition of which of the 400 runs' subsets was the 'certified' FL-36"
+    ],
+    "steps_not_executed": [
+      "1 recover+verify FL-36",
+      "2 export validation table",
+      "3 cross-method gaps",
+      "4 rank check",
+      "5 regime coverage",
+      "6 random-percentile placement",
+      "7 stability rerun (20 seeds)",
+      "8 packaging (subsets/fl36 + audit card)"
+    ],
+    "unblock_requirements": "Provide the FL implementation script (or its exact algorithm and seed log) used for sweep_cluster_k/baseline_comparison_lpips_ks, or an exported FL-36 scene list. With either artifact, steps 1-8 run with the existing validated audit machinery in under an hour.",
+    "cluster_search": {
+      "date": "2026-07-24",
+      "host": "the cluster login node (user account account-A)",
+      "locations_searched": [
+        "/home/<cluster>/account-A (home + projects/)",
+        "<cluster>/projects/the-group (group project root)",
+        "<cluster>/projects/the-group/account-A (user dir - only MuRF project)",
+        "<cluster>/projects/the-group/account-B (student dir - NeRF training outputs only)",
+        "<cluster>/scratch/the-group root + account-A + account-B + other-member"
+      ],
+      "patterns": "*facility*, *rass*, *fl36*, *baseline*, *subset*, *kcenter*, *sweep_cluster*, plus grep 'facility_location|kcenter_farthest_first' in *.py",
+      "result": "No facility-location code, seeds, or subset manifests found in any accessible location. Student home /home/<cluster>/account-B is not readable by account-A (permission denied; not circumvented) - if the FL script lives anywhere, it is likely there; ask the student directly.",
+      "side_discovery": "Per-scene metric logs for additional methods exist in <cluster>/scratch/the-group/account-B: nerfacto 2,762 scenes (output_json_nerfacto/json, PSNR/SSIM/LPIPS per scene) and bionerf ~2,379+ scenes (output_json_bionerf/DISH et al.); <cluster>/scratch/the-group/output_json3 is the 3,617-scene feature-splatting source. The nerfacto and bionerf logs could extend the cross-method audit with a 4th/5th method on a reduced (~2.7k-scene) intersection if desired.",
+      "cluster_tooling_archive_examined": "User provided the cluster tooling archive (repo root, 68 files, 2026-07-24): cluster training/eval tooling only (sbatch/srun scripts for nerfacto, zipnerf, bionerf, nerfbusters, signerf, mipnerf, instant-ngp; colmap2nerf variants; render.py; transforms helpers). No facility-location or subset-selection code. E5 remains blocked; provenance of E8's method logs is now documented by these scripts."
+    },
+    "recovery_exhausted": {
+      "date": "2026-07-24",
+      "conclusion": "The FL selection script is unrecoverable. Searched: local repo + VolETA-v4-backup + VolETA-v4.vit + external drives (HDD_4TB_1 VolETA copies); user cluster account account-A (home, group project, scratch); student cluster account account-B with owner-provided credentials (home: only training/eval tooling + nerfacto.csv); the cluster tooling archive; git history; shell history; all Claude Code session transcripts. The baseline output files were created locally on 2026-03-05 13:47 and no Python file from that window survives anywhere - the script was evidently run once and not preserved.",
+      "options_forward": {
+        "a_honest_disclosure": "State in the rebuttal that the FL baseline row is reported from its recorded sweep (pass rates and LCBs at 7 sizes, config preserved) but the per-run subsets were not archived, so subset-level FL auditing is not possible for the original run; offer the archived config + summary as evidence.",
+        "b_labeled_reimplementation": "Reimplement facility location per the documented protocol (greedy facility location on the normalized descriptors, candidate pool 16, seed 0, M=400 perturbed runs, paper tolerances) as an explicitly-labeled reimplementation, export a new FL-36' with the full E5 audit trail (steps 2-8), and sanity-compare its sweep curve to the recorded one. Must be presented as a new run, never as the paper's original subset."
+      }
+    },
+    "reimplementation": {
+      "sweep": [
+        {
+          "subset_size": 12,
+          "n_pass": 0,
+          "pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "recorded_pass_rate": 0.0,
+          "runtime_sec_per_run": 0.0017220383882522582
+        },
+        {
+          "subset_size": 24,
+          "n_pass": 24,
+          "pass_rate": 0.06,
+          "wilson_lcb_95": 0.0406479701137247,
+          "recorded_pass_rate": 0.08,
+          "runtime_sec_per_run": 0.0030989837646484375
+        },
+        {
+          "subset_size": 36,
+          "n_pass": 60,
+          "pass_rate": 0.15,
+          "wilson_lcb_95": 0.11834499530337546,
+          "recorded_pass_rate": 0.1075,
+          "runtime_sec_per_run": 0.004696940779685974
+        },
+        {
+          "subset_size": 48,
+          "n_pass": 105,
+          "pass_rate": 0.2625,
+          "wilson_lcb_95": 0.22178679994488376,
+          "recorded_pass_rate": 0.14,
+          "runtime_sec_per_run": 0.006041298508644104
+        },
+        {
+          "subset_size": 60,
+          "n_pass": 121,
+          "pass_rate": 0.3025,
+          "wilson_lcb_95": 0.25953936408389566,
+          "recorded_pass_rate": 0.12,
+          "runtime_sec_per_run": 0.007492614388465882
+        },
+        {
+          "subset_size": 72,
+          "n_pass": 118,
+          "pass_rate": 0.295,
+          "wilson_lcb_95": 0.25242899167233757,
+          "recorded_pass_rate": 0.1125,
+          "runtime_sec_per_run": 0.008782731890678406
+        },
+        {
+          "subset_size": 96,
+          "n_pass": 95,
+          "pass_rate": 0.2375,
+          "wilson_lcb_95": 0.19841751180740802,
+          "recorded_pass_rate": 0.0725,
+          "runtime_sec_per_run": 0.011670702695846557
+        }
+      ],
+      "export_audit": {
+        "pass": true,
+        "joint_objective": 0.636994360368402,
+        "constraints": [
+          {
+            "metric": "psnr",
+            "abs_mean_gap": 0.12777463673318934,
+            "tolerance": 0.5,
+            "normalized_gap": 0.2555492734663787,
+            "ks": 0.08917921045157629,
+            "ks_tolerance": 0.14,
+            "mean_pass": true,
+            "ks_pass": true
+          },
+          {
+            "metric": "ssim",
+            "abs_mean_gap": 0.0005385489651370534,
+            "tolerance": 0.01,
+            "normalized_gap": 0.05385489651370534,
+            "ks": 0.083798794534381,
+            "ks_tolerance": 0.14,
+            "mean_pass": true,
+            "ks_pass": true
+          },
+          {
+            "metric": "lpips",
+            "abs_mean_gap": 0.00030118187646688277,
+            "tolerance": 0.01,
+            "normalized_gap": 0.030118187646688277,
+            "ks": 0.056896714948404814,
+            "ks_tolerance": 0.14,
+            "mean_pass": true,
+            "ks_pass": true
+          }
+        ]
+      },
+      "cross_method_gaps": {
+        "zipnerf": {
+          "subset_n": 36,
+          "abs_psnr_gap": 0.1398294732343146,
+          "abs_ssim_gap": 0.0008702331855183765,
+          "abs_lpips_gap": 0.00033089773192540584
+        },
+        "feature_splatting": {
+          "subset_n": 36,
+          "abs_psnr_gap": 0.03185712669130325,
+          "abs_ssim_gap": 0.008325672447471621,
+          "abs_lpips_gap": 0.011526529587318757
+        },
+        "instant_ngp_fi": {
+          "subset_n": 36,
+          "abs_psnr_gap": 0.7272835536962106,
+          "abs_ssim_gap": 0.012137166504184393
+        },
+        "instant_ngp_oc": {
+          "subset_n": 36,
+          "abs_psnr_gap": 0.8323661341414628,
+          "abs_ssim_gap": 0.014678295503928296
+        }
+      },
+      "rank_preserved": {
+        "psnr": false,
+        "ssim": true
+      },
+      "regime_counts": {
+        "0": 7,
+        "1": 6,
+        "2": 5,
+        "3": 6,
+        "4": 6,
+        "5": 6
+      },
+      "thin_regimes": [],
+      "random_percentiles": {
+        "per_pair": {
+          "zipnerf.psnr": 11.899999999999999,
+          "zipnerf.ssim": 2.1,
+          "zipnerf.lpips": 0.6,
+          "feature_splatting.psnr": 1.5,
+          "feature_splatting.ssim": 23.9,
+          "feature_splatting.lpips": 34.0,
+          "instant_ngp_fi.psnr": 66.3,
+          "instant_ngp_fi.ssim": 54.800000000000004,
+          "instant_ngp_oc.psnr": 53.1,
+          "instant_ngp_oc.ssim": 35.3
+        },
+        "average": 28.35,
+        "n_random": 1000,
+        "seed": 42,
+        "definition": "percent of 1000 uniform random 36-scene subsets (common 3473 pool) with SMALLER abs mean gap than FL-36' (lower = FL better)"
+      },
+      "stability": {
+        "seeds": 20,
+        "mean_pairwise_overlap": 0.038157894736842106,
+        "pass_fraction": 0.15
+      },
+      "artifact_paths": {
+        "scene_list": "subsets/fl36/fl36_scene_list.csv",
+        "audit_card": "subsets/fl36/fl36_audit_card.json",
+        "sweep_csv": "rebuttal/e5b_fl_sweep.csv"
+      },
+      "runtime_sec_total": 23.4208767414093
+    }
+  },
+  "E6": {
+    "a": {
+      "group_mapping": {
+        "capture_pose": [
+          "aabb_scale",
+          "camera_angle_x",
+          "camera_angle_y",
+          "cx",
+          "cy",
+          "fl_x",
+          "fl_y",
+          "h",
+          "w",
+          "k1",
+          "k2",
+          "k3",
+          "p1",
+          "p2",
+          "mean_camera_center_dist",
+          "std_camera_center_dist",
+          "mean_view_angle_var",
+          "std_view_angle_var",
+          "num_images",
+          "num_frames_total",
+          "num_frames_used"
+        ],
+        "image_stats": [
+          "entropy_mean",
+          "entropy_std",
+          "sharpness_mean",
+          "sharpness_std"
+        ],
+        "texture": [
+          "edge_frac_mean",
+          "edge_frac_std"
+        ],
+        "mask_geometry": [
+          "area_frac_mean",
+          "area_frac_std",
+          "bbox_aspect_ratio_mean",
+          "bbox_aspect_ratio_std",
+          "largest_comp_frac_mean",
+          "largest_comp_frac_std",
+          "num_components_mean",
+          "num_components_std"
+        ],
+        "sparse_geometry": [
+          "bbox_max_x",
+          "bbox_max_y",
+          "bbox_max_z",
+          "bbox_min_x",
+          "bbox_min_y",
+          "bbox_min_z",
+          "extent_x",
+          "extent_y",
+          "extent_z",
+          "volume",
+          "point_count",
+          "point_density",
+          "mean_error",
+          "median_error",
+          "std_error",
+          "mean_track_length",
+          "median_track_length",
+          "std_track_length",
+          "mean_visible_points",
+          "std_visible_points",
+          "mean_visible_ratio",
+          "std_visible_ratio"
+        ]
+      },
+      "group_mapping_note": "Derived from src/feature_extractor.py source functions; judgment calls documented: aabb_scale->capture_pose, sharpness/entropy->image_stats (not texture). Budget proxies (num_images, num_frames_total, num_frames_used) are excluded from clustering in every configuration, matching the validated protocol.",
+      "renormalization_note": "feats_norm.normalize_features is per-feature independent (log1p by skew, robust/standard scale, clip), so column subsets of feats_normalized.csv are identical to renormalizing each subset with the same pipeline.",
+      "audit": "Zip-NeRF event, paper tolerances, M=400, audit seed 0, coarse grid b in {8,12,16,20} (48-120 scenes)",
+      "per_group_table": {
+        "capture_pose_alone": {
+          "n_clustering_dims": 18,
+          "min_regime_size": 261,
+          "pass_rate_48": 0.0025,
+          "lcb_48": 0.0004414477868016353,
+          "coarse_frontier": [
+            {
+              "b": 8,
+              "budget_scenes": 48,
+              "n_pass": 1,
+              "empirical_pass_rate": 0.0025,
+              "wilson_lcb_95": 0.0004414477868016353
+            },
+            {
+              "b": 12,
+              "budget_scenes": 72,
+              "n_pass": 0,
+              "empirical_pass_rate": 0.0,
+              "wilson_lcb_95": 0.0
+            },
+            {
+              "b": 16,
+              "budget_scenes": 96,
+              "n_pass": 0,
+              "empirical_pass_rate": 0.0,
+              "wilson_lcb_95": 0.0
+            },
+            {
+              "b": 20,
+              "budget_scenes": 120,
+              "n_pass": 0,
+              "empirical_pass_rate": 0.0,
+              "wilson_lcb_95": 0.0
+            }
+          ],
+          "recommended_budget_coarse_grid": "not reached up to 120 (coarse grid)"
+        },
+        "minus_capture_pose": {
+          "n_clustering_dims": 36,
+          "min_regime_size": 246,
+          "pass_rate_48": 0.1675,
+          "lcb_48": 0.13410557406748244,
+          "coarse_frontier": [
+            {
+              "b": 8,
+              "budget_scenes": 48,
+              "n_pass": 67,
+              "empirical_pass_rate": 0.1675,
+              "wilson_lcb_95": 0.13410557406748244
+            },
+            {
+              "b": 12,
+              "budget_scenes": 72,
+              "n_pass": 97,
+              "empirical_pass_rate": 0.2425,
+              "wilson_lcb_95": 0.2030764095091307
+            },
+            {
+              "b": 16,
+              "budget_scenes": 96,
+              "n_pass": 107,
+              "empirical_pass_rate": 0.2675,
+              "wilson_lcb_95": 0.22648238411831478
+            },
+            {
+              "b": 20,
+              "budget_scenes": 120,
+              "n_pass": 117,
+              "empirical_pass_rate": 0.2925,
+              "wilson_lcb_95": 0.2500620261568489
+            }
+          ],
+          "recommended_budget_coarse_grid": 48
+        },
+        "image_stats_alone": {
+          "n_clustering_dims": 4,
+          "min_regime_size": 242,
+          "pass_rate_48": 0.1175,
+          "lcb_48": 0.08952194095010378,
+          "coarse_frontier": [
+            {
+              "b": 8,
+              "budget_scenes": 48,
+              "n_pass": 47,
+              "empirical_pass_rate": 0.1175,
+              "wilson_lcb_95": 0.08952194095010378
+            },
+            {
+              "b": 12,
+              "budget_scenes": 72,
+              "n_pass": 55,
+              "empirical_pass_rate": 0.1375,
+              "wilson_lcb_95": 0.10718448673484568
+            },
+            {
+              "b": 16,
+              "budget_scenes": 96,
+              "n_pass": 76,
+              "empirical_pass_rate": 0.19,
+              "wilson_lcb_95": 0.15457385084236502
+            },
+            {
+              "b": 20,
+              "budget_scenes": 120,
+              "n_pass": 66,
+              "empirical_pass_rate": 0.165,
+              "wilson_lcb_95": 0.13184503236772813
+            }
+          ],
+          "recommended_budget_coarse_grid": 48
+        },
+        "minus_image_stats": {
+          "n_clustering_dims": 50,
+          "min_regime_size": 174,
+          "pass_rate_48": 0.09,
+          "lcb_48": 0.06571729376939447,
+          "coarse_frontier": [
+            {
+              "b": 8,
+              "budget_scenes": 48,
+              "n_pass": 36,
+              "empirical_pass_rate": 0.09,
+              "wilson_lcb_95": 0.06571729376939447
+            },
+            {
+              "b": 12,
+              "budget_scenes": 72,
+              "n_pass": 42,
+              "empirical_pass_rate": 0.105,
+              "wilson_lcb_95": 0.07862372743733602
+            },
+            {
+              "b": 16,
+              "budget_scenes": 96,
+              "n_pass": 31,
+              "empirical_pass_rate": 0.0775,
+              "wilson_lcb_95": 0.05513293467684452
+            },
+            {
+              "b": 20,
+              "budget_scenes": 120,
+              "n_pass": 44,
+              "empirical_pass_rate": 0.11,
+              "wilson_lcb_95": 0.08296867911910687
+            }
+          ],
+          "recommended_budget_coarse_grid": 120
+        },
+        "texture_alone": {
+          "n_clustering_dims": 2,
+          "min_regime_size": 254,
+          "pass_rate_48": 0.15,
+          "lcb_48": 0.11834499530337546,
+          "coarse_frontier": [
+            {
+              "b": 8,
+              "budget_scenes": 48,
+              "n_pass": 60,
+              "empirical_pass_rate": 0.15,
+              "wilson_lcb_95": 0.11834499530337546
+            },
+            {
+              "b": 12,
+              "budget_scenes": 72,
+              "n_pass": 74,
+              "empirical_pass_rate": 0.185,
+              "wilson_lcb_95": 0.15000697382952777
+            },
+            {
+              "b": 16,
+              "budget_scenes": 96,
+              "n_pass": 80,
+              "empirical_pass_rate": 0.2,
+              "wilson_lcb_95": 0.16373705973387687
+            },
+            {
+              "b": 20,
+              "budget_scenes": 120,
+              "n_pass": 81,
+              "empirical_pass_rate": 0.2025,
+              "wilson_lcb_95": 0.16603379503442495
+            }
+          ],
+          "recommended_budget_coarse_grid": 48
+        },
+        "minus_texture": {
+          "n_clustering_dims": 52,
+          "min_regime_size": 357,
+          "pass_rate_48": 0.0,
+          "lcb_48": 0.0,
+          "coarse_frontier": [
+            {
+              "b": 8,
+              "budget_scenes": 48,
+              "n_pass": 0,
+              "empirical_pass_rate": 0.0,
+              "wilson_lcb_95": 0.0
+            },
+            {
+              "b": 12,
+              "budget_scenes": 72,
+              "n_pass": 0,
+              "empirical_pass_rate": 0.0,
+              "wilson_lcb_95": 0.0
+            },
+            {
+              "b": 16,
+              "budget_scenes": 96,
+              "n_pass": 0,
+              "empirical_pass_rate": 0.0,
+              "wilson_lcb_95": 0.0
+            },
+            {
+              "b": 20,
+              "budget_scenes": 120,
+              "n_pass": 0,
+              "empirical_pass_rate": 0.0,
+              "wilson_lcb_95": 0.0
+            }
+          ],
+          "recommended_budget_coarse_grid": "not reached up to 120 (coarse grid)"
+        },
+        "mask_geometry_alone": {
+          "n_clustering_dims": 8,
+          "min_regime_size": 337,
+          "pass_rate_48": 0.1475,
+          "lcb_48": 0.11610607335839332,
+          "coarse_frontier": [
+            {
+              "b": 8,
+              "budget_scenes": 48,
+              "n_pass": 59,
+              "empirical_pass_rate": 0.1475,
+              "wilson_lcb_95": 0.11610607335839332
+            },
+            {
+              "b": 12,
+              "budget_scenes": 72,
+              "n_pass": 94,
+              "empirical_pass_rate": 0.235,
+              "wilson_lcb_95": 0.1960909748126292
+            },
+            {
+              "b": 16,
+              "budget_scenes": 96,
+              "n_pass": 128,
+              "empirical_pass_rate": 0.32,
+              "wilson_lcb_95": 0.2761841236239046
+            },
+            {
+              "b": 20,
+              "budget_scenes": 120,
+              "n_pass": 135,
+              "empirical_pass_rate": 0.3375,
+              "wilson_lcb_95": 0.2929016377213044
+            }
+          ],
+          "recommended_budget_coarse_grid": 48
+        },
+        "minus_mask_geometry": {
+          "n_clustering_dims": 46,
+          "min_regime_size": 180,
+          "pass_rate_48": 0.0975,
+          "lcb_48": 0.07214511778538758,
+          "coarse_frontier": [
+            {
+              "b": 8,
+              "budget_scenes": 48,
+              "n_pass": 39,
+              "empirical_pass_rate": 0.0975,
+              "wilson_lcb_95": 0.07214511778538758
+            },
+            {
+              "b": 12,
+              "budget_scenes": 72,
+              "n_pass": 42,
+              "empirical_pass_rate": 0.105,
+              "wilson_lcb_95": 0.07862372743733602
+            },
+            {
+              "b": 16,
+              "budget_scenes": 96,
+              "n_pass": 39,
+              "empirical_pass_rate": 0.0975,
+              "wilson_lcb_95": 0.07214511778538758
+            },
+            {
+              "b": 20,
+              "budget_scenes": 120,
+              "n_pass": 33,
+              "empirical_pass_rate": 0.0825,
+              "wilson_lcb_95": 0.05934587622971529
+            }
+          ],
+          "recommended_budget_coarse_grid": "not reached up to 120 (coarse grid)"
+        },
+        "sparse_geometry_alone": {
+          "n_clustering_dims": 22,
+          "min_regime_size": 177,
+          "pass_rate_48": 0.105,
+          "lcb_48": 0.07862372743733602,
+          "coarse_frontier": [
+            {
+              "b": 8,
+              "budget_scenes": 48,
+              "n_pass": 42,
+              "empirical_pass_rate": 0.105,
+              "wilson_lcb_95": 0.07862372743733602
+            },
+            {
+              "b": 12,
+              "budget_scenes": 72,
+              "n_pass": 35,
+              "empirical_pass_rate": 0.0875,
+              "wilson_lcb_95": 0.06358691021150326
+            },
+            {
+              "b": 16,
+              "budget_scenes": 96,
+              "n_pass": 42,
+              "empirical_pass_rate": 0.105,
+              "wilson_lcb_95": 0.07862372743733602
+            },
+            {
+              "b": 20,
+              "budget_scenes": 120,
+              "n_pass": 27,
+              "empirical_pass_rate": 0.0675,
+              "wilson_lcb_95": 0.04680146916375966
+            }
+          ],
+          "recommended_budget_coarse_grid": "not reached up to 120 (coarse grid)"
+        },
+        "minus_sparse_geometry": {
+          "n_clustering_dims": 32,
+          "min_regime_size": 331,
+          "pass_rate_48": 0.14,
+          "lcb_48": 0.10940962137459034,
+          "coarse_frontier": [
+            {
+              "b": 8,
+              "budget_scenes": 48,
+              "n_pass": 56,
+              "empirical_pass_rate": 0.14,
+              "wilson_lcb_95": 0.10940962137459034
+            },
+            {
+              "b": 12,
+              "budget_scenes": 72,
+              "n_pass": 54,
+              "empirical_pass_rate": 0.135,
+              "wilson_lcb_95": 0.10496299061600528
+            },
+            {
+              "b": 16,
+              "budget_scenes": 96,
+              "n_pass": 52,
+              "empirical_pass_rate": 0.13,
+              "wilson_lcb_95": 0.10053125228664084
+            },
+            {
+              "b": 20,
+              "budget_scenes": 120,
+              "n_pass": 47,
+              "empirical_pass_rate": 0.1175,
+              "wilson_lcb_95": 0.08952194095010378
+            }
+          ],
+          "recommended_budget_coarse_grid": 48
+        },
+        "full_57d": {
+          "n_clustering_dims": 54,
+          "min_regime_size": 422,
+          "pass_rate_48": 0.22,
+          "lcb_48": 0.1821738927340146,
+          "coarse_frontier": [
+            {
+              "b": 8,
+              "budget_scenes": 48,
+              "n_pass": 88,
+              "empirical_pass_rate": 0.22,
+              "wilson_lcb_95": 0.1821738927340146
+            },
+            {
+              "b": 12,
+              "budget_scenes": 72,
+              "n_pass": 95,
+              "empirical_pass_rate": 0.2375,
+              "wilson_lcb_95": 0.19841751180740802
+            },
+            {
+              "b": 16,
+              "budget_scenes": 96,
+              "n_pass": 113,
+              "empirical_pass_rate": 0.2825,
+              "wilson_lcb_95": 0.24061027235147464
+            },
+            {
+              "b": 20,
+              "budget_scenes": 120,
+              "n_pass": 120,
+              "empirical_pass_rate": 0.3,
+              "wilson_lcb_95": 0.25716767195619705
+            }
+          ],
+          "recommended_budget_coarse_grid": 48
+        }
+      }
+    },
+    "b": {
+      "status": "completed",
+      "model": "dinov2_vits14 (torch.hub facebookresearch/dinov2)",
+      "protocol": "8 uniformly-sampled frames per scene (deterministic linspace), 224x224 bilinear, ImageNet normalization, CLS embeddings mean-pooled then L2-normalized; KMeans k=6 seed 0 (n_init='auto') directly on the L2-normalized 384-D vectors; balanced Zip-NeRF audit, paper tolerances, M=400, audit seed 0, rng=default_rng(seed+b).",
+      "n_scenes_embedded": 3522,
+      "n_scenes_missing_frames": 0,
+      "regime_sizes": {
+        "0": 766,
+        "1": 454,
+        "2": 339,
+        "3": 568,
+        "4": 387,
+        "5": 1007
+      },
+      "audit_population": 3521,
+      "frontier": [
+        {
+          "b": 4,
+          "budget_scenes": 24,
+          "n_pass": 17,
+          "empirical_pass_rate": 0.0425,
+          "wilson_lcb_95": 0.026701694991131116
+        },
+        {
+          "b": 6,
+          "budget_scenes": 36,
+          "n_pass": 52,
+          "empirical_pass_rate": 0.13,
+          "wilson_lcb_95": 0.10053125228664084
+        },
+        {
+          "b": 8,
+          "budget_scenes": 48,
+          "n_pass": 80,
+          "empirical_pass_rate": 0.2,
+          "wilson_lcb_95": 0.16373705973387687
+        },
+        {
+          "b": 10,
+          "budget_scenes": 60,
+          "n_pass": 91,
+          "empirical_pass_rate": 0.2275,
+          "wilson_lcb_95": 0.18912326740735155
+        },
+        {
+          "b": 12,
+          "budget_scenes": 72,
+          "n_pass": 94,
+          "empirical_pass_rate": 0.235,
+          "wilson_lcb_95": 0.1960909748126292
+        },
+        {
+          "b": 14,
+          "budget_scenes": 84,
+          "n_pass": 114,
+          "empirical_pass_rate": 0.285,
+          "wilson_lcb_95": 0.24297076989988836
+        },
+        {
+          "b": 16,
+          "budget_scenes": 96,
+          "n_pass": 133,
+          "empirical_pass_rate": 0.3325,
+          "wilson_lcb_95": 0.2881179581855746
+        },
+        {
+          "b": 20,
+          "budget_scenes": 120,
+          "n_pass": 149,
+          "empirical_pass_rate": 0.3725,
+          "wilson_lcb_95": 0.3265438629583563
+        }
+      ],
+      "budget_p008": 36,
+      "embeddings_cache": "rebuttal/e6b_dinov2_embeddings.npz"
+    }
+  },
+  "E7": {
+    "feasibility": {
+      "verdict": "FAIL (confirmed)",
+      "evidence": [
+        {
+          "source": "https://github.com/DL3DV-10K/Dataset",
+          "finding": "Benchmark results only as figure images (imgs/nvs-benchmark-*.jpg); only CSV is cache/DL3DV-valid.csv (scene validity, not metrics); no per-scene PSNR/SSIM/LPIPS files in the tree or issues."
+        },
+        {
+          "source": "https://arxiv.org/html/2312.16256v2 + CVPR 2024 supplemental",
+          "finding": "Table 3 reports averages across all 140 scenes; supplement has per-POI-category bar charts and qualitative figures; no per-scene table."
+        },
+        {
+          "source": "https://huggingface.co/datasets/DL3DV/DL3DV-Benchmark (gated, auto-grant)",
+          "finding": "Full tree enumerated via API: per-scene dirs contain only gaussian_splat/ and nerfstudio/ inputs; the only candidate metrics file is benchmark-meta.csv, advertised as containing 'the performances of methods reported in the paper' for 5 methods, but unverifiable without an authenticated HF login (401 on direct download; datasets-server blocked; all third-party download scripts read only its 'hash' column)."
+        },
+        {
+          "source": "leaderboards / third parties",
+          "finding": "No DL3DV-140 leaderboard; third-party per-scene releases cover <=6 scenes or single methods (e.g. DL3DV-GS-960P pretrained 3DGS checkpoints, metrics derivable for one method only)."
+        }
+      ],
+      "escape_hatch": "benchmark-meta.csv in the gated HF repo is auto-granted to any logged-in HF account: checking https://huggingface.co/datasets/DL3DV/DL3DV-Benchmark/resolve/main/benchmark-meta.csv with the user's login takes ~2 minutes; if it contains per-scene PSNR/SSIM/LPIPS for >=2 methods, the verdict flips to PASS and the full study becomes log-based as planned.",
+      "benchmark_meta_csv_resolution": "User downloaded the gated file with their HF login (benchmark-meta.csv, 140 rows). Columns: hash, freq, freq_binary, environment, scene, light condition, reflection_degree, ref_degree_binary, transparency_degree, trans_degree_binary - scene complexity/condition labels only, NO per-scene PSNR/SSIM/LPIPS for any method. The last open question is closed: per-scene DL3DV-140 metrics are not published anywhere; the transfer study requires training methods ourselves (see fallback.cost_estimate)."
+    },
+    "study": null,
+    "fallback": {
+      "gpu_available": "yes - NVIDIA GeForce RTX 3090 (torch 2.7.0+cu126, CUDA available)",
+      "cost_estimate": "Training nerfacto or 3DGS on the 140 DL3DV benchmark scenes at ~10 min/scene on the local RTX 3090 = ~23.3 GPU-hours per method (~2 days for two methods sequentially), plus dataset download (~2 TB for full-res benchmark inputs; 960P subset smaller). Feasible on local hardware but not within the discussion period's compute budget without starting immediately.",
+      "mipnerf360_descriptor_note": "Descriptor pipeline ran unmodified on all 9 Mip-NeRF 360 scenes (360_v2.zip + 360_extra_scenes.zip for flowers/treehill, link provided by the authors). Per scene: COLMAP bin->text via pycolmap, transforms via the repo's colmap2nerf.py, descriptors via src/feature_extractor.extract_features, normalization via src/feats_norm.normalize_features. 49/57 descriptor dims computed for all 9 scenes; the 8 missing dims are exactly the mask-geometry group (Mip-NeRF 360 ships no foreground masks; structurally absent and handled by design via fillna). No regime or audit claims at n=9.",
+      "mipnerf360_artifacts": {
+        "raw_descriptors_csv": "rebuttal/e7_mipnerf360_feats_raw.csv",
+        "normalized_csv": "rebuttal/e7_mipnerf360_feats_normalized.csv",
+        "dims_complete_all_scenes": 49,
+        "dims_missing_all_scenes": [
+          "area_frac_mean",
+          "area_frac_std",
+          "bbox_aspect_ratio_mean",
+          "bbox_aspect_ratio_std",
+          "largest_comp_frac_mean",
+          "largest_comp_frac_std",
+          "num_components_mean",
+          "num_components_std"
+        ],
+        "dims_partial": [],
+        "scenes_processed": [
+          "bicycle",
+          "bonsai",
+          "counter",
+          "flowers",
+          "garden",
+          "kitchen",
+          "room",
+          "stump",
+          "treehill"
+        ],
+        "scenes_gated": []
+      }
+    }
+  },
+  "E8": {
+    "inventory": {
+      "nerfacto_scenes": 2762,
+      "bionerf_scenes_deduped": 2620,
+      "bionerf_per_run_counts": {
+        "output_json_bionerf": 2379,
+        "output_json5": 834,
+        "output_json6": 699
+      },
+      "bionerf_metric_convention": "fine_psnr/fine_ssim/fine_lpips (fine network)",
+      "I4": 2728,
+      "I5": 2092,
+      "source": "cluster <cluster>/scratch/the-group/account-B, pulled 2026-07-24",
+      "training_eval_tooling": "the cluster tooling archive (repo root) - sbatch/srun train+eval scripts for the recovered nerfacto/bionerf logs"
+    },
+    "E_joint4": {
+      "population_size": 2728,
+      "regime_support": {
+        "0": 459,
+        "1": 284,
+        "2": 311,
+        "3": 692,
+        "4": 376,
+        "5": 606
+      },
+      "frontier": [
+        {
+          "budget_scenes": 24,
+          "b": 4,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 4
+        },
+        {
+          "budget_scenes": 36,
+          "b": 6,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 6
+        },
+        {
+          "budget_scenes": 48,
+          "b": 8,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 8
+        },
+        {
+          "budget_scenes": 60,
+          "b": 10,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 10
+        },
+        {
+          "budget_scenes": 72,
+          "b": 12,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 12
+        },
+        {
+          "budget_scenes": 84,
+          "b": 14,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 14
+        },
+        {
+          "budget_scenes": 96,
+          "b": 16,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 16
+        },
+        {
+          "budget_scenes": 120,
+          "b": 20,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 20
+        }
+      ],
+      "per_method_n_pass_by_budget": {
+        "24": {
+          "zipnerf": 5,
+          "feature_splatting": 4,
+          "instant_ngp_fi": 19,
+          "nerfacto": 5
+        },
+        "36": {
+          "zipnerf": 6,
+          "feature_splatting": 4,
+          "instant_ngp_fi": 29,
+          "nerfacto": 8
+        },
+        "48": {
+          "zipnerf": 14,
+          "feature_splatting": 3,
+          "instant_ngp_fi": 30,
+          "nerfacto": 5
+        },
+        "60": {
+          "zipnerf": 7,
+          "feature_splatting": 3,
+          "instant_ngp_fi": 31,
+          "nerfacto": 6
+        },
+        "72": {
+          "zipnerf": 8,
+          "feature_splatting": 2,
+          "instant_ngp_fi": 30,
+          "nerfacto": 5
+        },
+        "84": {
+          "zipnerf": 2,
+          "feature_splatting": 3,
+          "instant_ngp_fi": 22,
+          "nerfacto": 6
+        },
+        "96": {
+          "zipnerf": 4,
+          "feature_splatting": 0,
+          "instant_ngp_fi": 17,
+          "nerfacto": 3
+        },
+        "120": {
+          "zipnerf": 1,
+          "feature_splatting": 0,
+          "instant_ngp_fi": 19,
+          "nerfacto": 1
+        }
+      },
+      "budget_p008": "not reached",
+      "rass48": {
+        "nominal_size": 48,
+        "scenes_in_intersection": 37,
+        "pass": false,
+        "violated": [
+          "feature_splatting.psnr",
+          "feature_splatting.lpips",
+          "nerfacto.psnr",
+          "nerfacto.ssim"
+        ]
+      },
+      "rass48_constraints": [
+        {
+          "method": "zipnerf",
+          "metric": "psnr",
+          "abs_mean_gap": 0.23145640673511636,
+          "ks": 0.1170246492827138,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "zipnerf",
+          "metric": "ssim",
+          "abs_mean_gap": 0.0054926636166797715,
+          "ks": 0.08503408100182294,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "zipnerf",
+          "metric": "lpips",
+          "abs_mean_gap": 0.006461287688693695,
+          "ks": 0.11262582230324165,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "feature_splatting",
+          "metric": "psnr",
+          "abs_mean_gap": 0.5306324701760055,
+          "ks": 0.10384798288024094,
+          "mean_pass": false,
+          "ks_pass": true
+        },
+        {
+          "method": "feature_splatting",
+          "metric": "ssim",
+          "abs_mean_gap": 0.005941772605378537,
+          "ks": 0.09923119600538956,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "feature_splatting",
+          "metric": "lpips",
+          "abs_mean_gap": 0.01827229133395164,
+          "ks": 0.14790560355076485,
+          "mean_pass": false,
+          "ks_pass": false
+        },
+        {
+          "method": "instant_ngp_fi",
+          "metric": "psnr",
+          "abs_mean_gap": 0.2592160900492466,
+          "ks": 0.08968058968058969,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "instant_ngp_fi",
+          "metric": "ssim",
+          "abs_mean_gap": 0.0027325957449266802,
+          "ks": 0.09307878259491163,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "nerfacto",
+          "metric": "psnr",
+          "abs_mean_gap": 0.5359216646355591,
+          "ks": 0.13792898470317824,
+          "mean_pass": false,
+          "ks_pass": true
+        },
+        {
+          "method": "nerfacto",
+          "metric": "ssim",
+          "abs_mean_gap": 0.010455805764459702,
+          "ks": 0.09643734643734644,
+          "mean_pass": false,
+          "ks_pass": true
+        },
+        {
+          "method": "nerfacto",
+          "metric": "lpips",
+          "abs_mean_gap": 0.002671164190834352,
+          "ks": 0.09087936910517555,
+          "mean_pass": true,
+          "ks_pass": true
+        }
+      ],
+      "rass96": {
+        "nominal_size": 96,
+        "scenes_in_intersection": 73,
+        "pass": true,
+        "violated": []
+      },
+      "rass96_constraints": [
+        {
+          "method": "zipnerf",
+          "metric": "psnr",
+          "abs_mean_gap": 0.0765481681446758,
+          "ks": 0.054046318242076084,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "zipnerf",
+          "metric": "ssim",
+          "abs_mean_gap": 0.0025397390439952927,
+          "ks": 0.0702054794520548,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "zipnerf",
+          "metric": "lpips",
+          "abs_mean_gap": 0.0013631732358216353,
+          "ks": 0.05091792873498574,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "feature_splatting",
+          "metric": "psnr",
+          "abs_mean_gap": 0.28474521982958834,
+          "ks": 0.07745149238741815,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "feature_splatting",
+          "metric": "ssim",
+          "abs_mean_gap": 0.006970030154413442,
+          "ks": 0.06815671072188968,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "feature_splatting",
+          "metric": "lpips",
+          "abs_mean_gap": 0.003987812638305721,
+          "ks": 0.07189270075924958,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "instant_ngp_fi",
+          "metric": "psnr",
+          "abs_mean_gap": 0.166222325336161,
+          "ks": 0.054126662113847264,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "instant_ngp_fi",
+          "metric": "ssim",
+          "abs_mean_gap": 0.00909730099324213,
+          "ks": 0.092174506889487,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "nerfacto",
+          "metric": "psnr",
+          "abs_mean_gap": 0.23434206902877897,
+          "ks": 0.07102900413770939,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "nerfacto",
+          "metric": "ssim",
+          "abs_mean_gap": 0.0024269912622365553,
+          "ks": 0.06869903185634516,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "nerfacto",
+          "metric": "lpips",
+          "abs_mean_gap": 0.0028820583922394283,
+          "ks": 0.0880468404772426,
+          "mean_pass": true,
+          "ks_pass": true
+        }
+      ]
+    },
+    "E_joint5": {
+      "population_size": 2092,
+      "regime_support": {
+        "0": 329,
+        "1": 195,
+        "2": 209,
+        "3": 576,
+        "4": 282,
+        "5": 501
+      },
+      "frontier": [
+        {
+          "budget_scenes": 24,
+          "b": 4,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 4
+        },
+        {
+          "budget_scenes": 36,
+          "b": 6,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 6
+        },
+        {
+          "budget_scenes": 48,
+          "b": 8,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 8
+        },
+        {
+          "budget_scenes": 60,
+          "b": 10,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 10
+        },
+        {
+          "budget_scenes": 72,
+          "b": 12,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 12
+        },
+        {
+          "budget_scenes": 84,
+          "b": 14,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 14
+        },
+        {
+          "budget_scenes": 96,
+          "b": 16,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 16
+        },
+        {
+          "budget_scenes": 120,
+          "b": 20,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
+          "rng_seed_effective": 20
+        }
+      ],
+      "per_method_n_pass_by_budget": {
+        "24": {
+          "zipnerf": 1,
+          "feature_splatting": 1,
+          "instant_ngp_fi": 5,
+          "nerfacto": 1,
+          "bionerf": 7
+        },
+        "36": {
+          "zipnerf": 3,
+          "feature_splatting": 3,
+          "instant_ngp_fi": 14,
+          "nerfacto": 1,
+          "bionerf": 26
+        },
+        "48": {
+          "zipnerf": 4,
+          "feature_splatting": 2,
+          "instant_ngp_fi": 5,
+          "nerfacto": 0,
+          "bionerf": 48
+        },
+        "60": {
+          "zipnerf": 3,
+          "feature_splatting": 0,
+          "instant_ngp_fi": 11,
+          "nerfacto": 0,
+          "bionerf": 52
+        },
+        "72": {
+          "zipnerf": 0,
+          "feature_splatting": 0,
+          "instant_ngp_fi": 7,
+          "nerfacto": 0,
+          "bionerf": 51
+        },
+        "84": {
+          "zipnerf": 0,
+          "feature_splatting": 0,
+          "instant_ngp_fi": 3,
+          "nerfacto": 0,
+          "bionerf": 62
+        },
+        "96": {
+          "zipnerf": 0,
+          "feature_splatting": 0,
+          "instant_ngp_fi": 3,
+          "nerfacto": 0,
+          "bionerf": 59
+        },
+        "120": {
+          "zipnerf": 0,
+          "feature_splatting": 0,
+          "instant_ngp_fi": 0,
+          "nerfacto": 0,
+          "bionerf": 62
+        }
+      },
+      "budget_p008": "not reached",
+      "rass48": {
+        "nominal_size": 48,
+        "scenes_in_intersection": 27,
+        "pass": false,
+        "violated": [
+          "zipnerf.psnr",
+          "zipnerf.ssim",
+          "zipnerf.lpips",
+          "feature_splatting.lpips",
+          "nerfacto.psnr",
+          "nerfacto.ssim",
+          "nerfacto.lpips",
+          "bionerf.psnr",
+          "bionerf.ssim"
+        ]
+      },
+      "rass48_constraints": [
+        {
+          "method": "zipnerf",
+          "metric": "psnr",
+          "abs_mean_gap": 0.6254538756390318,
+          "ks": 0.16640110473762482,
+          "mean_pass": false,
+          "ks_pass": false
+        },
+        {
+          "method": "zipnerf",
+          "metric": "ssim",
+          "abs_mean_gap": 0.01735157605502491,
+          "ks": 0.1386764393456554,
+          "mean_pass": false,
+          "ks_pass": true
+        },
+        {
+          "method": "zipnerf",
+          "metric": "lpips",
+          "abs_mean_gap": 0.012770970745470456,
+          "ks": 0.15278662984207916,
+          "mean_pass": false,
+          "ks_pass": false
+        },
+        {
+          "method": "feature_splatting",
+          "metric": "psnr",
+          "abs_mean_gap": 0.3283575266297838,
+          "ks": 0.10256001699596345,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "feature_splatting",
+          "metric": "ssim",
+          "abs_mean_gap": 0.0055159683464673925,
+          "ks": 0.1028432830536081,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "feature_splatting",
+          "metric": "lpips",
+          "abs_mean_gap": 0.019655836912759905,
+          "ks": 0.11226187947029247,
+          "mean_pass": false,
+          "ks_pass": true
+        },
+        {
+          "method": "instant_ngp_fi",
+          "metric": "psnr",
+          "abs_mean_gap": 0.12759461156616325,
+          "ks": 0.11325331067204872,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "instant_ngp_fi",
+          "metric": "ssim",
+          "abs_mean_gap": 0.0006357104598448959,
+          "ks": 0.09885985411798032,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "nerfacto",
+          "metric": "psnr",
+          "abs_mean_gap": 0.6626936657960076,
+          "ks": 0.12715105162523901,
+          "mean_pass": false,
+          "ks_pass": true
+        },
+        {
+          "method": "nerfacto",
+          "metric": "ssim",
+          "abs_mean_gap": 0.010346283161522418,
+          "ks": 0.08313858791870264,
+          "mean_pass": false,
+          "ks_pass": true
+        },
+        {
+          "method": "nerfacto",
+          "metric": "lpips",
+          "abs_mean_gap": 0.010345512628977427,
+          "ks": 0.12998371220168542,
+          "mean_pass": false,
+          "ks_pass": true
+        },
+        {
+          "method": "bionerf",
+          "metric": "psnr",
+          "abs_mean_gap": 0.6573029208323433,
+          "ks": 0.16507329509241556,
+          "mean_pass": false,
+          "ks_pass": false
+        },
+        {
+          "method": "bionerf",
+          "metric": "ssim",
+          "abs_mean_gap": 0.011857611978585259,
+          "ks": 0.21807945612916932,
+          "mean_pass": false,
+          "ks_pass": false
+        },
+        {
+          "method": "bionerf",
+          "metric": "lpips",
+          "abs_mean_gap": 0.004100931022851917,
+          "ks": 0.12766447135471992,
+          "mean_pass": true,
+          "ks_pass": true
+        }
+      ],
+      "rass96": {
+        "nominal_size": 96,
+        "scenes_in_intersection": 60,
+        "pass": false,
+        "violated": [
+          "feature_splatting.lpips",
+          "instant_ngp_fi.ssim",
+          "bionerf.psnr",
+          "bionerf.ssim",
+          "bionerf.lpips"
+        ]
+      },
+      "rass96_constraints": [
+        {
+          "method": "zipnerf",
+          "metric": "psnr",
+          "abs_mean_gap": 0.05088122593060973,
+          "ks": 0.06838750796685787,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "zipnerf",
+          "metric": "ssim",
+          "abs_mean_gap": 0.003960299247328103,
+          "ks": 0.09525175270873168,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "zipnerf",
+          "metric": "lpips",
+          "abs_mean_gap": 0.0004669586750943311,
+          "ks": 0.0692797960484385,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "feature_splatting",
+          "metric": "psnr",
+          "abs_mean_gap": 0.24560895178863618,
+          "ks": 0.08753983428935627,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "feature_splatting",
+          "metric": "ssim",
+          "abs_mean_gap": 0.008513090909097243,
+          "ks": 0.06660293180369663,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "feature_splatting",
+          "metric": "lpips",
+          "abs_mean_gap": 0.010303638862781905,
+          "ks": 0.08534098151688974,
+          "mean_pass": false,
+          "ks_pass": true
+        },
+        {
+          "method": "instant_ngp_fi",
+          "metric": "psnr",
+          "abs_mean_gap": 0.01705942163568608,
+          "ks": 0.0607074569789675,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "instant_ngp_fi",
+          "metric": "ssim",
+          "abs_mean_gap": 0.010051847413303228,
+          "ks": 0.12418738049713193,
+          "mean_pass": false,
+          "ks_pass": true
+        },
+        {
+          "method": "nerfacto",
+          "metric": "psnr",
+          "abs_mean_gap": 0.15314842756574087,
+          "ks": 0.07224346717654558,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "nerfacto",
+          "metric": "ssim",
+          "abs_mean_gap": 0.006597315911334278,
+          "ks": 0.08291905672402804,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "nerfacto",
+          "metric": "lpips",
+          "abs_mean_gap": 0.005094792665836567,
+          "ks": 0.0934353091140854,
+          "mean_pass": true,
+          "ks_pass": true
+        },
+        {
+          "method": "bionerf",
+          "metric": "psnr",
+          "abs_mean_gap": 0.4003129234277498,
+          "ks": 0.1682919056724028,
+          "mean_pass": true,
+          "ks_pass": false
+        },
+        {
+          "method": "bionerf",
+          "metric": "ssim",
+          "abs_mean_gap": 0.03111587477511968,
+          "ks": 0.1491714467813894,
+          "mean_pass": false,
+          "ks_pass": false
+        },
+        {
+          "method": "bionerf",
+          "metric": "lpips",
+          "abs_mean_gap": 0.02885446498696409,
+          "ks": 0.16625239005736137,
+          "mean_pass": false,
+          "ks_pass": false
+        }
+      ]
+    },
+    "description": "E1's formal joint event extended with nerfacto (E_joint4, 11 method-metric pairs) and nerfacto+bionerf (E_joint5, 14 pairs) on the correspondingly reduced intersections; references recomputed per intersection; same tolerances, balanced k=6 generator, M=400, seed 0 as E1.",
+    "diagnosis": {
+      "finding": "Joint and single-method pass rates on I4/I5 decline toward zero as budget grows - the signature of a systematic bias, not sampling noise. Cause: nerfacto/bionerf coverage is regime-skewed (I4 retention by regime: 63/68/68/97/71/96 percent), so the balanced generator's equal-per-regime allocation converges to the equal-weight regime mean, which on I4 sits -1.2904 dB (PSNR), -0.0302 (SSIM), +0.0419 (LPIPS) from the I4 population mean - each several times the corresponding tolerance.",
+      "interpretation": "E8 as run is a population-shift stress test, and the audit correctly refuses to certify: with incomplete, non-randomly missing method coverage, no balanced subset can match the intersection references. It is NOT evidence against the E1 result, whose intersection retains 96-99 percent per regime.",
+      "paths_to_a_fair_extension": [
+        "complete the nerfacto/bionerf runs on the ~760/~1430 missing scenes (preferred; keeps the protocol unchanged)",
+        "proportional-to-regime-size allocation (changes the generator protocol)",
+        "define references as the equal-weight regime mean (changes the event definition)"
+      ],
+      "i4_regime_retention_pct": {
+        "0": 63,
+        "1": 68,
+        "2": 68,
+        "3": 97,
+        "4": 71,
+        "5": 96
+      },
+      "i4_equal_weight_bias": {
+        "psnr_db": -1.2904,
+        "ssim": -0.0302,
+        "lpips": 0.0419
+      }
+    },
+    "local_eval_progress_20260724": {
+      "nerfacto_jsons_total": 2950,
+      "local_evals_completed": 188,
+      "validation": "pilot scene matches cluster metrics to 3e-4 dB PSNR / 2e-5 SSIM / 2e-5 LPIPS",
+      "caveat_scene": "dish_1551323219 evaluated at step-000028000 (final ckpt 0 bytes at source; flagged for retraining; note embedded in its JSON)",
+      "intersection_coverage": "2915/3473 (84%); regime retention 74/74/75/97/80/96 pct",
+      "equal_weight_bias_now": {
+        "psnr_db": -0.9788,
+        "ssim": -0.02258,
+        "lpips": 0.03244
+      },
+      "assessment": "Bias reduced from -1.29 to -0.98 dB PSNR but still ~2x the 0.5 dB tolerance: the remaining 572 untrained scenes are concentrated in regimes 0/1/2/4, so a fair E8 rerun still requires the queued cluster training jobs (43295216, 43780698) to finish. No interim frontier rerun published - it would still read ~0/400 for structural reasons already documented in E8.diagnosis."
+    }
+  },
+  "E9": {
+    "description": "Deadline-ready multi-method comparison on AVAILABLE data (common-coverage subpopulations, 2026-07-24 log state: nerfacto 2,950 scenes incl. 188 local GPU evals, bionerf 2,620). Proportional-allocation audit makes the balanced sampler unbiased on regime-skewed coverage; equal-allocation results (0/400, E8) stand as the contrast demonstrating the audit detects population shift.",
+    "populations": {
+      "I4": 2915,
+      "I5": 2228
+    },
+    "caveat": "I4/I5 are not random subsamples of the audit set (missingness concentrated in regimes 0/1/2/4); all claims are for the common-coverage subpopulation. dish_1551323219 evaluated at 28k/30k steps (flagged).",
+    "a_method_table_I5": {
+      "zipnerf": {
+        "psnr": {
+          "mean": 19.81516432612332,
+          "std": 6.376875061716939
+        },
+        "ssim": {
+          "mean": 0.7034709854536361,
+          "std": 0.16602589167657056
+        },
+        "lpips": {
+          "mean": 0.30831138594527496,
+          "std": 0.22316070659546797
+        }
+      },
+      "feature_splatting": {
+        "psnr": {
+          "mean": 18.070867212285258,
+          "std": 4.878499202537342
+        },
+        "ssim": {
+          "mean": 0.6725841762641817,
+          "std": 0.17083657301081442
+        },
+        "lpips": {
+          "mean": 0.40652184365099864,
+          "std": 0.1540001501481659
+        }
+      },
+      "instant_ngp_fi": {
+        "psnr": {
+          "mean": 17.217265668852782,
+          "std": 4.492120596760133
+        },
+        "ssim": {
+          "mean": 0.7521396983474732,
+          "std": 0.09388071183513931
+        }
+      },
+      "nerfacto": {
+        "psnr": {
+          "mean": 15.506382269748023,
+          "std": 4.58636189097288
+        },
+        "ssim": {
+          "mean": 0.6383930966993744,
+          "std": 0.13611855646749632
+        },
+        "lpips": {
+          "mean": 0.5745043067572575,
+          "std": 0.13350956662773733
+        }
+      },
+      "bionerf": {
+        "psnr": {
+          "mean": 8.668622223757328,
+          "std": 1.8493325607777569
+        },
+        "ssim": {
+          "mean": 0.45363866748485576,
+          "std": 0.12308853120753678
+        },
+        "lpips": {
+          "mean": 0.8869522007807581,
+          "std": 0.08970497777975121
+        }
+      }
+    },
+    "a_pairwise_gaps_I5": {
+      "zipnerf_minus_feature_splatting_psnr": 1.744297113838062,
+      "zipnerf_minus_instant_ngp_fi_psnr": 2.5978986572705374,
+      "zipnerf_minus_nerfacto_psnr": 4.308782056375296,
+      "zipnerf_minus_bionerf_psnr": 11.146542102365991,
+      "feature_splatting_minus_instant_ngp_fi_psnr": 0.8536015434324753,
+      "feature_splatting_minus_nerfacto_psnr": 2.5644849425372342,
+      "feature_splatting_minus_bionerf_psnr": 9.40224498852793,
+      "instant_ngp_fi_minus_nerfacto_psnr": 1.710883399104759,
+      "instant_ngp_fi_minus_bionerf_psnr": 8.548643445095454,
+      "nerfacto_minus_bionerf_psnr": 6.837760045990695,
+      "zipnerf_minus_feature_splatting_ssim": 0.03088680918945441,
+      "zipnerf_minus_instant_ngp_fi_ssim": -0.04866871289383712,
+      "zipnerf_minus_nerfacto_ssim": 0.06507788875426168,
+      "zipnerf_minus_bionerf_ssim": 0.2498323179687803,
+      "feature_splatting_minus_instant_ngp_fi_ssim": -0.07955552208329153,
+      "feature_splatting_minus_nerfacto_ssim": 0.03419107956480727,
+      "feature_splatting_minus_bionerf_ssim": 0.2189455087793259,
+      "instant_ngp_fi_minus_nerfacto_ssim": 0.1137466016480988,
+      "instant_ngp_fi_minus_bionerf_ssim": 0.2985010308626174,
+      "nerfacto_minus_bionerf_ssim": 0.18475442921451862,
+      "zipnerf_minus_feature_splatting_lpips": -0.09821045770572367,
+      "zipnerf_minus_nerfacto_lpips": -0.26619292081198254,
+      "zipnerf_minus_bionerf_lpips": -0.5786408148354831,
+      "feature_splatting_minus_nerfacto_lpips": -0.16798246310625886,
+      "feature_splatting_minus_bionerf_lpips": -0.48043035712975946,
+      "nerfacto_minus_bionerf_lpips": -0.3124478940235006
+    },
+    "a_orderings_I5": {
+      "psnr": [
+        "zipnerf",
+        "feature_splatting",
+        "instant_ngp_fi",
+        "nerfacto",
+        "bionerf"
+      ],
+      "ssim": [
+        "instant_ngp_fi",
+        "zipnerf",
+        "feature_splatting",
+        "nerfacto",
+        "bionerf"
+      ],
+      "lpips": [
+        "zipnerf",
+        "feature_splatting",
+        "nerfacto",
+        "bionerf"
+      ]
+    },
+    "b_proportional_frontiers": {
+      "I4_4methods": {
+        "population": 2915,
+        "regime_sizes": {
+          "0": 535,
+          "1": 310,
+          "2": 345,
+          "3": 695,
+          "4": 422,
+          "5": 608
+        },
+        "frontier": [
+          {
+            "budget_scenes": 24,
+            "allocation": {
+              "0": 4,
+              "1": 3,
+              "2": 3,
+              "3": 6,
+              "4": 3,
+              "5": 5
+            },
+            "n_pass": 0,
+            "empirical_pass_rate": 0.0,
+            "wilson_lcb_95": 0.0,
+            "rng_seed_effective": 24
+          },
+          {
+            "budget_scenes": 36,
+            "allocation": {
+              "0": 7,
+              "1": 4,
+              "2": 4,
+              "3": 9,
+              "4": 5,
+              "5": 7
+            },
+            "n_pass": 6,
+            "empirical_pass_rate": 0.015,
+            "wilson_lcb_95": 0.006892291919440893,
+            "rng_seed_effective": 36
+          },
+          {
+            "budget_scenes": 48,
+            "allocation": {
+              "0": 9,
+              "1": 5,
+              "2": 6,
+              "3": 11,
+              "4": 7,
+              "5": 10
+            },
+            "n_pass": 18,
+            "empirical_pass_rate": 0.045,
+            "wilson_lcb_95": 0.028651458653886002,
+            "rng_seed_effective": 48
+          },
+          {
+            "budget_scenes": 60,
+            "allocation": {
+              "0": 11,
+              "1": 6,
+              "2": 7,
+              "3": 14,
+              "4": 9,
+              "5": 13
+            },
+            "n_pass": 28,
+            "empirical_pass_rate": 0.07,
+            "wilson_lcb_95": 0.0488716266997445,
+            "rng_seed_effective": 60
+          },
+          {
+            "budget_scenes": 72,
+            "allocation": {
+              "0": 13,
+              "1": 8,
+              "2": 9,
+              "3": 17,
+              "4": 10,
+              "5": 15
+            },
+            "n_pass": 54,
+            "empirical_pass_rate": 0.135,
+            "wilson_lcb_95": 0.10496299061600528,
+            "rng_seed_effective": 72
+          },
+          {
+            "budget_scenes": 96,
+            "allocation": {
+              "0": 18,
+              "1": 10,
+              "2": 11,
+              "3": 23,
+              "4": 14,
+              "5": 20
+            },
+            "n_pass": 72,
+            "empirical_pass_rate": 0.18,
+            "wilson_lcb_95": 0.14545031532583305,
+            "rng_seed_effective": 96
+          },
+          {
+            "budget_scenes": 120,
+            "allocation": {
+              "0": 22,
+              "1": 13,
+              "2": 14,
+              "3": 29,
+              "4": 17,
+              "5": 25
+            },
+            "n_pass": 106,
+            "empirical_pass_rate": 0.265,
+            "wilson_lcb_95": 0.22413371758035427,
+            "rng_seed_effective": 120
+          }
+        ],
+        "budget_p008": 72
+      },
+      "I5_5methods": {
+        "population": 2228,
+        "regime_sizes": {
+          "0": 388,
+          "1": 216,
+          "2": 228,
+          "3": 579,
+          "4": 314,
+          "5": 503
+        },
+        "frontier": [
+          {
+            "budget_scenes": 24,
+            "allocation": {
+              "0": 4,
+              "1": 2,
+              "2": 3,
+              "3": 6,
+              "4": 3,
+              "5": 6
+            },
+            "n_pass": 0,
+            "empirical_pass_rate": 0.0,
+            "wilson_lcb_95": 0.0,
+            "rng_seed_effective": 24
+          },
+          {
+            "budget_scenes": 36,
+            "allocation": {
+              "0": 6,
+              "1": 4,
+              "2": 4,
+              "3": 9,
+              "4": 5,
+              "5": 8
+            },
+            "n_pass": 0,
+            "empirical_pass_rate": 0.0,
+            "wilson_lcb_95": 0.0,
+            "rng_seed_effective": 36
+          },
+          {
+            "budget_scenes": 48,
+            "allocation": {
+              "0": 8,
+              "1": 5,
+              "2": 5,
+              "3": 12,
+              "4": 7,
+              "5": 11
+            },
+            "n_pass": 2,
+            "empirical_pass_rate": 0.005,
+            "wilson_lcb_95": 0.0013722529547103846,
+            "rng_seed_effective": 48
+          },
+          {
+            "budget_scenes": 60,
+            "allocation": {
+              "0": 10,
+              "1": 6,
+              "2": 6,
+              "3": 16,
+              "4": 8,
+              "5": 14
+            },
+            "n_pass": 7,
+            "empirical_pass_rate": 0.0175,
+            "wilson_lcb_95": 0.008502291107038101,
+            "rng_seed_effective": 60
+          },
+          {
+            "budget_scenes": 72,
+            "allocation": {
+              "0": 13,
+              "1": 7,
+              "2": 7,
+              "3": 19,
+              "4": 10,
+              "5": 16
+            },
+            "n_pass": 23,
+            "empirical_pass_rate": 0.0575,
+            "wilson_lcb_95": 0.038617542757733075,
+            "rng_seed_effective": 72
+          },
+          {
+            "budget_scenes": 96,
+            "allocation": {
+              "0": 17,
+              "1": 9,
+              "2": 10,
+              "3": 25,
+              "4": 13,
+              "5": 22
+            },
+            "n_pass": 37,
+            "empirical_pass_rate": 0.0925,
+            "wilson_lcb_95": 0.06785393449857381,
+            "rng_seed_effective": 96
+          },
+          {
+            "budget_scenes": 120,
+            "allocation": {
+              "0": 21,
+              "1": 12,
+              "2": 12,
+              "3": 31,
+              "4": 17,
+              "5": 27
+            },
+            "n_pass": 73,
+            "empirical_pass_rate": 0.1825,
+            "wilson_lcb_95": 0.14772734739355886,
+            "rng_seed_effective": 120
+          }
+        ],
+        "budget_p008": 120
+      }
+    },
+    "b_seed_rule": "numpy default_rng(seed + budget_scenes), proportional allocation (largest-remainder rounding)",
+    "b_equal_allocation_contrast": "E8 frontiers: 0/400 at every budget (see E8.diagnosis)",
+    "c_rass_tables": {
+      "rass48": {
+        "I4": {
+          "nominal": 48,
+          "in_intersection": 41,
+          "pass": false,
+          "violated": [
+            "zipnerf.ssim",
+            "feature_splatting.lpips",
+            "nerfacto.psnr",
+            "nerfacto.lpips"
+          ]
+        },
+        "I5": {
+          "nominal": 48,
+          "in_intersection": 29,
+          "pass": false,
+          "violated": [
+            "zipnerf.psnr",
+            "zipnerf.ssim",
+            "zipnerf.lpips",
+            "feature_splatting.lpips",
+            "nerfacto.psnr",
+            "nerfacto.lpips",
+            "bionerf.psnr",
+            "bionerf.ssim",
+            "bionerf.lpips"
+          ]
+        }
+      },
+      "rass96": {
+        "I4": {
+          "nominal": 96,
+          "in_intersection": 77,
+          "pass": true,
+          "violated": []
+        },
+        "I5": {
+          "nominal": 96,
+          "in_intersection": 64,
+          "pass": false,
+          "violated": [
+            "feature_splatting.lpips",
+            "nerfacto.ssim",
+            "bionerf.psnr",
+            "bionerf.ssim",
+            "bionerf.lpips"
+          ]
+        }
+      }
+    },
+    "c_rass_constraints_full": {
+      "rass48": {
+        "I4": {
+          "nominal": 48,
+          "in_intersection": 41,
+          "pass": false,
+          "violated": [
+            "zipnerf.ssim",
+            "feature_splatting.lpips",
+            "nerfacto.psnr",
+            "nerfacto.lpips"
+          ],
+          "constraints": [
+            {
+              "method": "zipnerf",
+              "metric": "psnr",
+              "abs_mean_gap": 0.3292876987842348,
+              "ks": 0.1196000502029034,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "zipnerf",
+              "metric": "ssim",
+              "abs_mean_gap": 0.010184638303866844,
+              "ks": 0.08985482993766473,
+              "mean_pass": false,
+              "ks_pass": true
+            },
+            {
+              "method": "zipnerf",
+              "metric": "lpips",
+              "abs_mean_gap": 0.0026632125325273814,
+              "ks": 0.13507091160105425,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "feature_splatting",
+              "metric": "psnr",
+              "abs_mean_gap": 0.22741154164134159,
+              "ks": 0.08815629837258922,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "feature_splatting",
+              "metric": "ssim",
+              "abs_mean_gap": 0.0038325611524530068,
+              "ks": 0.10361042546960633,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "feature_splatting",
+              "metric": "lpips",
+              "abs_mean_gap": 0.02613815152862181,
+              "ks": 0.16863155252478768,
+              "mean_pass": false,
+              "ks_pass": false
+            },
+            {
+              "method": "instant_ngp_fi",
+              "metric": "psnr",
+              "abs_mean_gap": 0.0993835276963253,
+              "ks": 0.07941262603020541,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "instant_ngp_fi",
+              "metric": "ssim",
+              "abs_mean_gap": 0.003047808924405593,
+              "ks": 0.0959210140986487,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "nerfacto",
+              "metric": "psnr",
+              "abs_mean_gap": 0.3725707552340545,
+              "ks": 0.158080575659959,
+              "mean_pass": true,
+              "ks_pass": false
+            },
+            {
+              "method": "nerfacto",
+              "metric": "ssim",
+              "abs_mean_gap": 0.008614121794211949,
+              "ks": 0.11156758565870392,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "nerfacto",
+              "metric": "lpips",
+              "abs_mean_gap": 0.010397137750947083,
+              "ks": 0.10414592310588629,
+              "mean_pass": false,
+              "ks_pass": true
+            }
+          ]
+        },
+        "I5": {
+          "nominal": 48,
+          "in_intersection": 29,
+          "pass": false,
+          "violated": [
+            "zipnerf.psnr",
+            "zipnerf.ssim",
+            "zipnerf.lpips",
+            "feature_splatting.lpips",
+            "nerfacto.psnr",
+            "nerfacto.lpips",
+            "bionerf.psnr",
+            "bionerf.ssim",
+            "bionerf.lpips"
+          ],
+          "constraints": [
+            {
+              "method": "zipnerf",
+              "metric": "psnr",
+              "abs_mean_gap": 0.6606036645151292,
+              "ks": 0.17954869064570048,
+              "mean_pass": false,
+              "ks_pass": false
+            },
+            {
+              "method": "zipnerf",
+              "metric": "ssim",
+              "abs_mean_gap": 0.019336912122333905,
+              "ks": 0.14274438184857302,
+              "mean_pass": false,
+              "ks_pass": false
+            },
+            {
+              "method": "zipnerf",
+              "metric": "lpips",
+              "abs_mean_gap": 0.016145081973557462,
+              "ks": 0.15187581254256174,
+              "mean_pass": false,
+              "ks_pass": false
+            },
+            {
+              "method": "feature_splatting",
+              "metric": "psnr",
+              "abs_mean_gap": 0.11225177233177774,
+              "ks": 0.07845291896242185,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "feature_splatting",
+              "metric": "ssim",
+              "abs_mean_gap": 0.004104966947993782,
+              "ks": 0.10115767968798366,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "feature_splatting",
+              "metric": "lpips",
+              "abs_mean_gap": 0.02727064364967685,
+              "ks": 0.1510864854825729,
+              "mean_pass": false,
+              "ks_pass": false
+            },
+            {
+              "method": "instant_ngp_fi",
+              "metric": "psnr",
+              "abs_mean_gap": 0.12243853780238823,
+              "ks": 0.10516622299263295,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "instant_ngp_fi",
+              "metric": "ssim",
+              "abs_mean_gap": 0.001213082690457945,
+              "ks": 0.09205720299634743,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "nerfacto",
+              "metric": "psnr",
+              "abs_mean_gap": 0.585503428504687,
+              "ks": 0.14542190305206462,
+              "mean_pass": false,
+              "ks_pass": false
+            },
+            {
+              "method": "nerfacto",
+              "metric": "ssim",
+              "abs_mean_gap": 0.008847827724764223,
+              "ks": 0.0947811552033678,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "nerfacto",
+              "metric": "lpips",
+              "abs_mean_gap": 0.01685576896316776,
+              "ks": 0.16560391258589735,
+              "mean_pass": false,
+              "ks_pass": false
+            },
+            {
+              "method": "bionerf",
+              "metric": "psnr",
+              "abs_mean_gap": 0.46482272674105474,
+              "ks": 0.14166099176623537,
+              "mean_pass": true,
+              "ks_pass": false
+            },
+            {
+              "method": "bionerf",
+              "metric": "ssim",
+              "abs_mean_gap": 0.006485800856192492,
+              "ks": 0.16625394663529994,
+              "mean_pass": true,
+              "ks_pass": false
+            },
+            {
+              "method": "bionerf",
+              "metric": "lpips",
+              "abs_mean_gap": 0.014178289481174833,
+              "ks": 0.15021977341670278,
+              "mean_pass": false,
+              "ks_pass": false
+            }
+          ]
+        }
+      },
+      "rass96": {
+        "I4": {
+          "nominal": 96,
+          "in_intersection": 77,
+          "pass": true,
+          "violated": [],
+          "constraints": [
+            {
+              "method": "zipnerf",
+              "metric": "psnr",
+              "abs_mean_gap": 0.06330479809067668,
+              "ks": 0.06782651310953197,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "zipnerf",
+              "metric": "ssim",
+              "abs_mean_gap": 0.002186911158980953,
+              "ks": 0.06571918647390346,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "zipnerf",
+              "metric": "lpips",
+              "abs_mean_gap": 0.003604073144625075,
+              "ks": 0.0503308012741975,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "feature_splatting",
+              "metric": "psnr",
+              "abs_mean_gap": 0.2187872660215575,
+              "ks": 0.06052438127909826,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "feature_splatting",
+              "metric": "ssim",
+              "abs_mean_gap": 0.003419491703444244,
+              "ks": 0.06297476108796864,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "feature_splatting",
+              "metric": "lpips",
+              "abs_mean_gap": 0.00473978356717264,
+              "ks": 0.06380789022298457,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "instant_ngp_fi",
+              "metric": "psnr",
+              "abs_mean_gap": 0.18313531865464228,
+              "ks": 0.05915216858613085,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "instant_ngp_fi",
+              "metric": "ssim",
+              "abs_mean_gap": 0.00920898383986346,
+              "ks": 0.09438863023768684,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "nerfacto",
+              "metric": "psnr",
+              "abs_mean_gap": 0.06784944536638626,
+              "ks": 0.08620436167605978,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "nerfacto",
+              "metric": "ssim",
+              "abs_mean_gap": 0.007410196753671161,
+              "ks": 0.07223719676549865,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "nerfacto",
+              "metric": "lpips",
+              "abs_mean_gap": 0.0060996994920233805,
+              "ks": 0.08056848811565792,
+              "mean_pass": true,
+              "ks_pass": true
+            }
+          ]
+        },
+        "I5": {
+          "nominal": 96,
+          "in_intersection": 64,
+          "pass": false,
+          "violated": [
+            "feature_splatting.lpips",
+            "nerfacto.ssim",
+            "bionerf.psnr",
+            "bionerf.ssim",
+            "bionerf.lpips"
+          ],
+          "constraints": [
+            {
+              "method": "zipnerf",
+              "metric": "psnr",
+              "abs_mean_gap": 0.014860777548829418,
+              "ks": 0.0653052064631957,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "zipnerf",
+              "metric": "ssim",
+              "abs_mean_gap": 0.0018529626055945325,
+              "ks": 0.09038375224416517,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "zipnerf",
+              "metric": "lpips",
+              "abs_mean_gap": 0.00433954075691545,
+              "ks": 0.0626963644524237,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "feature_splatting",
+              "metric": "psnr",
+              "abs_mean_gap": 0.22546777295038822,
+              "ks": 0.07355251346499102,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "feature_splatting",
+              "metric": "ssim",
+              "abs_mean_gap": 0.006242703381404202,
+              "ks": 0.06412701974865351,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "feature_splatting",
+              "metric": "lpips",
+              "abs_mean_gap": 0.012723080676359966,
+              "ks": 0.07686265709156194,
+              "mean_pass": false,
+              "ks_pass": true
+            },
+            {
+              "method": "instant_ngp_fi",
+              "metric": "psnr",
+              "abs_mean_gap": 0.09815544196215598,
+              "ks": 0.05641270197486535,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "instant_ngp_fi",
+              "metric": "ssim",
+              "abs_mean_gap": 0.009534064288464372,
+              "ks": 0.10704667863554758,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "nerfacto",
+              "metric": "psnr",
+              "abs_mean_gap": 0.030132157691291184,
+              "ks": 0.08586736983842011,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "nerfacto",
+              "metric": "ssim",
+              "abs_mean_gap": 0.010321703200233512,
+              "ks": 0.10154847396768402,
+              "mean_pass": false,
+              "ks_pass": true
+            },
+            {
+              "method": "nerfacto",
+              "metric": "lpips",
+              "abs_mean_gap": 0.006381861151562251,
+              "ks": 0.08844815978456014,
+              "mean_pass": true,
+              "ks_pass": true
+            },
+            {
+              "method": "bionerf",
+              "metric": "psnr",
+              "abs_mean_gap": 0.41894643930333686,
+              "ks": 0.1596442998204668,
+              "mean_pass": true,
+              "ks_pass": false
+            },
+            {
+              "method": "bionerf",
+              "metric": "ssim",
+              "abs_mean_gap": 0.026206238184013853,
+              "ks": 0.13226548473967684,
+              "mean_pass": false,
+              "ks_pass": true
+            },
+            {
+              "method": "bionerf",
+              "metric": "lpips",
+              "abs_mean_gap": 0.027665492489138077,
+              "ks": 0.1602894973070018,
+              "mean_pass": false,
+              "ks_pass": false
+            }
+          ]
+        }
+      }
+    },
+    "d_kendall_tau_I5": {
+      "zipnerf_vs_feature_splatting_psnr": 0.586090085848639,
+      "zipnerf_vs_instant_ngp_fi_psnr": 0.6458777900404614,
+      "zipnerf_vs_nerfacto_psnr": 0.6173911010537398,
+      "zipnerf_vs_bionerf_psnr": 0.14387083927545005,
+      "feature_splatting_vs_instant_ngp_fi_psnr": 0.6013096976151184,
+      "feature_splatting_vs_nerfacto_psnr": 0.727132894080241,
+      "feature_splatting_vs_bionerf_psnr": 0.16696750102181565,
+      "instant_ngp_fi_vs_nerfacto_psnr": 0.6290845418436537,
+      "instant_ngp_fi_vs_bionerf_psnr": 0.13267238453483,
+      "nerfacto_vs_bionerf_psnr": 0.17444630489689536,
+      "zipnerf_vs_feature_splatting_ssim": 0.5824088452573855,
+      "zipnerf_vs_instant_ngp_fi_ssim": 0.5629995838166246,
+      "zipnerf_vs_nerfacto_ssim": 0.6109140818117906,
+      "zipnerf_vs_bionerf_ssim": -0.06535469808565851,
+      "feature_splatting_vs_instant_ngp_fi_ssim": 0.5711816542369273,
+      "feature_splatting_vs_nerfacto_ssim": 0.7236510622448987,
+      "feature_splatting_vs_bionerf_ssim": -0.09109355639414755,
+      "instant_ngp_fi_vs_nerfacto_ssim": 0.6678038984585295,
+      "instant_ngp_fi_vs_bionerf_ssim": 0.007538460174180269,
+      "nerfacto_vs_bionerf_ssim": -0.040209957926185806,
+      "zipnerf_vs_feature_splatting_lpips": 0.49483690854608725,
+      "zipnerf_vs_nerfacto_lpips": 0.5198836863400779,
+      "zipnerf_vs_bionerf_lpips": -0.15733511926130597,
+      "feature_splatting_vs_nerfacto_lpips": 0.6185116720773854,
+      "feature_splatting_vs_bionerf_lpips": -0.16964205997359275,
+      "nerfacto_vs_bionerf_lpips": -0.08972675584618608
+    },
+    "thresholds": {
+      "psnr_tol": 0.5,
+      "ssim_tol": 0.01,
+      "lpips_tol": 0.01,
+      "ks_tol": 0.14
+    },
+    "num_trials": 400,
+    "seed": 0
+  },
+  "E10": {
+    "description": "E1's three-method joint event under proportional-to-regime-size allocation (largest-remainder, min 1/regime), everything else identical, for symmetric allocation reporting. Equal-allocation evaluator validated to reproduce E1's frontier exactly.",
+    "frontier_proportional": [
+      {
+        "budget_scenes": 24,
+        "b": 4,
+        "n_pass": 0,
+        "empirical_pass_rate": 0.0,
+        "wilson_lcb_95": 0.0,
+        "rng_seed_effective": 4
+      },
+      {
+        "budget_scenes": 36,
+        "b": 6,
+        "n_pass": 8,
+        "empirical_pass_rate": 0.02,
+        "wilson_lcb_95": 0.01016838679166465,
+        "rng_seed_effective": 6
+      },
+      {
+        "budget_scenes": 48,
+        "b": 8,
+        "n_pass": 17,
+        "empirical_pass_rate": 0.0425,
+        "wilson_lcb_95": 0.026701694991131116,
+        "rng_seed_effective": 8
+      },
+      {
+        "budget_scenes": 60,
+        "b": 10,
+        "n_pass": 36,
+        "empirical_pass_rate": 0.09,
+        "wilson_lcb_95": 0.06571729376939447,
+        "rng_seed_effective": 10
+      },
+      {
+        "budget_scenes": 72,
+        "b": 12,
+        "n_pass": 49,
+        "empirical_pass_rate": 0.1225,
+        "wilson_lcb_95": 0.09391315520467675,
+        "rng_seed_effective": 12
+      },
+      {
+        "budget_scenes": 84,
+        "b": 14,
+        "n_pass": 67,
+        "empirical_pass_rate": 0.1675,
+        "wilson_lcb_95": 0.13410557406748244,
+        "rng_seed_effective": 14
+      },
+      {
+        "budget_scenes": 96,
+        "b": 16,
+        "n_pass": 85,
+        "empirical_pass_rate": 0.2125,
+        "wilson_lcb_95": 0.17524350992363666,
+        "rng_seed_effective": 16
+      },
+      {
+        "budget_scenes": 120,
+        "b": 20,
+        "n_pass": 122,
+        "empirical_pass_rate": 0.305,
+        "wilson_lcb_95": 0.2619126095600189,
+        "rng_seed_effective": 20
+      }
+    ],
+    "frontier_equal_ref": [
+      {
+        "budget_scenes": 24,
+        "b": 4,
+        "n_pass": 1,
+        "empirical_pass_rate": 0.0025,
+        "wilson_lcb_95": 0.0004414477868016353,
+        "rng_seed_effective": 4
+      },
+      {
+        "budget_scenes": 36,
+        "b": 6,
+        "n_pass": 5,
+        "empirical_pass_rate": 0.0125,
+        "wilson_lcb_95": 0.005350750779971615,
+        "rng_seed_effective": 6
+      },
+      {
+        "budget_scenes": 48,
+        "b": 8,
+        "n_pass": 6,
+        "empirical_pass_rate": 0.015,
+        "wilson_lcb_95": 0.006892291919440893,
+        "rng_seed_effective": 8
+      },
+      {
+        "budget_scenes": 60,
+        "b": 10,
+        "n_pass": 14,
+        "empirical_pass_rate": 0.035,
+        "wilson_lcb_95": 0.02096129419797776,
+        "rng_seed_effective": 10
+      },
+      {
+        "budget_scenes": 72,
+        "b": 12,
+        "n_pass": 20,
+        "empirical_pass_rate": 0.05,
+        "wilson_lcb_95": 0.03259742983714726,
+        "rng_seed_effective": 12
+      },
+      {
+        "budget_scenes": 84,
+        "b": 14,
+        "n_pass": 20,
+        "empirical_pass_rate": 0.05,
+        "wilson_lcb_95": 0.03259742983714726,
+        "rng_seed_effective": 14
+      },
+      {
+        "budget_scenes": 96,
+        "b": 16,
+        "n_pass": 30,
+        "empirical_pass_rate": 0.075,
+        "wilson_lcb_95": 0.05303774392284766,
+        "rng_seed_effective": 16
+      },
+      {
+        "budget_scenes": 120,
+        "b": 20,
+        "n_pass": 27,
+        "empirical_pass_rate": 0.0675,
+        "wilson_lcb_95": 0.04680146916375966,
+        "rng_seed_effective": 20
+      }
+    ],
+    "allocations_per_budget": {
+      "24": {
+        "0": 5,
+        "1": 3,
+        "2": 3,
+        "3": 5,
+        "4": 4,
+        "5": 4
+      },
+      "36": {
+        "0": 8,
+        "1": 4,
+        "2": 5,
+        "3": 7,
+        "4": 5,
+        "5": 7
+      },
+      "48": {
+        "0": 10,
+        "1": 6,
+        "2": 6,
+        "3": 10,
+        "4": 7,
+        "5": 9
+      },
+      "60": {
+        "0": 13,
+        "1": 7,
+        "2": 8,
+        "3": 12,
+        "4": 9,
+        "5": 11
+      },
+      "72": {
+        "0": 15,
+        "1": 9,
+        "2": 9,
+        "3": 15,
+        "4": 11,
+        "5": 13
+      },
+      "84": {
+        "0": 18,
+        "1": 10,
+        "2": 11,
+        "3": 17,
+        "4": 13,
+        "5": 15
+      },
+      "96": {
+        "0": 20,
+        "1": 11,
+        "2": 13,
+        "3": 20,
+        "4": 15,
+        "5": 17
+      },
+      "120": {
+        "0": 25,
+        "1": 14,
+        "2": 16,
+        "3": 25,
+        "4": 18,
+        "5": 22
+      }
+    },
+    "budget_p008": 72,
+    "budget_p020": 120,
+    "budget_p008_equal_ref": "not reached up to 120",
+    "binding_histogram_48": {
+      "zipnerf.lpips.mean": 268,
+      "zipnerf.ssim.mean": 216,
+      "feature_splatting.lpips.mean": 203,
+      "feature_splatting.ssim.mean": 176,
+      "instant_ngp_fi.ssim.mean": 163,
+      "zipnerf.psnr.mean": 162,
+      "feature_splatting.psnr.mean": 102,
+      "instant_ngp_fi.psnr.mean": 94,
+      "instant_ngp_fi.ssim.ks": 72,
+      "zipnerf.lpips.ks": 55,
+      "feature_splatting.lpips.ks": 53,
+      "instant_ngp_fi.psnr.ks": 53,
+      "zipnerf.ssim.ks": 49,
+      "feature_splatting.ssim.ks": 48,
+      "feature_splatting.psnr.ks": 47,
+      "zipnerf.psnr.ks": 46
+    },
+    "binding_n_failures_48": 383,
+    "verdict_sentence": "Proportional allocation certifies at 72 scenes where equal allocation does not - reported for symmetry, not preference.",
+    "seed_rule": "default_rng(seed + b), b = subset_size/6, paired with E1",
+    "num_trials": 400,
+    "seed": 0,
+    "population_size": 3473,
+    "note_rass": "RASS-48/96 not rerun: allocation-independent; E1 formal."
+  },
+  "E11": {
+    "label": "dispersion-matched operating point, declared post hoc during the discussion period",
+    "derivation": {
+      "anchor_fraction_c": 0.07976898900783332,
+      "sigmas": {
+        "psnr": 6.2681,
+        "ssim": 0.1684,
+        "lpips": 0.2244
+      },
+      "tau_ssim_new": 0.013433,
+      "tau_lpips_new": 0.0179,
+      "tau_psnr_unchanged": 0.5,
+      "ks_unchanged": 0.14,
+      "rule": "every mean tolerance at the same fraction c = tau_PSNR/sigma_PSNR of its per-scene std (E3c)"
+    },
+    "cap_checks": {
+      "ssim": "0.013433 < 0.0199",
+      "lpips": "0.0179 < 0.0952",
+      "all_pass": true
+    },
+    "frontier_equal": [
+      {
+        "budget_scenes": 24,
+        "b": 4,
+        "n_pass": 1,
+        "empirical_pass_rate": 0.0025,
+        "wilson_lcb_95": 0.0004414477868016353
+      },
+      {
+        "budget_scenes": 36,
+        "b": 6,
+        "n_pass": 26,
+        "empirical_pass_rate": 0.065,
+        "wilson_lcb_95": 0.04474048189620037
+      },
+      {
+        "budget_scenes": 48,
+        "b": 8,
+        "n_pass": 27,
+        "empirical_pass_rate": 0.0675,
+        "wilson_lcb_95": 0.04680146916375966
+      },
+      {
+        "budget_scenes": 60,
+        "b": 10,
+        "n_pass": 50,
+        "empirical_pass_rate": 0.125,
+        "wilson_lcb_95": 0.09611512323676383
+      },
+      {
+        "budget_scenes": 72,
+        "b": 12,
+        "n_pass": 76,
+        "empirical_pass_rate": 0.19,
+        "wilson_lcb_95": 0.15457385084236502
+      },
+      {
+        "budget_scenes": 84,
+        "b": 14,
+        "n_pass": 73,
+        "empirical_pass_rate": 0.1825,
+        "wilson_lcb_95": 0.14772734739355886
+      },
+      {
+        "budget_scenes": 96,
+        "b": 16,
+        "n_pass": 104,
+        "empirical_pass_rate": 0.26,
+        "wilson_lcb_95": 0.21944164704726868
+      },
+      {
+        "budget_scenes": 120,
+        "b": 20,
+        "n_pass": 109,
+        "empirical_pass_rate": 0.2725,
+        "wilson_lcb_95": 0.23118490254462754
+      }
+    ],
+    "frontier_proportional": [
+      {
+        "budget_scenes": 24,
+        "b": 4,
+        "n_pass": 0,
+        "empirical_pass_rate": 0.0,
+        "wilson_lcb_95": 0.0
+      },
+      {
+        "budget_scenes": 36,
+        "b": 6,
+        "n_pass": 22,
+        "empirical_pass_rate": 0.055,
+        "wilson_lcb_95": 0.03659849414955068
+      },
+      {
+        "budget_scenes": 48,
+        "b": 8,
+        "n_pass": 54,
+        "empirical_pass_rate": 0.135,
+        "wilson_lcb_95": 0.10496299061600528
+      },
+      {
+        "budget_scenes": 60,
+        "b": 10,
+        "n_pass": 107,
+        "empirical_pass_rate": 0.2675,
+        "wilson_lcb_95": 0.22648238411831478
+      },
+      {
+        "budget_scenes": 72,
+        "b": 12,
+        "n_pass": 131,
+        "empirical_pass_rate": 0.3275,
+        "wilson_lcb_95": 0.2833400429179013
+      },
+      {
+        "budget_scenes": 84,
+        "b": 14,
+        "n_pass": 157,
+        "empirical_pass_rate": 0.3925,
+        "wilson_lcb_95": 0.34588652662317476
+      },
+      {
+        "budget_scenes": 96,
+        "b": 16,
+        "n_pass": 204,
+        "empirical_pass_rate": 0.51,
+        "wilson_lcb_95": 0.46114904250821503
+      },
+      {
+        "budget_scenes": 120,
+        "b": 20,
+        "n_pass": 242,
+        "empirical_pass_rate": 0.605,
+        "wilson_lcb_95": 0.5563126557323715
+      }
+    ],
+    "budget_targets": {
+      "equal": {
+        "p008": 60,
+        "p020": 96
+      },
+      "proportional": {
+        "p008": 48,
+        "p020": 60
+      }
+    },
+    "rass48_table": {
+      "scenes_in_intersection": 48,
+      "pass": false,
+      "constraints": [
+        {
+          "method": "zipnerf",
+          "metric": "psnr",
+          "abs_mean_gap": 0.14111136409594494,
+          "tolerance": 0.5,
+          "mean_pass": true,
+          "ks": 0.09017180151646031,
+          "ks_pass": true
+        },
+        {
+          "method": "zipnerf",
+          "metric": "ssim",
+          "abs_mean_gap": 0.005586109650702165,
+          "tolerance": 0.013433,
+          "mean_pass": true,
+          "ks": 0.07328558402917747,
+          "ks_pass": true
+        },
+        {
+          "method": "zipnerf",
+          "metric": "lpips",
+          "abs_mean_gap": 0.0006778253250767641,
+          "tolerance": 0.0179,
+          "mean_pass": true,
+          "ks": 0.11161099913619349,
+          "ks_pass": true
+        },
+        {
+          "method": "feature_splatting",
+          "metric": "psnr",
+          "abs_mean_gap": 0.09191256059040853,
+          "tolerance": 0.5,
+          "mean_pass": true,
+          "ks": 0.07444332469526826,
+          "ks_pass": true
+        },
+        {
+          "method": "feature_splatting",
+          "metric": "ssim",
+          "abs_mean_gap": 0.007432414682165267,
+          "tolerance": 0.013433,
+          "mean_pass": true,
+          "ks": 0.07978812745944909,
+          "ks_pass": true
+        },
+        {
+          "method": "feature_splatting",
+          "metric": "lpips",
+          "abs_mean_gap": 0.02105688705923464,
+          "tolerance": 0.0179,
+          "mean_pass": false,
+          "ks": 0.16511301468471062,
+          "ks_pass": false
+        },
+        {
+          "method": "instant_ngp_fi",
+          "metric": "psnr",
+          "abs_mean_gap": 0.08404556549482578,
+          "tolerance": 0.5,
+          "mean_pass": true,
+          "ks": 0.06788679335828775,
+          "ks_pass": true
+        },
+        {
+          "method": "instant_ngp_fi",
+          "metric": "ssim",
+          "abs_mean_gap": 0.002038382206962286,
+          "tolerance": 0.013433,
+          "mean_pass": true,
+          "ks": 0.07635089739898263,
+          "ks_pass": true
+        }
+      ],
+      "violated": [
+        "feature_splatting.lpips"
+      ]
+    },
+    "rass96_table": {
+      "scenes_in_intersection": 94,
+      "pass": true,
+      "constraints": [
+        {
+          "method": "zipnerf",
+          "metric": "psnr",
+          "abs_mean_gap": 0.07634304888897248,
+          "tolerance": 0.5,
+          "mean_pass": true,
+          "ks": 0.04490568580723024,
+          "ks_pass": true
+        },
+        {
+          "method": "zipnerf",
+          "metric": "ssim",
+          "abs_mean_gap": 0.003428477891177284,
+          "tolerance": 0.013433,
+          "mean_pass": true,
+          "ks": 0.04880506766484308,
+          "ks_pass": true
+        },
+        {
+          "method": "zipnerf",
+          "metric": "lpips",
+          "abs_mean_gap": 0.002220828432727029,
+          "tolerance": 0.0179,
+          "mean_pass": true,
+          "ks": 0.04991086251998701,
+          "ks_pass": true
+        },
+        {
+          "method": "feature_splatting",
+          "metric": "psnr",
+          "abs_mean_gap": 0.32626892684135456,
+          "tolerance": 0.5,
+          "mean_pass": true,
+          "ks": 0.06813963033982516,
+          "ks_pass": true
+        },
+        {
+          "method": "feature_splatting",
+          "metric": "ssim",
+          "abs_mean_gap": 0.00844794272791849,
+          "tolerance": 0.013433,
+          "mean_pass": true,
+          "ks": 0.06724519239605221,
+          "ks_pass": true
+        },
+        {
+          "method": "feature_splatting",
+          "metric": "lpips",
+          "abs_mean_gap": 0.009950170610119768,
+          "tolerance": 0.0179,
+          "mean_pass": true,
+          "ks": 0.052248041119640265,
+          "ks_pass": true
+        },
+        {
+          "method": "instant_ngp_fi",
+          "metric": "psnr",
+          "abs_mean_gap": 0.0880562038167838,
+          "tolerance": 0.5,
+          "mean_pass": true,
+          "ks": 0.04296671588117453,
+          "ks_pass": true
+        },
+        {
+          "method": "instant_ngp_fi",
+          "metric": "ssim",
+          "abs_mean_gap": 0.007467583515472831,
+          "tolerance": 0.013433,
+          "mean_pass": true,
+          "ks": 0.08529323474094994,
+          "ks_pass": true
+        }
+      ],
+      "violated": []
+    },
+    "zip_only_frontier": [
+      {
+        "budget_scenes": 24,
+        "n_pass": 41,
+        "empirical_pass_rate": 0.1025,
+        "wilson_lcb_95": 0.07645885298219338
+      },
+      {
+        "budget_scenes": 36,
+        "n_pass": 102,
+        "empirical_pass_rate": 0.255,
+        "wilson_lcb_95": 0.21475670087938903
+      },
+      {
+        "budget_scenes": 48,
+        "n_pass": 143,
+        "empirical_pass_rate": 0.3575,
+        "wilson_lcb_95": 0.3120927823653414
+      },
+      {
+        "budget_scenes": 60,
+        "n_pass": 152,
+        "empirical_pass_rate": 0.38,
+        "wilson_lcb_95": 0.3337874943779953
+      },
+      {
+        "budget_scenes": 72,
+        "n_pass": 163,
+        "empirical_pass_rate": 0.4075,
+        "wilson_lcb_95": 0.3604480792409669
+      },
+      {
+        "budget_scenes": 84,
+        "n_pass": 170,
+        "empirical_pass_rate": 0.425,
+        "wilson_lcb_95": 0.3774943812405543
+      },
+      {
+        "budget_scenes": 96,
+        "n_pass": 188,
+        "empirical_pass_rate": 0.47,
+        "wilson_lcb_95": 0.4216068935658794
+      },
+      {
+        "budget_scenes": 120,
+        "n_pass": 183,
+        "empirical_pass_rate": 0.4575,
+        "wilson_lcb_95": 0.4093135795917928
+      }
+    ],
+    "zip_only_budget_p008": 36,
+    "binding_histogram_48": {
+      "zipnerf.lpips.mean": 203,
+      "feature_splatting.ssim.mean": 198,
+      "zipnerf.psnr.mean": 197,
+      "feature_splatting.lpips.mean": 182,
+      "zipnerf.ssim.mean": 180,
+      "feature_splatting.psnr.mean": 164,
+      "instant_ngp_fi.psnr.mean": 152,
+      "instant_ngp_fi.ssim.mean": 113,
+      "feature_splatting.lpips.ks": 97,
+      "zipnerf.lpips.ks": 94,
+      "instant_ngp_fi.psnr.ks": 83,
+      "instant_ngp_fi.ssim.ks": 81,
+      "zipnerf.psnr.ks": 71,
+      "feature_splatting.psnr.ks": 69,
+      "feature_splatting.ssim.ks": 69,
+      "zipnerf.ssim.ks": 68
+    },
+    "binding_n_failures_48": 373,
+    "one_sentence_result": "under it the three-method joint event gives 27/400 at 48 scenes and reaches the 0.08 LCB target at 60 scenes with equal allocation (48 with proportional).",
+    "num_trials": 400,
+    "seed": 0,
+    "seed_rule": "default_rng(seed + b), b = subset_size/6, as E1"
+  },
+  "E12": {
+    "verdict": "(a) documented reason found",
+    "evidence_paths": {
+      "selection_time_rule": "sweep_cluster_k/budget_sweep_k6_auto_v2/budget_recommendation.json (selection_metric joint_pass_rate_lcb, target 0.1, max_metric_fallback, max_total_subset 48)",
+      "selection_time_36_row": "sweep_cluster_k/budget_sweep_k6_auto_v2/budget_sweep_summary.csv: 36 scenes -> joint_pass_rate 0.060, LCB 0.0406 (FAILS 0.08); 48 -> 0.1075, LCB 0.0808 (passes)",
+      "paper_frontier_grid": "scripts/generate_strong_accept_results.py:40 DEFAULT_BUDGETS_PER_CLUSTER=[8,10,12,16,20] (grid starts at 48 scenes; 36 never evaluated in the released frontier)",
+      "paper_language": "rass_supplementary_review_package/latex_source/main.tex:108 'lowest-cost evaluated screening subset'; :432 'smallest configuration meeting p_min=0.08 is b=8' - accurate w.r.t. the evaluated grid",
+      "holdout_v3": "sweep_cluster_k/holdout_protocol_v3/: tune/test budget evals recorded only the 48-scene row; 36 not recorded"
+    },
+    "explanation": "Two-part documented reason: (1) the release decision was made under the earlier selection-time event (auto_v2, including cross-method mean-gap components, much lower pass rates), where 36 scenes FAILED the 0.08 LCB target (0.0406) and 48 was the smallest passing budget (0.0808); (2) the paper's released frontier (strong_accept event) evaluated budgets {48..120} only, so its 'lowest-cost evaluated' claim is accurate - the 36-scene pass (58/400, LCB 0.114) first appeared in the rebuttal-period extended sweep of the current event.",
+    "test_split_36_status": {
+      "recomputed": "2026-07-25, current-audit machinery (Zip-NeRF event, per-split population+references, M=400, seed 0)",
+      "tune": {
+        "population": 704,
+        "n_pass_36": 56,
+        "lcb_36": 0.1094,
+        "n_pass_48": 70,
+        "lcb_48": 0.1409
+      },
+      "test": {
+        "population": 705,
+        "n_pass_36": 62,
+        "lcb_36": 0.1228,
+        "n_pass_48": 69,
+        "lcb_48": 0.1386
+      },
+      "note": "under the CURRENT event 36 passes both splits; the 48 release traces to the selection-time event and evaluated grid, not a tune/test failure"
+    },
+    "hold_ready_reply": "The rule is recorded: the selection-time sweep (budget_recommendation.json) evaluated {12,24,36,48}; 36 scored LCB 0.041 (<0.08), 48 was the smallest passing (LCB 0.081). The paper frontier evaluates budgets from 48 upward, hence 'lowest-cost evaluated'. The revision adds the current audit's 36-scene row (LCB 0.114) and reconciles the frontier.",
+    "hold_ready_reply_alternatives": {
+      "b_reconstructed": "Recomputation shows 36 fails the release-time verification (LCB 0.041 on the selection-time event); 48 was the smallest budget passing it. The revision states the rule and adds the current audit's 36-scene row.",
+      "c_no_reason": "The release predates the recommendation rule being written down; the revision states the rule explicitly and reconciles the frontier with the released artifact."
+    }
+  },
+  "E13": {
+    "gate_recheck": {
+      "date": "2026-07-25",
+      "verdict": "FAIL confirmed - benchmark-meta.csv (downloaded by the user with their HF login, inspected locally) contains scene labels only (hash, freq, environment, scene, lighting, reflection, transparency); no per-scene metrics for any method. Training mode engaged."
+    },
+    "progress": {
+      "status": "COMPLETE 2026-07-26 - all 140 scene logs generated",
+      "pipeline": "download (transforms+images_4+sparse bins, ~392MB) -> 57-D descriptors -> ns-train nerfacto (seed 0, downscale 4 = 960P) -> ns-eval -> JSON -> delete; next scene prefetched during training; resumable (done == JSON exists)",
+      "gpu_handover": "n5k360 local training workers stopped (10 scenes banked, nerfacto log set at 2,960); cluster queue unaffected",
+      "scenes_completed": 140,
+      "eta_note": "rate will be measured from the first completed scenes; honest prior 15-25 min/scene -> 35-60 GPU-hours"
+    },
+    "logs_path": "scratchpad dl3dv_logs/ (json/ per-scene metrics, dl3dv_descriptors.csv)",
+    "audit": {
+      "date": "2026-07-26",
+      "population": {
+        "n_scenes": 140,
+        "method": "nerfacto (local RTX 3090, ns-train defaults, seed 0, downscale 4)",
+        "means": {
+          "psnr": 22.914215278625488,
+          "ssim": 0.7594972823347365,
+          "lpips": 0.16632635268781867
+        },
+        "stds_ddof1": {
+          "psnr": 2.5247786778904024,
+          "ssim": 0.11776969899620969,
+          "lpips": 0.06811341369757325
+        }
+      },
+      "validation": {
+        "reference": "b=8 k=6 Nutrition5k",
+        "n_pass": 88,
+        "wilson_lcb_95": 0.1821738927340146
+      },
+      "contract": {
+        "k": 4,
+        "c_anchor": 0.07976898900783332,
+        "mean_tolerances": {
+          "psnr": 0.20139904260385144,
+          "ssim": 0.009394369824684489,
+          "lpips": 0.005433338148527723
+        },
+        "ks_rule": "1.358*sqrt((n+140)/(140n)) per subset size n",
+        "M": 400,
+        "audit_seed": 0,
+        "generator_rng": "default_rng(audit_seed + b) balanced, default_rng(10000 + b) uniform"
+      },
+      "regime_sizes": {
+        "0": 59,
+        "1": 28,
+        "2": 27,
+        "3": 26
+      },
+      "feature_dims_used": 40,
+      "balanced_frontier": [
+        {
+          "b": 2,
+          "size": 8,
+          "n_pass": 6,
+          "empirical_pass_rate": 0.015,
+          "wilson_lcb_95": 0.006892291919440893,
+          "ks_tol": 0.49365281321997956
+        },
+        {
+          "b": 3,
+          "size": 12,
+          "n_pass": 14,
+          "empirical_pass_rate": 0.035,
+          "wilson_lcb_95": 0.02096129419797776,
+          "ks_tol": 0.40847635590488385
+        },
+        {
+          "b": 4,
+          "size": 16,
+          "n_pass": 16,
+          "empirical_pass_rate": 0.04,
+          "wilson_lcb_95": 0.024769063069711755,
+          "ks_tol": 0.35837529211707664
+        },
+        {
+          "b": 5,
+          "size": 20,
+          "n_pass": 17,
+          "empirical_pass_rate": 0.0425,
+          "wilson_lcb_95": 0.026701694991131116,
+          "ks_tol": 0.3246240902952213
+        },
+        {
+          "b": 6,
+          "size": 24,
+          "n_pass": 31,
+          "empirical_pass_rate": 0.0775,
+          "wilson_lcb_95": 0.05513293467684452,
+          "ks_tol": 0.30002127702325826
+        },
+        {
+          "b": 8,
+          "size": 32,
+          "n_pass": 26,
+          "empirical_pass_rate": 0.065,
+          "wilson_lcb_95": 0.04474048189620037,
+          "ks_tol": 0.26608781445229696
+        },
+        {
+          "b": 10,
+          "size": 40,
+          "n_pass": 40,
+          "empirical_pass_rate": 0.1,
+          "wilson_lcb_95": 0.07429925914003438,
+          "ks_tol": 0.243468067721416
+        },
+        {
+          "b": 12,
+          "size": 48,
+          "n_pass": 42,
+          "empirical_pass_rate": 0.105,
+          "wilson_lcb_95": 0.07862372743733602,
+          "ks_tol": 0.22714022834657305
+        },
+        {
+          "b": 16,
+          "size": 64,
+          "n_pass": 35,
+          "empirical_pass_rate": 0.0875,
+          "wilson_lcb_95": 0.06358691021150326,
+          "ks_tol": 0.20490891269049283
+        },
+        {
+          "b": 20,
+          "size": 80,
+          "n_pass": 28,
+          "empirical_pass_rate": 0.07,
+          "wilson_lcb_95": 0.0488716266997445,
+          "ks_tol": 0.19032774364238125
+        }
+      ],
+      "proportional_frontier": [
+        {
+          "b": 2,
+          "size": 8,
+          "counts": {
+            "0": 3,
+            "1": 2,
+            "2": 2,
+            "3": 1
+          },
+          "n_pass": 12,
+          "empirical_pass_rate": 0.03,
+          "wilson_lcb_95": 0.017243020965143047
+        },
+        {
+          "b": 3,
+          "size": 12,
+          "counts": {
+            "0": 5,
+            "1": 3,
+            "2": 2,
+            "3": 2
+          },
+          "n_pass": 11,
+          "empirical_pass_rate": 0.0275,
+          "wilson_lcb_95": 0.015423636260295418
+        },
+        {
+          "b": 4,
+          "size": 16,
+          "counts": {
+            "0": 7,
+            "1": 3,
+            "2": 3,
+            "3": 3
+          },
+          "n_pass": 20,
+          "empirical_pass_rate": 0.05,
+          "wilson_lcb_95": 0.03259742983714726
+        },
+        {
+          "b": 5,
+          "size": 20,
+          "counts": {
+            "0": 8,
+            "1": 4,
+            "2": 4,
+            "3": 4
+          },
+          "n_pass": 40,
+          "empirical_pass_rate": 0.1,
+          "wilson_lcb_95": 0.07429925914003438
+        },
+        {
+          "b": 6,
+          "size": 24,
+          "counts": {
+            "0": 10,
+            "1": 5,
+            "2": 5,
+            "3": 4
+          },
+          "n_pass": 38,
+          "empirical_pass_rate": 0.095,
+          "wilson_lcb_95": 0.06999661149327467
+        },
+        {
+          "b": 8,
+          "size": 32,
+          "counts": {
+            "0": 14,
+            "1": 6,
+            "2": 6,
+            "3": 6
+          },
+          "n_pass": 62,
+          "empirical_pass_rate": 0.155,
+          "wilson_lcb_95": 0.12283258671753924
+        },
+        {
+          "b": 10,
+          "size": 40,
+          "counts": {
+            "0": 17,
+            "1": 8,
+            "2": 8,
+            "3": 7
+          },
+          "n_pass": 109,
+          "empirical_pass_rate": 0.2725,
+          "wilson_lcb_95": 0.23118490254462754
+        },
+        {
+          "b": 12,
+          "size": 48,
+          "counts": {
+            "0": 20,
+            "1": 10,
+            "2": 9,
+            "3": 9
+          },
+          "n_pass": 121,
+          "empirical_pass_rate": 0.3025,
+          "wilson_lcb_95": 0.25953936408389566
+        },
+        {
+          "b": 16,
+          "size": 64,
+          "counts": {
+            "0": 27,
+            "1": 13,
+            "2": 12,
+            "3": 12
+          },
+          "n_pass": 184,
+          "empirical_pass_rate": 0.46,
+          "wilson_lcb_95": 0.4117698068715022
+        },
+        {
+          "b": 20,
+          "size": 80,
+          "counts": {
+            "0": 34,
+            "1": 16,
+            "2": 15,
+            "3": 15
+          },
+          "n_pass": 247,
+          "empirical_pass_rate": 0.6175,
+          "wilson_lcb_95": 0.5689692933715043
+        }
+      ],
+      "uniform_frontier": [
+        {
+          "size": 8,
+          "n_pass": 3,
+          "wilson_lcb_95": 0.0025538891952499414
+        },
+        {
+          "size": 12,
+          "n_pass": 8,
+          "wilson_lcb_95": 0.01016838679166465
+        },
+        {
+          "size": 16,
+          "n_pass": 17,
+          "wilson_lcb_95": 0.026701694991131116
+        },
+        {
+          "size": 20,
+          "n_pass": 27,
+          "wilson_lcb_95": 0.04680146916375966
+        },
+        {
+          "size": 24,
+          "n_pass": 36,
+          "wilson_lcb_95": 0.06571729376939447
+        },
+        {
+          "size": 32,
+          "n_pass": 46,
+          "wilson_lcb_95": 0.08733292262163242
+        },
+        {
+          "size": 40,
+          "n_pass": 73,
+          "wilson_lcb_95": 0.14772734739355886
+        },
+        {
+          "size": 48,
+          "n_pass": 91,
+          "wilson_lcb_95": 0.18912326740735155
+        },
+        {
+          "size": 64,
+          "n_pass": 155,
+          "wilson_lcb_95": 0.34104299567214824
+        },
+        {
+          "size": 80,
+          "n_pass": 207,
+          "wilson_lcb_95": 0.46859763274320027
+        }
+      ],
+      "recommended_p008_balanced": null,
+      "recommended_p020_balanced": null,
+      "recommended_p008_proportional": {
+        "b": 8,
+        "size": 32,
+        "counts": {
+          "0": 14,
+          "1": 6,
+          "2": 6,
+          "3": 6
+        },
+        "n_pass": 62,
+        "empirical_pass_rate": 0.155,
+        "wilson_lcb_95": 0.12283258671753924
+      },
+      "recommended_p020_proportional": {
+        "b": 10,
+        "size": 40,
+        "counts": {
+          "0": 17,
+          "1": 8,
+          "2": 8,
+          "3": 7
+        },
+        "n_pass": 109,
+        "empirical_pass_rate": 0.2725,
+        "wilson_lcb_95": 0.23118490254462754
+      }
+    }
+  },
+  "E14": {
+    "date": "2026-07-26",
+    "event": "zipnerf-only, default tolerances (0.5/0.01/0.01), KS<=0.14, population 3521 (shipped k6 mapping)",
+    "validation": {
+      "48": {
+        "n_pass": 88,
+        "wilson_lcb_95": 0.1822,
+        "status": "reproduced"
+      },
+      "96": {
+        "n_pass": 113,
+        "wilson_lcb_95": 0.2406,
+        "status": "reproduced"
+      }
+    },
+    "seed_rule": "default_rng(0 + b), b = size/6, paired equal vs proportional",
+    "M": 400,
+    "regime_sizes": {
+      "0": 736,
+      "1": 422,
+      "2": 463,
+      "3": 724,
+      "4": 537,
+      "5": 639
+    },
+    "allocations_per_budget": {
+      "24": {
+        "0": 5,
+        "1": 3,
+        "2": 3,
+        "3": 5,
+        "4": 4,
+        "5": 4
+      },
+      "36": {
+        "0": 8,
+        "1": 4,
+        "2": 5,
+        "3": 7,
+        "4": 5,
+        "5": 7
+      },
+      "48": {
+        "0": 10,
+        "1": 6,
+        "2": 6,
+        "3": 10,
+        "4": 7,
+        "5": 9
+      },
+      "60": {
+        "0": 13,
+        "1": 7,
+        "2": 8,
+        "3": 12,
+        "4": 9,
+        "5": 11
+      },
+      "72": {
+        "0": 15,
+        "1": 9,
+        "2": 9,
+        "3": 15,
+        "4": 11,
+        "5": 13
+      },
+      "96": {
+        "0": 20,
+        "1": 11,
+        "2": 13,
+        "3": 20,
+        "4": 15,
+        "5": 17
+      },
+      "120": {
+        "0": 25,
+        "1": 14,
+        "2": 16,
+        "3": 25,
+        "4": 18,
+        "5": 22
+      }
+    },
+    "frontier_equal_ref": [
+      {
+        "size": 24,
+        "n_pass": 26,
+        "empirical_pass_rate": 0.065,
+        "wilson_lcb_95": 0.04474048189620037
+      },
+      {
+        "size": 36,
+        "n_pass": 58,
+        "empirical_pass_rate": 0.145,
+        "wilson_lcb_95": 0.11387048965924289
+      },
+      {
+        "size": 48,
+        "n_pass": 88,
+        "empirical_pass_rate": 0.22,
+        "wilson_lcb_95": 0.1821738927340146
+      },
+      {
+        "size": 60,
+        "n_pass": 92,
+        "empirical_pass_rate": 0.23,
+        "wilson_lcb_95": 0.19144383051896455
+      },
+      {
+        "size": 72,
+        "n_pass": 95,
+        "empirical_pass_rate": 0.2375,
+        "wilson_lcb_95": 0.19841751180740802
+      },
+      {
+        "size": 96,
+        "n_pass": 113,
+        "empirical_pass_rate": 0.2825,
+        "wilson_lcb_95": 0.24061027235147464
+      },
+      {
+        "size": 120,
+        "n_pass": 120,
+        "empirical_pass_rate": 0.3,
+        "wilson_lcb_95": 0.25716767195619705
+      }
+    ],
+    "frontier_proportional": [
+      {
+        "size": 24,
+        "n_pass": 24,
+        "empirical_pass_rate": 0.06,
+        "wilson_lcb_95": 0.0406479701137247
+      },
+      {
+        "size": 36,
+        "n_pass": 77,
+        "empirical_pass_rate": 0.1925,
+        "wilson_lcb_95": 0.15686102519327602
+      },
+      {
+        "size": 48,
+        "n_pass": 82,
+        "empirical_pass_rate": 0.205,
+        "wilson_lcb_95": 0.16833283817780625
+      },
+      {
+        "size": 60,
+        "n_pass": 113,
+        "empirical_pass_rate": 0.2825,
+        "wilson_lcb_95": 0.24061027235147464
+      },
+      {
+        "size": 72,
+        "n_pass": 151,
+        "empirical_pass_rate": 0.3775,
+        "wilson_lcb_95": 0.33137162500063877
+      },
+      {
+        "size": 96,
+        "n_pass": 179,
+        "empirical_pass_rate": 0.4475,
+        "wilson_lcb_95": 0.3995008932268813
+      },
+      {
+        "size": 120,
+        "n_pass": 163,
+        "empirical_pass_rate": 0.4075,
+        "wilson_lcb_95": 0.3604480792409669
+      }
+    ],
+    "budgets_at_targets": {
+      "equal": {
+        "p008": 36,
+        "p020": 96
+      },
+      "proportional": {
+        "p008": 36,
+        "p020": 60
+      }
+    },
+    "hold_ready_reply": "No. RASS-48/96 are export-audited scene lists, allocation-independent; equal allocation is the documented generator of record. Proportional keeps the 0.08 budget at 36 scenes, is comparable at 48 (LCB .168 vs .182), and dominates beyond (0.20 target: 60 vs 96 scenes). The revision reports both allocations and adopts proportional going forward."
+  },
+  "E15": {
+    "date": "2026-07-26",
+    "verdict": "a",
+    "verdict_text": "Clean timestamped declaration precedes all audit results, for the core contract. Evidence is local session records and file mtimes (no external anchor such as a pushed git commit existed at declaration time); two post-hoc additions are explicitly labeled below.",
+    "evidence_trail": [
+      {
+        "item": "task P13 message declaring the core contract (k=4, 7.98% E3c rule, KS critical-distance formula, balanced generator, M=400)",
+        "source": "Claude Code session transcript 41f9479d-8fff-41b4-ba18-0defb5b2dcf3.jsonl, line 1487",
+        "timestamp": "2026-07-24T22:53:11.187Z",
+        "line_sha256": "cb2eaedb64388699"
+      },
+      {
+        "item": "contract recorded in rebuttal/summaries/E13.md (plan section) and rebuttal_results.json E13 key with \"audit\": null",
+        "source": "session transcript line 1596 (assistant write of E13.md)",
+        "timestamp": "2026-07-24T23:16:14.702Z",
+        "line_sha256": "709d125a92252d54"
+      },
+      {
+        "item": "first DL3DV scene log written (log generation began after the declaration)",
+        "source": "dl3dv_logs/json/9641a1ed7963*.json mtime",
+        "timestamp": "2026-07-25 01:38:43 local"
+      },
+      {
+        "item": "last DL3DV scene log written",
+        "source": "dl3dv_logs/json/71b2dc8a2aa5*.json mtime",
+        "timestamp": "2026-07-26 11:32:43 local"
+      },
+      {
+        "item": "descriptor table finalized",
+        "source": "dl3dv_logs/dl3dv_descriptors.csv, sha256 691f8deedf63f3c2",
+        "timestamp": "2026-07-26 11:19:47 local"
+      },
+      {
+        "item": "first audit result computed (validation gate ran first and STOPped once on a wrong-population wiring, itself evidence the gate was enforced)",
+        "source": "scripts/rebuttal_e13_dl3dv_audit.py, first successful run merging E13.audit",
+        "timestamp": "2026-07-26 ~11:37 local onward"
+      }
+    ],
+    "post_hoc_additions_labeled": [
+      "proportional-to-regime-size and uniform companion frontiers: added 2026-07-26 AFTER the balanced frontier was computed (motivated by the E10 equal-allocation-bias diagnosis); every use of these numbers carries this label",
+      "concrete budget grid b in {2,3,4,5,6,8,10,12,16,20} (subset sizes 8-80): fixed at audit-script authoring on 2026-07-26, after log generation but before any audit result was computed"
+    ],
+    "declaration_path": "rebuttal/dl3dv_contract_declaration.json",
+    "disclosures_added": [
+      "rebuttal/dl3dv_audit_card.json (KS looseness 0.19-0.49 at N=140; binding constraints are dispersion-matched means; E13 caveat list verbatim; erratum)",
+      "README.md section 'Rebuttal Artifacts (Discussion Period)' (erratum 3,521; DL3DV disclosures)"
+    ],
+    "event_configs_paths": [
+      "rebuttal/event_configs/dispersion_matched_v1.json",
+      "rebuttal/event_configs/fivemethod_v1.json",
+      "rebuttal/event_configs/fourmethod_v1.json",
+      "rebuttal/event_configs/ranking_variantA_v1.json",
+      "rebuttal/event_configs/ranking_variantB_v1.json",
+      "rebuttal/event_configs/regime_constrained_c1_v1.json",
+      "rebuttal/event_configs/regime_constrained_c2_v1.json",
+      "rebuttal/event_configs/threemethod_equal_v1.json",
+      "rebuttal/event_configs/threemethod_proportional_v1.json"
+    ],
+    "note_for_drafting": "VERDICT (a): the 'declared before any result' sentence is supported and may be posted, PROVIDED the two labeled post-hoc additions (proportional/uniform companions, concrete budget grid) are not claimed as pre-declared."
+  }
+}

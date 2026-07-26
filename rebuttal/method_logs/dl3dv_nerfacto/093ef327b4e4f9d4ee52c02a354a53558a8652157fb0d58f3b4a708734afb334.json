@@ -1,0 +1,18 @@
+{
+ "experiment_name": "093ef327b4e4f9d4ee52c02a354a53558a8652157fb0d58f3b4a708734afb334",
+ "method_name": "nerfacto",
+ "checkpoint": "step-000029999.ckpt",
+ "results": {
+  "psnr": 23.58059310913086,
+  "psnr_std": 2.3932862281799316,
+  "ssim": 0.8195860981941223,
+  "ssim_std": 0.0793302059173584,
+  "lpips": 0.12052533775568008,
+  "lpips_std": 0.051980383694171906,
+  "num_rays_per_sec": 739024.625,
+  "num_rays_per_sec_std": 85588.890625,
+  "fps": 1.42558753490448,
+  "fps_std": 0.165102019906044
+ },
+ "provenance": "DL3DV-Benchmark scene, trained+evaluated locally on RTX 3090, ns-train nerfacto defaults, seed 0, downscale 4 (960P), 2026-07"
+}

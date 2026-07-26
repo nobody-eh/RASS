@@ -1,0 +1,43 @@
+{
+  "schema_version": "rass-event-config/1.0",
+  "event": "four-method joint fidelity on available coverage (E9, I4)",
+  "population": {
+    "definition": "common-coverage subpopulation of methods zipnerf/feature_splatting/instant_ngp_fi/nerfacto as of 2026-07-24 (nerfacto incl. 188 validated local GPU evals)",
+    "n_scenes": 2915
+  },
+  "constraints": {
+    "method_metrics": {
+      "zipnerf": [
+        "psnr",
+        "ssim",
+        "lpips"
+      ],
+      "feature_splatting": [
+        "psnr",
+        "ssim",
+        "lpips"
+      ],
+      "instant_ngp_fi": [
+        "psnr",
+        "ssim"
+      ],
+      "nerfacto": [
+        "psnr",
+        "ssim",
+        "lpips"
+      ]
+    }
+  },
+  "tolerances": {
+    "psnr": 0.5,
+    "ssim": 0.01,
+    "lpips": 0.01,
+    "ks": 0.14
+  },
+  "allocation": {
+    "type": "proportional-to-regime-size, largest-remainder rounding",
+    "regimes": "k=6 KMeans seed 0 on the 57-D descriptors excluding proxies num_images/num_frames_total/num_frames_used (shipped mapping, replication validated ARI=1.0)"
+  },
+  "M": 400,
+  "seed_rule": "default_rng(0 + budget_scenes)"
+}

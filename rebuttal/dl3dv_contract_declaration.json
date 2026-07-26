@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "claim_audited": "the DL3DV audit contract was declared before any audit result was computed",
+  "verdict": "a",
+  "verdict_text": "Clean timestamped declaration precedes all audit results, for the core contract. Evidence is local session records and file mtimes (no external anchor such as a pushed git commit existed at declaration time); two post-hoc additions are explicitly labeled below.",
+  "core_contract_declared_2026-07-24T22:53Z": {
+    "population": "all 140 DL3DV-Benchmark scenes, nerfacto per-scene PSNR/SSIM/LPIPS generated locally (ns-train defaults, machine.seed 0, downscale 4 / 960P)",
+    "regimes": "k = 4 KMeans on extracted descriptors, validated Nutrition5k recipe (exclude proxy dims num_images/num_frames_total/num_frames_used, fillna mean, drop zero variance, StandardScaler, KMeans(random_state=0, n_init='auto'))",
+    "mean_tolerances": "E3c dispersion rule: tau_m = c * sigma_m, c = 0.5/6.2681 = 0.0797686 (the Nutrition5k tau_PSNR/sigma_PSNR anchor), sigma_m = DL3DV per-scene std (ddof=1)",
+    "ks_guardrail": "two-sample critical distance at alpha = 0.05 per target subset size n against N = 140: D_crit = 1.358*sqrt((n+140)/(140*n))",
+    "generator": "balanced (equal per-regime) sampler",
+    "M": 400,
+    "seed_rule": "audit seed 0; rng = numpy default_rng(0 + b) per budget b",
+    "validation_gate": "machinery must reproduce the paper reference (b=8, k=6 Nutrition5k: 88/400, Wilson LCB 0.1822) before any DL3DV number"
+  },
+  "post_hoc_additions_labeled": [
+    "proportional-to-regime-size and uniform companion frontiers: added 2026-07-26 AFTER the balanced frontier was computed (motivated by the E10 equal-allocation-bias diagnosis); every use of these numbers carries this label",
+    "concrete budget grid b in {2,3,4,5,6,8,10,12,16,20} (subset sizes 8-80): fixed at audit-script authoring on 2026-07-26, after log generation but before any audit result was computed"
+  ],
+  "evidence_trail": [
+    {
+      "item": "task P13 message declaring the core contract (k=4, 7.98% E3c rule, KS critical-distance formula, balanced generator, M=400)",
+      "source": "Claude Code session transcript 41f9479d-8fff-41b4-ba18-0defb5b2dcf3.jsonl, line 1487",
+      "timestamp": "2026-07-24T22:53:11.187Z",
+      "line_sha256": "cb2eaedb64388699"
+    },
+    {
+      "item": "contract recorded in rebuttal/summaries/E13.md (plan section) and rebuttal_results.json E13 key with \"audit\": null",
+      "source": "session transcript line 1596 (assistant write of E13.md)",
+      "timestamp": "2026-07-24T23:16:14.702Z",
+      "line_sha256": "709d125a92252d54"
+    },
+    {
+      "item": "first DL3DV scene log written (log generation began after the declaration)",
+      "source": "dl3dv_logs/json/9641a1ed7963*.json mtime",
+      "timestamp": "2026-07-25 01:38:43 local"
+    },
+    {
+      "item": "last DL3DV scene log written",
+      "source": "dl3dv_logs/json/71b2dc8a2aa5*.json mtime",
+      "timestamp": "2026-07-26 11:32:43 local"
+    },
+    {
+      "item": "descriptor table finalized",
+      "source": "dl3dv_logs/dl3dv_descriptors.csv, sha256 691f8deedf63f3c2",
+      "timestamp": "2026-07-26 11:19:47 local"
+    },
+    {
+      "item": "first audit result computed (validation gate ran first and STOPped once on a wrong-population wiring, itself evidence the gate was enforced)",
+      "source": "scripts/rebuttal_e13_dl3dv_audit.py, first successful run merging E13.audit",
+      "timestamp": "2026-07-26 ~11:37 local onward"
+    }
+  ],
+  "provenance_note": "The audit contract for the DL3DV transfer was fixed in the task instruction of 2026-07-24T22:53Z and recorded in the repository summary and results JSON within 25 minutes, roughly two hours before the first scene log existed and about 36 hours before the first audit statistic was computed. The evidence is local (session transcript, file mtimes, the recorded 'audit: null' placeholder); no externally anchored timestamp (e.g. a pushed commit) existed at declaration time, which we state plainly. Two additions postdate the balanced-frontier results and are labeled as post hoc wherever used: the proportional and uniform companion frontiers, and the concrete budget grid. The Wilson/KS machinery was revalidated against the paper reference (88/400, LCB 0.1822) before any DL3DV number; the validation gate rejected one mis-wired population on its first run, demonstrating it was active."
+}

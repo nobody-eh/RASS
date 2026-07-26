@@ -1,0 +1,31 @@
+{
+  "schema_version": "rass-event-config/1.0",
+  "event": "as regime_constrained_c1 with c = 2 (E4, c=2)",
+  "population": {
+    "definition": "effective Zip-NeRF audit set",
+    "n_scenes": 3521
+  },
+  "constraints": {
+    "method_metrics": {
+      "zipnerf": [
+        "psnr",
+        "ssim",
+        "lpips"
+      ]
+    },
+    "per_regime": "all 6 regimes x 3 metrics, c = 2"
+  },
+  "tolerances": {
+    "psnr": 0.5,
+    "ssim": 0.01,
+    "lpips": 0.01,
+    "ks": 0.14,
+    "ks_scope": "global only"
+  },
+  "allocation": {
+    "type": "equal-per-regime",
+    "regimes": "k=6 KMeans seed 0 on the 57-D descriptors excluding proxies num_images/num_frames_total/num_frames_used (shipped mapping, replication validated ARI=1.0)"
+  },
+  "M": 400,
+  "seed_rule": "default_rng(0 + b)"
+}

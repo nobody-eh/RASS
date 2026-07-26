@@ -1,0 +1,38 @@
+{
+  "schema_version": "rass-event-config/1.0",
+  "event": "three-method joint fidelity, proportional allocation (E10)",
+  "population": {
+    "definition": "same 3,473-scene intersection as E1",
+    "n_scenes": 3473
+  },
+  "constraints": {
+    "method_metrics": {
+      "zipnerf": [
+        "psnr",
+        "ssim",
+        "lpips"
+      ],
+      "feature_splatting": [
+        "psnr",
+        "ssim",
+        "lpips"
+      ],
+      "instant_ngp_fi": [
+        "psnr",
+        "ssim"
+      ]
+    }
+  },
+  "tolerances": {
+    "psnr": 0.5,
+    "ssim": 0.01,
+    "lpips": 0.01,
+    "ks": 0.14
+  },
+  "allocation": {
+    "type": "proportional-to-regime-size, largest-remainder rounding",
+    "regimes": "k=6 KMeans seed 0 on the 57-D descriptors excluding proxies num_images/num_frames_total/num_frames_used (shipped mapping, replication validated ARI=1.0)"
+  },
+  "M": 400,
+  "seed_rule": "default_rng(0 + b), b = subset_size/6, paired with the equal frontier"
+}

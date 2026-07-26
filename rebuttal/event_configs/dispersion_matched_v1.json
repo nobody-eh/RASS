@@ -1,0 +1,39 @@
+{
+  "schema_version": "rass-event-config/1.0",
+  "event": "three-method joint fidelity under dispersion-matched tolerances (E11) \u2014 POST-HOC operating point declared during the discussion period; released alongside, never replacing, the default contract",
+  "population": {
+    "definition": "E1 intersection",
+    "n_scenes": 3473
+  },
+  "constraints": {
+    "method_metrics": {
+      "zipnerf": [
+        "psnr",
+        "ssim",
+        "lpips"
+      ],
+      "feature_splatting": [
+        "psnr",
+        "ssim",
+        "lpips"
+      ],
+      "instant_ngp_fi": [
+        "psnr",
+        "ssim"
+      ]
+    }
+  },
+  "tolerances": {
+    "psnr": 0.5,
+    "ssim": 0.013433,
+    "lpips": 0.0179,
+    "ks": 0.14,
+    "rule": "tau_m = c * sigma_m, c = tau_PSNR/sigma_PSNR = 0.5/6.2681 = 0.079769 (E3c per-scene stds); cap-checked below min cross-method gaps"
+  },
+  "allocation": {
+    "type": "equal-per-regime (proportional companion recorded in E11)",
+    "regimes": "k=6 KMeans seed 0 on the 57-D descriptors excluding proxies num_images/num_frames_total/num_frames_used (shipped mapping, replication validated ARI=1.0)"
+  },
+  "M": 400,
+  "seed_rule": "default_rng(0 + b), identical to E1"
+}
