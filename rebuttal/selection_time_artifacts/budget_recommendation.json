@@ -1,0 +1,16 @@
+{
+  "recommended_budget_per_cluster": 8,
+  "recommended_total_subset_size": 48,
+  "recommended_joint_pass_rate": 0.1075,
+  "recommended_joint_pass_rate_lcb": 0.08079372047159449,
+  "selection_mode": "max_metric_fallback",
+  "selection_metric": "joint_pass_rate_lcb",
+  "target_joint_pass_rate": 0.1,
+  "target_met": false,
+  "max_total_subset": 48,
+  "max_total_subset_applied": true,
+  "require_best_manifest_constraints": true,
+  "passing_constraints_applied": false,
+  "recommended_manifest": "sweep_cluster_k/budget_sweep_k6_auto_v2/manifests/subset_budget_8.csv",
+  "exported_manifest": "sweep_cluster_k/budget_sweep_k6_auto_v2/recommended_subset.csv"
+}

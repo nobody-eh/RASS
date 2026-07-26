@@ -102,9 +102,24 @@ the paper's choice to export the balanced subset.
 the 57-D hand-crafted descriptors, and the full 57-D set beats every group
 ablation. The descriptor design is not load-bearing for the result.
 
-**E9 — multi-method on available data.** 4-method certification at 72 scenes
-(LCB 0.105) on I4 = 2,915; 5-method at 120 scenes (LCB 0.148) on I5 = 2,228;
-proportional allocation. RASS-96 passes the 4-method event.
+**E9 — multi-method on available data. QUOTE ONLY WITH THE E18 CAVEAT.**
+4-method certification at 72 scenes (LCB 0.105) on I4 = 2,915; 5-method at
+120 scenes (LCB 0.148) on I5 = 2,228; proportional allocation. RASS-96
+passes the 4-method event.
+
+**E18 — the coverage is NOT missing at random (unfavourable, must disclose).**
+Zip-NeRF metrics exist for all 3,521 scenes, so covered and missing scenes
+can be compared on identical ground truth. Scenes lacking nerfacto logs are
+systematically *harder*: Zip-NeRF PSNR 15.73 vs 19.40 for covered scenes
+(-3.72 dB), KS 0.317 against the 0.14 guardrail, and regime shares shift by
+up to 0.20 (regime 3 falls from 23.7% of covered to 3.6% of missing).
+BioNeRF is milder but still biased (-2.18 dB, KS 0.178). Consequence: E9's
+audit is *internally* valid — a subset is certified against its own
+population — but that population is easier than the full benchmark, so E9
+is not evidence about the full benchmark. State this whenever E9 is used.
+It also supplies the quantitative explanation for E8's 0/400 stress-test
+result, which attributed the failure to population shift without measuring
+it. Completing the missing scenes is camera-ready work, not rebuttal work.
 
 **E13 — DL3DV transfer, the strongest new result.** We generated all 140
 per-scene nerfacto logs ourselves (DL3DV publishes none — verified three

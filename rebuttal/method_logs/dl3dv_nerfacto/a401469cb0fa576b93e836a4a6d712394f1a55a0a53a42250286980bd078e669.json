@@ -1,18 +1,18 @@
 {
- "experiment_name": "a401469cb0fa576b93e836a4a6d712394f1a55a0a53a42250286980bd078e669",
- "method_name": "nerfacto",
- "checkpoint": "step-000029999.ckpt",
- "results": {
-  "psnr": 23.86160659790039,
-  "psnr_std": 1.3919724225997925,
-  "ssim": 0.8095925450325012,
-  "ssim_std": 0.03359586000442505,
-  "lpips": 0.13395702838897705,
-  "lpips_std": 0.03305003419518471,
-  "num_rays_per_sec": 750799.8125,
-  "num_rays_per_sec_std": 90816.359375,
-  "fps": 1.448302149772644,
-  "fps_std": 0.175185889005661
- },
- "provenance": "DL3DV-Benchmark scene, trained+evaluated locally on RTX 3090, ns-train nerfacto defaults, seed 0, downscale 4 (960P), 2026-07"
+  "experiment_name": "a401469cb0fa576b93e836a4a6d712394f1a55a0a53a42250286980bd078e669",
+  "method_name": "nerfacto",
+  "checkpoint": "step-000029999.ckpt",
+  "results": {
+    "psnr": 23.86160659790039,
+    "psnr_std": 1.3919724225997925,
+    "ssim": 0.8095925450325012,
+    "ssim_std": 0.03359586000442505,
+    "lpips": 0.13395702838897705,
+    "lpips_std": 0.03305003419518471,
+    "num_rays_per_sec": 750799.8125,
+    "num_rays_per_sec_std": 90816.359375,
+    "fps": 1.448302149772644,
+    "fps_std": 0.175185889005661
+  },
+  "provenance": "DL3DV-Benchmark scene, trained+evaluated locally on RTX 3090, ns-train nerfacto defaults, seed 0, downscale 4 (960P), 2026-07"
 }

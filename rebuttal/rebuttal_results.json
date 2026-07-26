@@ -5907,5 +5907,116 @@
     },
     "logs_path": "scratchpad dl3dv_splatfacto_logs/json",
     "audit": null
+  },
+  "E18": {
+    "date": "2026-07-26",
+    "question": "are the scenes missing from per-scene method coverage missing at random?",
+    "method": "compare Zip-NeRF metrics (available for all 3,521 scenes) and k=6 regime shares between covered and missing scenes; KS is the two-sample sup-distance, same evaluator as every other task",
+    "population": 3521,
+    "results": {
+      "nerfacto": {
+        "n_covered": 2963,
+        "n_missing": 558,
+        "metrics": {
+          "psnr": {
+            "covered_mean": 19.41292272706793,
+            "missing_mean": 15.688759131243586,
+            "gap": -3.7241635958243435,
+            "ks_missing_vs_covered": 0.3167391859214663,
+            "tolerance": 0.5,
+            "gap_exceeds_tolerance": true,
+            "ks_exceeds_guardrail": true
+          },
+          "ssim": {
+            "covered_mean": 0.6934762665881846,
+            "missing_mean": 0.6080033060790816,
+            "gap": -0.08547296050910302,
+            "ks_missing_vs_covered": 0.28721495820011933,
+            "tolerance": 0.01,
+            "gap_exceeds_tolerance": true,
+            "ks_exceeds_guardrail": true
+          },
+          "lpips": {
+            "covered_mean": 0.3231036414367462,
+            "missing_mean": 0.4367429443625033,
+            "gap": 0.11363930292575714,
+            "ks_missing_vs_covered": 0.3078729661040527,
+            "tolerance": 0.01,
+            "gap_exceeds_tolerance": true,
+            "ks_exceeds_guardrail": true
+          }
+        },
+        "regime_share_covered": {
+          "0": 0.1832602092473844,
+          "1": 0.10664866689166386,
+          "2": 0.11913601079986501,
+          "3": 0.23759703003712454,
+          "4": 0.1461356733040837,
+          "5": 0.20722240971987851
+        },
+        "regime_share_missing": {
+          "0": 0.34587813620071683,
+          "1": 0.18996415770609318,
+          "2": 0.1971326164874552,
+          "3": 0.035842293906810034,
+          "4": 0.1863799283154122,
+          "5": 0.044802867383512544
+        },
+        "max_regime_share_shift": 0.2017547361303145,
+        "verdict": "NOT missing at random: missing scenes are systematically harder (lower PSNR/SSIM, higher LPIPS) and drawn from different regimes"
+      },
+      "bionerf": {
+        "n_covered": 2521,
+        "n_missing": 1000,
+        "metrics": {
+          "psnr": {
+            "covered_mean": 19.44249763171004,
+            "missing_mean": 17.260281105995183,
+            "gap": -2.182216525714857,
+            "ks_missing_vs_covered": 0.1779547798492661,
+            "tolerance": 0.5,
+            "gap_exceeds_tolerance": true,
+            "ks_exceeds_guardrail": true
+          },
+          "ssim": {
+            "covered_mean": 0.6948861182267966,
+            "missing_mean": 0.6422281186431644,
+            "gap": -0.052657999583632153,
+            "ks_missing_vs_covered": 0.15865132883776278,
+            "tolerance": 0.01,
+            "gap_exceeds_tolerance": true,
+            "ks_exceeds_guardrail": true
+          },
+          "lpips": {
+            "covered_mean": 0.3204636115703447,
+            "missing_mean": 0.3931698877625167,
+            "gap": 0.07270627619217201,
+            "ks_missing_vs_covered": 0.17180126933756448,
+            "tolerance": 0.01,
+            "gap_exceeds_tolerance": true,
+            "ks_exceeds_guardrail": true
+          }
+        },
+        "regime_share_covered": {
+          "0": 0.18683062276874257,
+          "1": 0.11106703689012297,
+          "2": 0.10908369694565649,
+          "3": 0.23839746132487108,
+          "4": 0.14518048393494645,
+          "5": 0.20944069813566046
+        },
+        "regime_share_missing": {
+          "0": 0.265,
+          "1": 0.142,
+          "2": 0.188,
+          "3": 0.123,
+          "4": 0.171,
+          "5": 0.111
+        },
+        "max_regime_share_shift": 0.11539746132487108,
+        "verdict": "NOT missing at random: missing scenes are systematically harder (lower PSNR/SSIM, higher LPIPS) and drawn from different regimes"
+      }
+    },
+    "implication": "E9's I4/I5 multi-method results are computed on a subpopulation biased toward EASIER scenes. The audit remains internally valid (subset vs its own population) but the subpopulation is not representative of the full benchmark; every use of E9 must say so. This also quantifies the population shift E8 detected qualitatively."
   }
 }
