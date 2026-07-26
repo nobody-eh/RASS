@@ -19,6 +19,10 @@ task, all seeds recorded). Each summary below is self-contained.
 | P11 dispersion-matched | `E11` | E11.md | COMPLETE (post-hoc label mandatory) | Dispersion-matched taus: 0.08 at 60sc equal / 48sc proportional; RASS-96 passes all 16; RASS-48 still fails only FS-LPIPS |
 | P12 why-48 | `E12` | E12.md | COMPLETE, verdict (a) | Selection-time sweep evaluated 36 and it failed its recorded rule (LCB 0.041<0.08); 48 smallest passing; paper frontier starts at 48 by design |
 | P13 DL3DV logs+audit | `E13` | E13.md | COMPLETE (in window) | 140/140 nerfacto logs generated locally; audit transfers: proportional certifies 32sc at p_min=0.08 (LCB .123), equal-allocation bias replicated on second dataset |
+| P14 single-method prop. | `E14` | E14.md | COMPLETE | Paper's Zip-NeRF frontier under proportional: 0.08 budget unchanged (36sc), comparable at 48 (LCB .168 vs .182), dominates beyond (0.20: 60 vs 96sc); RASS-48/96 unaffected |
+| P15 contract evidence | `E15` | E15.md | COMPLETE, verdict (a) | "Declared before results" holds for the core contract (timestamped trail packaged); proportional/uniform companions + budget grid labeled post hoc; 9 event configs exported |
+| P16 repo sync | `E16` | E16.md | COMPLETE, commit d50bf31 | 223 files pushed to anonymous repo; 33/33 release claims resolve to live paths; DL3DV license gate PROCEED (metrics only); anonymity grep 0 hits |
+| P17 DL3DV 3DGS | `E17` | E17.md | RUNNING (camera-ready) | splatfacto DL3DV-140 queued on local GPU; two-method audit on completion; nothing in the rebuttal depends on it |
 
 ## For the drafting session — DO and DO NOT
 

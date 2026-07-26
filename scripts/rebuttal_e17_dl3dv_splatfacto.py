@@ -69,7 +69,19 @@ def main() -> None:
     ndone = 0
     for i, h in enumerate(todo):
         try:
-            ns_dir = prefetched.pop(h, None) or download_scene(h)
+            ns_dir = prefetched.pop(h, None)
+            for attempt in range(4):
+                if ns_dir is not None:
+                    break
+                try:
+                    ns_dir = download_scene(h)
+                except Exception as exc:
+                    if attempt == 3:
+                        raise
+                    wait = 180 * (attempt + 1)
+                    print(f"DL RETRY {h[:12]} in {wait}s: {str(exc)[:120]}",
+                          flush=True)
+                    time.sleep(wait)
             if i + 1 < len(todo):
                 threading.Thread(target=prefetch, args=(todo[i + 1],), daemon=True).start()
 

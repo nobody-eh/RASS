@@ -5671,5 +5671,210 @@
       "rebuttal/event_configs/threemethod_proportional_v1.json"
     ],
     "note_for_drafting": "VERDICT (a): the 'declared before any result' sentence is supported and may be posted, PROVIDED the two labeled post-hoc additions (proportional/uniform companions, concrete budget grid) are not claimed as pre-declared."
+  },
+  "E16": {
+    "date": "2026-07-26",
+    "commit_hash": "d50bf31805d74768695cad3d64fecdf180bdcc54",
+    "remote": "github.com/nobody-eh/RASS (anonymous org)",
+    "files_committed": 223,
+    "claims_checklist": [
+      {
+        "claim": "we release the RASS-48 and RASS-96 scene lists, configurations, descriptors, regime labels, seeds (paper abstract)",
+        "path": "rass_kaggle_artifact_anonymous/scene_lists/rass48_scene_ids.txt",
+        "exists": true
+      },
+      {
+        "claim": "we release the RASS-48 and RASS-96 scene lists, configurations, descriptors, regime labels, seeds (paper abstract)",
+        "path": "rass_kaggle_artifact_anonymous/scene_lists/rass96_scene_ids.txt",
+        "exists": true
+      },
+      {
+        "claim": "we release the RASS-48 and RASS-96 scene lists, configurations, descriptors, regime labels, seeds (paper abstract)",
+        "path": "rass_kaggle_artifact_anonymous/metadata/artifact_manifest.json",
+        "exists": true
+      },
+      {
+        "claim": "all rebuttal audit scripts incl. P0 validation are released",
+        "path": "scripts/rebuttal_p0_validation.py",
+        "exists": true
+      },
+      {
+        "claim": "all rebuttal audit scripts incl. P0 validation are released",
+        "path": "scripts/rebuttal_audit_tasks.py",
+        "exists": true
+      },
+      {
+        "claim": "all rebuttal audit scripts incl. P0 validation are released",
+        "path": "scripts/rebuttal_e1_joint_event.py",
+        "exists": true
+      },
+      {
+        "claim": "all rebuttal audit scripts incl. P0 validation are released",
+        "path": "scripts/rebuttal_e13_dl3dv_audit.py",
+        "exists": true
+      },
+      {
+        "claim": "all rebuttal audit scripts incl. P0 validation are released",
+        "path": "scripts/rebuttal_e14_proportional_zipnerf.py",
+        "exists": true
+      },
+      {
+        "claim": "versioned event configs for every referenced audited configuration",
+        "path": "rebuttal/event_configs/threemethod_equal_v1.json",
+        "exists": true
+      },
+      {
+        "claim": "versioned event configs for every referenced audited configuration",
+        "path": "rebuttal/event_configs/threemethod_proportional_v1.json",
+        "exists": true
+      },
+      {
+        "claim": "versioned event configs for every referenced audited configuration",
+        "path": "rebuttal/event_configs/fourmethod_v1.json",
+        "exists": true
+      },
+      {
+        "claim": "versioned event configs for every referenced audited configuration",
+        "path": "rebuttal/event_configs/fivemethod_v1.json",
+        "exists": true
+      },
+      {
+        "claim": "versioned event configs for every referenced audited configuration",
+        "path": "rebuttal/event_configs/ranking_variantA_v1.json",
+        "exists": true
+      },
+      {
+        "claim": "versioned event configs for every referenced audited configuration",
+        "path": "rebuttal/event_configs/ranking_variantB_v1.json",
+        "exists": true
+      },
+      {
+        "claim": "versioned event configs for every referenced audited configuration",
+        "path": "rebuttal/event_configs/dispersion_matched_v1.json",
+        "exists": true
+      },
+      {
+        "claim": "versioned event configs for every referenced audited configuration",
+        "path": "rebuttal/event_configs/regime_constrained_c1_v1.json",
+        "exists": true
+      },
+      {
+        "claim": "versioned event configs for every referenced audited configuration",
+        "path": "rebuttal/event_configs/regime_constrained_c2_v1.json",
+        "exists": true
+      },
+      {
+        "claim": "FL-36-prime scene list + audit card with reimplementation provenance label (E5)",
+        "path": "subsets/fl36/fl36_scene_list.csv",
+        "exists": true
+      },
+      {
+        "claim": "FL-36-prime scene list + audit card with reimplementation provenance label (E5)",
+        "path": "subsets/fl36/fl36_audit_card.json",
+        "exists": true
+      },
+      {
+        "claim": "DL3DV: 140 per-scene metric JSONs, descriptor CSV, contract declaration, audit outputs (E13)",
+        "path": "rebuttal/method_logs/dl3dv_nerfacto",
+        "exists": true
+      },
+      {
+        "claim": "DL3DV: 140 per-scene metric JSONs, descriptor CSV, contract declaration, audit outputs (E13)",
+        "path": "rebuttal/method_logs/dl3dv_descriptors.csv",
+        "exists": true
+      },
+      {
+        "claim": "DL3DV: 140 per-scene metric JSONs, descriptor CSV, contract declaration, audit outputs (E13)",
+        "path": "rebuttal/dl3dv_contract_declaration.json",
+        "exists": true
+      },
+      {
+        "claim": "DL3DV: 140 per-scene metric JSONs, descriptor CSV, contract declaration, audit outputs (E13)",
+        "path": "rebuttal/dl3dv_audit_card.json",
+        "exists": true
+      },
+      {
+        "claim": "DL3DV: 140 per-scene metric JSONs, descriptor CSV, contract declaration, audit outputs (E13)",
+        "path": "rebuttal/rebuttal_results.json",
+        "exists": true
+      },
+      {
+        "claim": "additional per-scene method logs, metrics only, sources anonymized (E8/E9)",
+        "path": "rebuttal/method_logs/nutrition5k_nerfacto_metrics.csv",
+        "exists": true
+      },
+      {
+        "claim": "additional per-scene method logs, metrics only, sources anonymized (E8/E9)",
+        "path": "rebuttal/method_logs/nutrition5k_bionerf_metrics.csv",
+        "exists": true
+      },
+      {
+        "claim": "recorded selection-time artifacts backing the why-48 answer (E12)",
+        "path": "rebuttal/selection_artifacts/budget_recommendation.json",
+        "exists": true
+      },
+      {
+        "claim": "recorded selection-time artifacts backing the why-48 answer (E12)",
+        "path": "rebuttal/selection_artifacts/budget_sweep_summary.csv",
+        "exists": true
+      },
+      {
+        "claim": "erratum (3,521 effective population) stated in README and audit cards",
+        "path": "README.md",
+        "exists": true
+      },
+      {
+        "claim": "erratum (3,521 effective population) stated in README and audit cards",
+        "path": "rebuttal/dl3dv_audit_card.json",
+        "exists": true
+      },
+      {
+        "claim": "erratum (3,521 effective population) stated in README and audit cards",
+        "path": "subsets/fl36/fl36_audit_card.json",
+        "exists": true
+      },
+      {
+        "claim": "per-task machine-readable results with all seeds (INDEX)",
+        "path": "rebuttal/rebuttal_results.json",
+        "exists": true
+      },
+      {
+        "claim": "per-task machine-readable results with all seeds (INDEX)",
+        "path": "rebuttal/summaries/INDEX.md",
+        "exists": true
+      }
+    ],
+    "claims_all_live": true,
+    "license_check": {
+      "dataset": "DL3DV-Benchmark (140 scenes, sampled from DL3DV-10K)",
+      "license": "DL3DV-10K Terms of Use + CC BY-NC 4.0 (License.md in the HF repo)",
+      "relevant_clause": "ToU clause 4: sharing the Dataset beyond agreed researchers is strictly prohibited",
+      "verdict": "PROCEED: only our own derived per-scene metric scalars and descriptor statistics are released; no DL3DV images, colmap data, or other Dataset inputs are redistributed; non-commercial research context; DL3DV attributed in the method_logs README",
+      "gate_reverification": "top-level file listings of both DL3DV/DL3DV-Benchmark and DL3DV/DL3DV-10K-Benchmark contain only License.md, README.md, benchmark-meta.csv, download.py plus 140 scene dirs - no per-scene metric files exist despite the dataset card's 'performances of methods' phrasing; E7/E13 gate verdict definitively confirmed",
+      "benchmark_meta_csv": "NOT redistributed (DL3DV content, gated); scripts that need it document obtaining it from the gated HF repo (license auto-grant)"
+    },
+    "anonymity_scrub_report": {
+      "identifiers_swept": "author/collaborator names, cluster hostnames and account IDs, group ID, other members' IDs, cluster filesystem paths, local username and hostname, home/scratchpad absolute paths, HF token, cluster password, session-directory paths",
+      "actions": [
+        "scratchpad literals in 10 scripts parameterized via RASS_SCRATCH env var",
+        "cluster references genericized in scripts, summaries, results JSON (accounts -> account-A/account-B, group -> the-group, hostnames -> 'the cluster login node', /gpfs -> <cluster>)",
+        "recovered method logs released as metrics-only CSVs; checkpoint paths dropped; provenance says 'additional per-scene method logs' with no machines or people",
+        "DL3DV log JSONs: checkpoint field reduced to basename",
+        "pre-scrub handoff zip excluded from the commit",
+        "final staged-blob grep returned zero hits; commit author/committer verified as nobody-eh <nobody-eh@users.noreply.github.com>"
+      ],
+      "final_grep_hits": 0
+    }
+  },
+  "E17": {
+    "date": "2026-07-26",
+    "progress": {
+      "status": "RUNNING - splatfacto (3DGS) DL3DV-140 streamed pipeline on local RTX 3090, low priority, resumable",
+      "settings": "ns-train splatfacto defaults, machine.seed 0, downscale 4 (960P), same log schema as E13; per-scene checkpointing; download retry guard (4 attempts, backoff) after an HF rate-limit storm killed the first launch at 0/140",
+      "scenes_completed": 0,
+      "note": "no rebuttal text depends on this; camera-ready material only"
+    },
+    "logs_path": "scratchpad dl3dv_splatfacto_logs/json",
+    "audit": null
   }
 }
