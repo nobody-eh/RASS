@@ -5904,7 +5904,13 @@
       },
       "expectation_for_the_two_method_audit": "between-method gaps (~4-5 dB PSNR, 0.16-0.22 SSIM) are far larger than the DL3DV tolerances (tau_PSNR 0.2014 dB), so the two-method joint event is a demanding test; expect a certified budget at or above nerfacto's 32 scenes. To be reported honestly either way.",
       "note": "camera-ready material; NO rebuttal text depends on this and nothing may be claimed from it during the discussion period",
-      "scenes_completed": 140
+      "scenes_completed": 140,
+      "instant_ngp": {
+        "status": "RUNNING locally, 2 workers, 30k steps",
+        "scenes_completed_at_last_check": 3,
+        "measured": "~28.8 min/scene/worker, ~14 min/scene effective, ~33 h for 140",
+        "eval_oom_fix": "two trainings occupy 21.6 of 24.5 GB; ns-eval renders full 960P images and OOMed against the other worker. Fixed with --pipeline.model.eval-num-rays-per-chunk 2048 plus PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True. Chunking tiles rendering only and does not change the metrics; the previously failing scene then completed."
+      }
     },
     "logs_path": "scratchpad dl3dv_splatfacto_logs/json",
     "audit": {
@@ -6158,6 +6164,34 @@
           "p020": 80
         }
       }
+    },
+    "convergence_check": {
+      "date": "2026-07-27",
+      "question": "is the 30,000-step nerfstudio default more than instant-ngp needs?",
+      "method": "train-PSNR from TensorBoard, averaged in 2,000-step windows, on two independent DL3DV scenes; marginal gain per window compared against the DL3DV audit tolerance tau_PSNR = 0.2014 dB",
+      "marginal_gain_db_per_2k_steps": {
+        "2beaca318994": {
+          "2k-4k": 3.179,
+          "4k-6k": 0.896,
+          "6k-8k": 0.555,
+          "8k-10k": 0.406,
+          "10k-12k": 0.31,
+          "12k-14k": 0.252,
+          "14k-16k": 0.176
+        },
+        "9c8c0e0fadd9": {
+          "2k-4k": 2.336,
+          "4k-6k": 0.807,
+          "6k-8k": 0.544,
+          "8k-10k": 0.357,
+          "10k-12k": 0.265,
+          "12k-14k": 0.209,
+          "14k-16k": 0.17
+        }
+      },
+      "finding": "Neither scene plateaus; marginal gain decays geometrically at about 0.8x per 2k-step window and first falls below tau_PSNR at ~14-16k steps. Extrapolating the decay, steps 16k->30k still contribute ~0.5-0.6 dB, roughly 2.7x the audit tolerance.",
+      "decision": "keep 30,000 steps (the nerfstudio default) for instant-ngp, identical to nerfacto, splatfacto and tensorf. Halving to 15k would have halved runtime and left the within-method audit valid, but would cost ~0.5 dB and make instant-ngp the only method not at the default, requiring a permanent disclosure and precluding any fair cross-method quality statement.",
+      "runtime_note": "training is 88% of per-scene wall clock (25.5 of 28.8 min), so step count is the only material speed lever; two workers cost only 16% per-worker slowdown (1410 -> 1179 steps/min), giving 1.67x aggregate, and a third does not fit in 24 GB VRAM."
     }
   },
   "E18": {
