@@ -1,0 +1,18 @@
+{
+ "experiment_name": "35872363e17af5d173b6a0b09fcf5de94627ad5dc5f8a9ad4c579f3e70b4797a",
+ "method_name": "tensorf",
+ "checkpoint": "step-000029999.ckpt",
+ "results": {
+  "psnr": 25.804752349853516,
+  "psnr_std": 2.725339651107788,
+  "ssim": 0.8002006411552429,
+  "ssim_std": 0.06111165136098862,
+  "lpips": 0.27131280303001404,
+  "lpips_std": 0.12302368134260178,
+  "num_rays_per_sec": 257455.34375,
+  "num_rays_per_sec_std": 149124.375,
+  "fps": 0.4966345429420471,
+  "fps_std": 0.2876627743244171
+ },
+ "provenance": "DL3DV-Benchmark scene, trained+evaluated on an H100/H200 GPU node, ns-train tensorf defaults, seed 0, downscale 4 (960P), 2026-07; camera-ready material (P17)"
+}

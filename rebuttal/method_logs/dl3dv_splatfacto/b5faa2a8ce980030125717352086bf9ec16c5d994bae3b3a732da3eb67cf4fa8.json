@@ -1,0 +1,18 @@
+{
+ "experiment_name": "b5faa2a8ce980030125717352086bf9ec16c5d994bae3b3a732da3eb67cf4fa8",
+ "method_name": "splatfacto",
+ "checkpoint": "step-000029999.ckpt",
+ "results": {
+  "psnr": 30.100215911865234,
+  "psnr_std": 1.4365863800048828,
+  "ssim": 0.88704913854599,
+  "ssim_std": 0.030062390491366386,
+  "lpips": 0.17622312903404236,
+  "lpips_std": 0.036469366401433945,
+  "num_rays_per_sec": 24156718.0,
+  "num_rays_per_sec_std": 8520846.0,
+  "fps": 46.733741760253906,
+  "fps_std": 16.484481811523438
+ },
+ "provenance": "DL3DV-Benchmark scene, trained+evaluated on an H100/H200 GPU node, ns-train splatfacto defaults, seed 0, downscale 4 (960P), COLMAP-seeded init, 2026-07; camera-ready material (P17)"
+}
