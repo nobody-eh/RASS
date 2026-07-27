@@ -38,6 +38,7 @@ RESULTS = REPO / "rebuttal/rebuttal_results.json"
 SCRATCH = Path(os.environ.get("RASS_SCRATCH", "/tmp/rass_scratch"))
 NERFACTO_DIR = REPO / "rebuttal/method_logs/dl3dv_nerfacto"
 SPLAT_DIR = SCRATCH / "dl3dv_splat_final/json"
+TENSORF_DIR = SCRATCH / "dl3dv_tensorf_final/json"
 METRICS = ("psnr", "ssim", "lpips")
 P_MIN, P_STRICT = 0.08, 0.20
 
@@ -65,6 +66,8 @@ def main() -> None:
     hashes = pd.read_csv(META)["hash"].astype(str).tolist()
     methods = {"nerfacto": load_method(NERFACTO_DIR, hashes),
                "splatfacto": load_method(SPLAT_DIR, hashes)}
+    if TENSORF_DIR.exists() and len(list(TENSORF_DIR.glob("*.json"))) == len(hashes):
+        methods["tensorf"] = load_method(TENSORF_DIR, hashes)
     labels, ndims = cluster_dl3dv(hashes)
     N = len(hashes)
     groups = {int(c): np.where(labels == c)[0] for c in sorted(set(labels))}
@@ -136,10 +139,10 @@ def main() -> None:
     e17["progress"]["status"] = "splatfacto COMPLETE 140/140, zero failures"
     e17["progress"]["scenes_completed"] = 140
     e17["audit"] = {
-        "label": "CAMERA-READY MATERIAL - two-method DL3DV joint event; NOT for "
-                 "the discussion-period rebuttal",
+        "label": f"CAMERA-READY MATERIAL - {len(methods)}-method DL3DV joint event; "
+                 "NOT for the discussion-period rebuttal",
         "date": "2026-07-26",
-        "methods": ["nerfacto", "splatfacto"],
+        "methods": list(methods),
         "contract": "E13 contract extended method-wise: k=4 regimes, per-method "
                     "E3c dispersion tolerances (c=0.079769 x that method's own "
                     "per-scene std), KS 1.358*sqrt((n+140)/(140n)), M=400, "

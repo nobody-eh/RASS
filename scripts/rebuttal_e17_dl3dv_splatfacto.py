@@ -95,6 +95,10 @@ def main() -> None:
                  "--viewer.quit-on-train-completion", "True",
                  "nerfstudio-data", "--downscale-factor", "4"],
                 env=env, capture_output=True, text=True, timeout=10800,
+                # splatfacto needs a seed point cloud; the dataparser asks
+                # whether to convert the COLMAP points to .ply. Yes = default
+                # COLMAP-seeded Gaussian init (declining degrades 3DGS).
+                input="y\n",
             )
             ckpts = list((outdir / h).glob("splatfacto/*/nerfstudio_models/step-000029999.ckpt"))
             if r.returncode != 0 or not ckpts:
