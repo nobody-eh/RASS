@@ -14,9 +14,12 @@ path there.
 
 ## 1. Hard rules — violating any of these is a defect
 
-1. **Never claim E17 (3DGS/splatfacto) results.** The run is incomplete and
-   its audit is null. The only permitted statement is the existing
-   commitment: 3DGS as a second DL3DV method **in the camera-ready**.
+1. **Never claim E17 results in the rebuttal.** E17 is now COMPLETE (four
+   DL3DV methods, four-method audit run) but it is **camera-ready material**,
+   not discussion-period evidence. The only permitted rebuttal statement is
+   the existing commitment: additional DL3DV methods **in the camera-ready**.
+   If E17 is used in the camera-ready, instant-ngp's 16k-step deviation must
+   travel with it (see the E17 disclosure block).
 2. **Never present these as pre-declared** (they are labeled post hoc in
    `dl3dv_contract_declaration.json`): the proportional and uniform
    companion frontiers in E13, and E13's concrete budget grid. The core
@@ -134,6 +137,21 @@ Mandatory caveats: single method; logs self-generated during the discussion
 period; DL3DV chosen after submission; at N=140 the KS critical distances
 are loose (0.19–0.49), so the binding constraints are the dispersion-matched
 means; the proportional/uniform frontiers are post hoc (rule 2).
+
+**E17 — four-method DL3DV audit (CAMERA-READY ONLY, do not quote in the
+rebuttal).** All 140 DL3DV scenes trained and evaluated under one harness for
+nerfacto, splatfacto, tensorf and instant-ngp (560 per-scene logs, all
+committed). Headline: the audit cost **saturates** in the number of methods —
+certified budget at p_min = 0.08 goes 32 -> 40 -> 64 -> **64** scenes for
+1 -> 2 -> 3 -> 4 methods, so a fourth method tightens the event (pass count at
+64 falls 67 -> 56) without moving the budget. Equal allocation fails at every
+budget in every multi-method event; proportional is required throughout,
+independently corroborating E10. Mandatory disclosure: instant-ngp was trained
+to 16,000 steps versus 30,000 for the other three (35,000 in NVlabs'
+reference implementation); valid for the within-method scaling curve, NOT for
+ranking method quality. Note the shortened schedule did not flatter the
+result — instant-ngp has the smallest sigma and hence the tightest tolerance
+of the four.
 
 **E15 — provenance.** The DL3DV contract was declared 2026-07-24 22:53 UTC,
 recorded in the repo 23 minutes later with `"audit": null`, ~2 h before the
