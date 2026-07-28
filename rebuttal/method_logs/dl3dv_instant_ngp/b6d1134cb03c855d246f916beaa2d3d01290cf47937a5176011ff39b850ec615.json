@@ -1,0 +1,19 @@
+{
+ "experiment_name": "b6d1134cb03c855d246f916beaa2d3d01290cf47937a5176011ff39b850ec615",
+ "method_name": "instant-ngp",
+ "checkpoint": "step-000015999.ckpt",
+ "results": {
+  "psnr": 23.8026180267334,
+  "psnr_std": 1.1412100791931152,
+  "ssim": 0.8052627444267273,
+  "ssim_std": 0.04353679344058037,
+  "lpips": 0.17562168836593628,
+  "lpips_std": 0.052277471870183945,
+  "num_rays_per_sec": 292684.125,
+  "num_rays_per_sec_std": 68144.3203125,
+  "fps": 0.5645912885665894,
+  "fps_std": 0.13145123422145844
+ },
+ "provenance": "DL3DV-Benchmark scene, trained+evaluated locally on RTX 3090 with tinycudann, ns-train instant-ngp, seed 0, downscale 4 (960P), max_num_iterations=16000 (NOT the nerfstudio default of 30000 used by the other three methods; see E17 disclosure), 2026-07; camera-ready (P17)",
+ "train_steps": 16000
+}

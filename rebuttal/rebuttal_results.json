@@ -5914,12 +5914,13 @@
     },
     "logs_path": "scratchpad dl3dv_splatfacto_logs/json",
     "audit": {
-      "label": "CAMERA-READY MATERIAL - 3-method DL3DV joint event; NOT for the discussion-period rebuttal",
+      "label": "CAMERA-READY MATERIAL - 4-method DL3DV joint event; NOT for the discussion-period rebuttal",
       "date": "2026-07-26",
       "methods": [
         "nerfacto",
         "splatfacto",
-        "tensorf"
+        "tensorf",
+        "instant-ngp"
       ],
       "contract": "E13 contract extended method-wise: k=4 regimes, per-method E3c dispersion tolerances (c=0.079769 x that method's own per-scene std), KS 1.358*sqrt((n+140)/(140n)), M=400, seed 0, rng default_rng(0+b); a subset passes only if ALL methods satisfy every mean and KS constraint at once",
       "validation": {
@@ -5987,9 +5988,26 @@
             "ssim": 0.008640644857127617,
             "lpips": 0.007549007838154047
           }
+        },
+        "instant-ngp": {
+          "means": {
+            "psnr": 24.558262389046806,
+            "ssim": 0.8217019340821675,
+            "lpips": 0.19871366139767424
+          },
+          "stds_ddof1": {
+            "psnr": 2.36674255277291,
+            "ssim": 0.08195159455264044,
+            "lpips": 0.08068617153044742
+          },
+          "tolerances": {
+            "psnr": 0.18879266067651362,
+            "ssim": 0.006537195845043988,
+            "lpips": 0.006436254329896414
+          }
         }
       },
-      "n_constraints": 18,
+      "n_constraints": 24,
       "frontier_equal": [
         {
           "b": 2,
@@ -6010,9 +6028,9 @@
         {
           "b": 4,
           "size": 16,
-          "n_pass": 1,
-          "empirical_pass_rate": 0.0025,
-          "wilson_lcb_95": 0.0004414477868016353,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
           "ks_tol": 0.35837529211707664
         },
         {
@@ -6026,9 +6044,9 @@
         {
           "b": 6,
           "size": 24,
-          "n_pass": 2,
-          "empirical_pass_rate": 0.005,
-          "wilson_lcb_95": 0.0013722529547103846,
+          "n_pass": 1,
+          "empirical_pass_rate": 0.0025,
+          "wilson_lcb_95": 0.0004414477868016353,
           "ks_tol": 0.30002127702325826
         },
         {
@@ -6042,9 +6060,9 @@
         {
           "b": 10,
           "size": 40,
-          "n_pass": 2,
-          "empirical_pass_rate": 0.005,
-          "wilson_lcb_95": 0.0013722529547103846,
+          "n_pass": 1,
+          "empirical_pass_rate": 0.0025,
+          "wilson_lcb_95": 0.0004414477868016353,
           "ks_tol": 0.243468067721416
         },
         {
@@ -6058,17 +6076,17 @@
         {
           "b": 16,
           "size": 64,
-          "n_pass": 5,
-          "empirical_pass_rate": 0.0125,
-          "wilson_lcb_95": 0.005350750779971615,
+          "n_pass": 3,
+          "empirical_pass_rate": 0.0075,
+          "wilson_lcb_95": 0.0025538891952499414,
           "ks_tol": 0.20490891269049283
         },
         {
           "b": 20,
           "size": 80,
-          "n_pass": 2,
-          "empirical_pass_rate": 0.005,
-          "wilson_lcb_95": 0.0013722529547103846,
+          "n_pass": 0,
+          "empirical_pass_rate": 0.0,
+          "wilson_lcb_95": 0.0,
           "ks_tol": 0.19032774364238125
         }
       ],
@@ -6108,49 +6126,49 @@
         {
           "b": 6,
           "size": 24,
-          "n_pass": 3,
-          "empirical_pass_rate": 0.0075,
-          "wilson_lcb_95": 0.0025538891952499414,
+          "n_pass": 2,
+          "empirical_pass_rate": 0.005,
+          "wilson_lcb_95": 0.0013722529547103846,
           "ks_tol": 0.30002127702325826
         },
         {
           "b": 8,
           "size": 32,
-          "n_pass": 8,
-          "empirical_pass_rate": 0.02,
-          "wilson_lcb_95": 0.01016838679166465,
+          "n_pass": 5,
+          "empirical_pass_rate": 0.0125,
+          "wilson_lcb_95": 0.005350750779971615,
           "ks_tol": 0.26608781445229696
         },
         {
           "b": 10,
           "size": 40,
-          "n_pass": 14,
-          "empirical_pass_rate": 0.035,
-          "wilson_lcb_95": 0.02096129419797776,
+          "n_pass": 12,
+          "empirical_pass_rate": 0.03,
+          "wilson_lcb_95": 0.017243020965143047,
           "ks_tol": 0.243468067721416
         },
         {
           "b": 12,
           "size": 48,
-          "n_pass": 36,
-          "empirical_pass_rate": 0.09,
-          "wilson_lcb_95": 0.06571729376939447,
+          "n_pass": 19,
+          "empirical_pass_rate": 0.0475,
+          "wilson_lcb_95": 0.03061707696271188,
           "ks_tol": 0.22714022834657305
         },
         {
           "b": 16,
           "size": 64,
-          "n_pass": 67,
-          "empirical_pass_rate": 0.1675,
-          "wilson_lcb_95": 0.13410557406748244,
+          "n_pass": 56,
+          "empirical_pass_rate": 0.14,
+          "wilson_lcb_95": 0.10940962137459034,
           "ks_tol": 0.20490891269049283
         },
         {
           "b": 20,
           "size": 80,
-          "n_pass": 113,
-          "empirical_pass_rate": 0.2825,
-          "wilson_lcb_95": 0.24061027235147464,
+          "n_pass": 106,
+          "empirical_pass_rate": 0.265,
+          "wilson_lcb_95": 0.22413371758035427,
           "ks_tol": 0.19032774364238125
         }
       ],

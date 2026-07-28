@@ -37,8 +37,11 @@ REPO = Path(__file__).resolve().parents[1]
 RESULTS = REPO / "rebuttal/rebuttal_results.json"
 SCRATCH = Path(os.environ.get("RASS_SCRATCH", "/tmp/rass_scratch"))
 NERFACTO_DIR = REPO / "rebuttal/method_logs/dl3dv_nerfacto"
-SPLAT_DIR = SCRATCH / "dl3dv_splat_final/json"
-TENSORF_DIR = SCRATCH / "dl3dv_tensorf_final/json"
+# read from the committed release copies: scratch is /tmp and does not
+# survive a reboot (it already ate the splatfacto/tensorf staging copies once)
+SPLAT_DIR = REPO / "rebuttal/method_logs/dl3dv_splatfacto"
+TENSORF_DIR = REPO / "rebuttal/method_logs/dl3dv_tensorf"
+INGP_DIR = REPO / "rebuttal/method_logs/dl3dv_instant_ngp"
 METRICS = ("psnr", "ssim", "lpips")
 P_MIN, P_STRICT = 0.08, 0.20
 
@@ -68,6 +71,11 @@ def main() -> None:
                "splatfacto": load_method(SPLAT_DIR, hashes)}
     if TENSORF_DIR.exists() and len(list(TENSORF_DIR.glob("*.json"))) == len(hashes):
         methods["tensorf"] = load_method(TENSORF_DIR, hashes)
+    # instant-ngp trained to 16k steps, NOT the 30k default used by the other
+    # three (NVlabs run.py falls back to 35k). Within-method constraints keep
+    # this audit valid, but no cross-method quality claim may be drawn.
+    if INGP_DIR.exists() and len(list(INGP_DIR.glob("*.json"))) == len(hashes):
+        methods["instant-ngp"] = load_method(INGP_DIR, hashes)
     labels, ndims = cluster_dl3dv(hashes)
     N = len(hashes)
     groups = {int(c): np.where(labels == c)[0] for c in sorted(set(labels))}

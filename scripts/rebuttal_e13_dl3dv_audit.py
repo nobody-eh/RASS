@@ -50,7 +50,10 @@ from rebuttal_e3_sensitivity import (  # noqa: E402
 REPO = Path(__file__).resolve().parents[1]
 SCRATCH = Path(os.environ.get("RASS_SCRATCH", "/tmp/rass_scratch"))
 JSON_DIR = SCRATCH / "dl3dv_logs/json"
-DESC_CSV = SCRATCH / "dl3dv_logs/dl3dv_descriptors.csv"
+# prefer the committed release copy; scratch is /tmp and vanishes on reboot
+DESC_CSV = REPO / "rebuttal/method_logs/dl3dv_descriptors.csv"
+if not DESC_CSV.exists():
+    DESC_CSV = SCRATCH / "dl3dv_logs/dl3dv_descriptors.csv"
 META = REPO / "benchmark-meta.csv"
 RESULTS = REPO / "rebuttal/rebuttal_results.json"
 

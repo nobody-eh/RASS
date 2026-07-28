@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
 """Task P17: DL3DV-140 instant-ngp logs on the local GPU (camera-ready).
 
-Runs locally because instant-ngp needs tinycudann, which is installed here
-but fails to build on the GPU cluster (its login node has no libcuda). The
-cluster's pure-PyTorch fallback cost 106 min/scene, 5x splatfacto, so those
-runs were quarantined as non-comparable rather than kept.
+Runs locally because the GPU cluster is being retired and our queued job sits
+behind other users. instant-ngp is the only method here that needs nerfacc's
+JIT-compiled CUDA extension, which made it far more fragile than nerfacto,
+splatfacto or tensorf (all 140/140 first time). Getting it running required:
+a stale JIT lock cleared, CUDA_HOME corrected (the env pointed at a
+non-existent 12.8 toolkit; the real nvcc is /usr/bin), MAX_JOBS=1 to survive
+a memory-constrained machine, and LD_PRELOAD of the SYSTEM libstdc++ because
+the extension is built with system g++ while conda ships an older
+libstdc++ lacking GLIBCXX_3.4.32.
 
 Scenes are streamed: download -> train -> eval -> delete, so peak disk stays
 small. Downloads use direct resolve URLs and read the frame list from each
@@ -36,6 +41,15 @@ META = REPO / "benchmark-meta.csv"
 BASE = "https://huggingface.co/datasets/DL3DV/DL3DV-Benchmark/resolve/main"
 COLMAP = ["cameras.bin", "images.bin", "points3D.bin"]
 METHOD = "instant-ngp"
+# DELIBERATE DEVIATION, must be disclosed wherever these logs are used:
+# instant-ngp is trained to 16,000 steps while nerfacto/splatfacto/tensorf use
+# the nerfstudio default of 30,000 (NVlabs' own run.py falls back to 35,000).
+# Chosen because measured marginal train-PSNR gain per 2k steps drops below the
+# DL3DV audit tolerance (0.2014 dB) at ~14-16k. The E17 scaling audit stays
+# valid because its constraints are within-method, but no fair cross-method
+# quality comparison can be drawn against the other three methods.
+STEPS = 16000
+CKPT = f"step-{STEPS - 1:09d}.ckpt"
 
 # ~/.cache points at a full disk on this machine, so every cache torch or
 # nerfstudio might touch is redirected here explicitly rather than being
@@ -44,6 +58,21 @@ for var, sub in (("TORCH_EXTENSIONS_DIR", "torch_ext"), ("TORCH_HOME", "torch"),
                  ("HF_HOME", "hf"), ("TMPDIR", "tmp"), ("XDG_CACHE_HOME", "xdg")):
     os.environ.setdefault(var, str(SCRATCH / sub))
     (SCRATCH / sub).mkdir(parents=True, exist_ok=True)
+# CUDA_HOME must be FORCED, not setdefault: the shell here exports a stale
+# /usr/local/cuda-12.8 that does not exist, so setdefault silently keeps it
+# and every nerfacc build dies with "nvcc: not found".
+_cuda = next((d for d in ("/usr/local/cuda", "/usr")
+              if os.path.exists(os.path.join(d, "bin", "nvcc"))), None)
+if _cuda:
+    os.environ["CUDA_HOME"] = _cuda
+os.environ.setdefault("MAX_JOBS", "1")              # memory-constrained host
+# match the arch of the verified prebuilt extension so torch reuses it
+os.environ.setdefault("TORCH_CUDA_ARCH_LIST", "8.6")
+# reduce allocator fragmentation when two workers share one GPU
+os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
+_SYS_STDCXX = "/usr/lib/x86_64-linux-gnu/libstdc++.so.6"
+if os.path.exists(_SYS_STDCXX):                     # conda libstdc++ is too old
+    os.environ.setdefault("LD_PRELOAD", _SYS_STDCXX)
 
 session = requests.Session()
 session.headers["Authorization"] = f"Bearer {os.environ['HF_TOKEN']}"
@@ -111,13 +140,18 @@ def main() -> None:
                  "--vis", "tensorboard", "--machine.num-devices", "1",
                  "--machine.seed", "0",
                  "--viewer.quit-on-train-completion", "True",
-                 "--steps-per-save", "30000",
+                 "--max-num-iterations", str(STEPS),
+                 "--steps-per-save", str(STEPS),
+                 # two workers share a 24 GB card; ns-eval renders full 960P
+                 # images and OOMs against the other worker's training unless
+                 # rendering is tiled. Chunking changes tiling only, not output.
+                 "--pipeline.model.eval-num-rays-per-chunk", "2048",
                  "nerfstudio-data", "--downscale-factor", "4"],
                 env=env, capture_output=True, text=True, timeout=14400,
                 input="y\n",
             )
             ckpts = list((outdir / h).glob(
-                f"{METHOD}/*/nerfstudio_models/step-000029999.ckpt"))
+                f"{METHOD}/*/nerfstudio_models/{CKPT}"))
             if r.returncode != 0 or not ckpts:
                 print(f"TRAIN FAIL {h[:12]}: {r.stderr[-300:]}", flush=True)
                 continue
@@ -135,10 +169,13 @@ def main() -> None:
             d["experiment_name"] = h
             if "checkpoint" in d:
                 d["checkpoint"] = pathlib.Path(d["checkpoint"]).name
-            d["provenance"] = ("DL3DV-Benchmark scene, trained+evaluated locally on "
-                               "RTX 3090 with tinycudann, ns-train instant-ngp "
-                               "defaults, seed 0, downscale 4 (960P), 2026-07; "
-                               "camera-ready material (P17)")
+            d["provenance"] = (f"DL3DV-Benchmark scene, trained+evaluated locally on "
+                               f"RTX 3090 with tinycudann, ns-train instant-ngp, "
+                               f"seed 0, downscale 4 (960P), "
+                               f"max_num_iterations={STEPS} (NOT the nerfstudio "
+                               f"default of 30000 used by the other three methods; "
+                               f"see E17 disclosure), 2026-07; camera-ready (P17)")
+            d["train_steps"] = STEPS
             json.dump(d, open(out, "w"), indent=2)
             ndone += 1
             total = len(list((LOGS / "json").glob("*.json")))
